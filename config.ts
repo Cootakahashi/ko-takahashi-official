@@ -3,11 +3,13 @@ import { SiteMetadata, SocialLink } from './types';
 // Default metadata (JA SEO optimized)
 export const siteMetadata: SiteMetadata = {
   title: "高橋 高 (Ko Takahashi) | Official Portfolio",
-  description: "エンジニア・経営者、高橋高の公式ポートフォリオ。Culture OS、Matsuri Platformの開発者。静謐な美意識と論理的思考で、テクノロジーと日本文化の融合を追求する。",
+  description: "エンジニア・経営者、高橋高の公式ポートフォリオ。Culture OS、Matsuri Platformの開発者。静謐な美意識と論理的思考で、テクノロジーと日本文化の融合を追求する。新宿を拠点に世界へ。",
   keywords: [
     "高橋高", 
     "高橋 高", 
     "Ko Takahashi", 
+    "Shinjuku",
+    "新宿",
     "Culture OS", 
     "Matsuri Platform",
     "Engineer",
@@ -15,7 +17,10 @@ export const siteMetadata: SiteMetadata = {
     "Next.js",
     "Python",
     "Design"
-  ]
+  ],
+  location: "Shinjuku, Tokyo, Japan",
+  ogImage: "https://picsum.photos/1200/630", // Placeholder, ideally should be a real OGP image
+  twitterId: "@zes55ch"
 };
 
 // Primary Company/Project Links (Remains as his work)

@@ -12,4 +12,7 @@ export interface SiteMetadata {
   title: string;
   description: string;
   keywords: string[];
+  location?: string;
+  ogImage?: string;
+  twitterId?: string;
 }

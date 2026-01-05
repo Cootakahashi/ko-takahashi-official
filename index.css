@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-obsidian text-slate-200 overflow-x-hidden;
+  }
+  
+  ::selection {
+    background: #D4AF37;
+    color: #050505;
+  }
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}

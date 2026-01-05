@@ -58,7 +58,7 @@ export const SmartImage: React.FC<SmartImageProps> = ({
     <motion.img
       {...motionProps}
       src={currentSrc}
-      alt={alt || "Story Image"}
+      alt={alt || "Ko Takahashi Portfolio - Visual Element (Shinjuku/Tokyo)"}
       className={className}
       onError={handleError}
       // Spread other standard HTML img props
