@@ -9,15 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "^19.2.3",
-    "@react-three/fiber": "8.15.16",
     "@react-three/drei": "9.99.0",
-    "three": "0.160.0",
-    "lucide-react": "0.344.0",
+    "@react-three/fiber": "8.15.16",
     "framer-motion": "11.0.8",
+    "fs": "latest",
+    "lucide-react": "0.344.0",
     "path": "latest",
-    "fs": "latest"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "0.160.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
