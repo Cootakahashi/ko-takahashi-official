@@ -1,0 +1,154 @@
+{
+  "posts": [
+    {
+      "id": "internal_001",
+      "ja": {
+        "title": "Jon & Coo Inc. 創業の哲学: なぜ今、文化OSなのか",
+        "description": "デジタル社会における「人間らしさ」の復権。",
+        "content": [
+          {
+            "type": "h2",
+            "text": "1. 失われた「手触り」を求めて"
+          },
+          {
+            "type": "p",
+            "text": "現代のインターネットは、無限の情報へのアクセスを可能にしましたが、同時に私たちの体験を均質化させてしまいました。スクロールする指先にあるのは、冷たいガラスの感触だけです。私が育った日本の田舎には、湿り気のある空気、鳥居の木肌、祭りの熱気といった「手触り」がありました。"
+          },
+          {
+            "type": "quote",
+            "text": "テクノロジーは魔法ですが、その魔法が現実世界の美しさを上書きしてはなりません。"
+          },
+          {
+            "type": "p",
+            "text": "Jon & Coo Inc.を設立した理由は、この「手触り」をデジタル空間に取り戻すためです。私たちはそれを「Culture OS」と呼んでいます。これは単なるソフトウェアではなく、コミュニティの文脈（コンテキスト）を保存し、デジタル上で再構築するための基盤です。"
+          },
+          {
+            "type": "h2",
+            "text": "2. Culture OSとは何か"
+          },
+          {
+            "type": "p",
+            "text": "Culture OSは、分散型IDとDAO（自律分散型組織）の技術を応用し、地域の伝統やコミュニティのルールをコード化する試みです。しかし、重要なのは技術そのものではなく、その背後にある哲学です。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "不可視な価値の可視化 (Visualization of Invisible Value)",
+              "所有から共有へのシフト (Shift from Ownership to Stewardship)",
+              "アルゴリズムによる最適化ではなく、感情による共鳴 (Resonance over Optimization)"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "私たちが目指すのは、効率性だけを追求するスマートシティではなく、物語と記憶が息づく「ワイズシティ（賢明な都市）」です。"
+          }
+        ]
+      },
+      "en": {
+        "title": "The Philosophy of Jon & Coo Inc.: Why Culture OS Now?",
+        "description": "Restoring 'humanity' in the digital society.",
+        "content": [
+          {
+            "type": "h2",
+            "text": "1. In Search of Lost 'Texture'"
+          },
+          {
+            "type": "p",
+            "text": "The modern internet has granted us access to infinite information, but it has simultaneously homogenized our experiences. All that remains at our fingertips is the cold touch of glass. In the rural Japan where I grew up, there was 'texture'—the humid air, the bark of Torii gates, the heat of festivals."
+          },
+          {
+            "type": "quote",
+            "text": "Technology is magic, but that magic must not overwrite the beauty of the real world."
+          },
+          {
+            "type": "p",
+            "text": "I founded Jon & Coo Inc. to restore this 'texture' to the digital space. We call it 'Culture OS'. It is not just software; it is a foundation for preserving community context and reconstructing it digitally."
+          },
+          {
+            "type": "h2",
+            "text": "2. What is Culture OS?"
+          },
+          {
+            "type": "p",
+            "text": "Culture OS is an attempt to codify local traditions and community rules using decentralized ID and DAO technologies. However, what matters is not the technology itself, but the philosophy behind it."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Visualization of Invisible Value",
+              "Shift from Ownership to Stewardship",
+              "Resonance over Optimization"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "We aim not for a Smart City that pursues only efficiency, but a 'Wise City' where stories and memories breathe."
+          }
+        ]
+      }
+    },
+    {
+      "id": "internal_002",
+      "ja": {
+        "title": "デジタルにおける「静寂」のデザイン",
+        "description": "UI/UXデザインにおける引き算の美学。",
+        "content": [
+          {
+            "type": "h2",
+            "text": "ノイズの海の中で"
+          },
+          {
+            "type": "p",
+            "text": "現代のアプリケーションは、ユーザーの注意を引こうと必死です。赤い通知バッジ、ポップアップ、点滅するバナー。これらはユーザーの認知リソースを枯渇させます。私たちは「静寂」こそが、最も贅沢なユーザー体験（UX）であると考えます。"
+          },
+          {
+            "type": "h2",
+            "text": "Zen-Tech デザイン原則"
+          },
+          {
+            "type": "p",
+            "text": "私たちのデザインシステムは、日本の禅庭園からインスピレーションを得ています。石（コンテンツ）を配置する前に、まず砂（空白）を整えること。空白は単なるスペースではなく、意味を持った「間（Ma）」です。"
+          },
+          {
+            "type": "code",
+            "text": "const style = {\n  padding: 'clamp(2rem, 5vw, 5rem)',\n  lineHeight: 1.8,\n  color: '#e5e5e5',\n  backgroundColor: '#050505' // Obsidian Silence\n};"
+          },
+          {
+            "type": "p",
+            "text": "黒（#050505）を基調とすることで、画面からの発光を抑え、目の疲れを軽減します。そして、重要な要素にのみ金（#D4AF37）を差すことで、視線を自然に誘導します。静寂の中でこそ、情報は際立つのです。"
+          }
+        ]
+      },
+      "en": {
+        "title": "Designing 'Silence' in the Digital Age",
+        "description": "The aesthetics of subtraction in UI/UX design.",
+        "content": [
+          {
+            "type": "h2",
+            "text": "In a Sea of Noise"
+          },
+          {
+            "type": "p",
+            "text": "Modern applications are desperate for user attention. Red notification badges, pop-ups, flashing banners. These deplete user cognitive resources. We believe that 'silence' is the most luxurious User Experience (UX)."
+          },
+          {
+            "type": "h2",
+            "text": "Zen-Tech Design Principles"
+          },
+          {
+            "type": "p",
+            "text": "Our design system draws inspiration from Japanese Zen gardens. Before placing stones (content), one must first rake the sand (void). Whitespace is not just empty space; it is meaningful 'Ma'."
+          },
+          {
+            "type": "code",
+            "text": "const style = {\n  padding: 'clamp(2rem, 5vw, 5rem)',\n  lineHeight: 1.8,\n  color: '#e5e5e5',\n  backgroundColor: '#050505' // Obsidian Silence\n};"
+          },
+          {
+            "type": "p",
+            "text": "By using black (#050505) as a base, we reduce light emission and eye strain. By applying Gold (#D4AF37) only to essential elements, we naturally guide the eye. Information stands out only in silence."
+          }
+        ]
+      }
+    }
+  ]
+}

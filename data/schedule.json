@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "ja": {
+      "title": "Future Roadmap | 高橋 高",
+      "description": "Culture OS、Matsuri Platform、The J-Timesの展開ロードマップ。"
+    },
+    "en": {
+      "title": "Future Roadmap | Ko Takahashi",
+      "description": "Development roadmap for Culture OS, Matsuri Platform, and The J-Times."
+    }
+  },
+  "events": [
+    {
+      "id": "ev_future_01",
+      "date": "2025-05-01",
+      "title": {
+        "ja": "Matsuri Platform: Genesis Launch",
+        "en": "Matsuri Platform: Genesis Launch"
+      },
+      "description": {
+        "ja": "Matsuri Engineの公式リリース。日本の地方祭りをデジタル空間で再定義し、世界中からの参加を可能にする分散型プロトコルの始動。物理的な祭りとデジタルの双方向性を実現。",
+        "en": "Official release of the Matsuri Engine. Redefining local Japanese festivals in digital space and enabling global participation via decentralized protocols. achieving bidirectionality between physical and digital."
+      },
+      "location": "Tokyo / Metaverse",
+      "status": "upcoming",
+      "tags": ["Release", "Matsuri", "Web3"],
+      "link": "https://matsuri.group"
+    },
+    {
+      "id": "ev_future_02",
+      "date": "2025-07-07",
+      "title": {
+        "ja": "The J-Times: Media Protocol Activation",
+        "en": "The J-Times: Media Protocol Activation"
+      },
+      "description": {
+        "ja": "分散型メディア「The J-Times」のプロトコル始動。ブロックチェーン上の不変なアーカイブ技術を用い、日本のコンテキストを正確に世界へ伝達する次世代ジャーナリズム基盤。",
+        "en": "Activation of 'The J-Times' decentralized media protocol. A next-generation journalism infrastructure using immutable on-chain archiving to accurately transmit Japanese context to the world."
+      },
+      "location": "Global / On-chain",
+      "status": "upcoming",
+      "tags": ["Media", "Blockchain", "Launch"],
+      "link": "https://www.j-times.org/"
+    },
+    {
+      "id": "ev_future_03",
+      "date": "2025-09-20",
+      "title": {
+        "ja": "Culture OS: Blockchain Integration",
+        "en": "Culture OS: Blockchain Integration"
+      },
+      "description": {
+        "ja": "Culture OSへのSSI（自己主権型アイデンティティ）完全統合。地域コミュニティの会員権をNFT化し、物理的な施設アクセス権や投票権とシームレスに連携させる実証実験フェーズ。",
+        "en": "Full integration of SSI (Self-Sovereign Identity) into Culture OS. Pilot phase tokenizing local community memberships as NFTs, seamlessly linked with physical access rights and voting power."
+      },
+      "location": "Kyoto / Ethereum L2",
+      "status": "upcoming",
+      "tags": ["Dev", "Identity", "Smart Contracts"]
+    },
+    {
+      "id": "ev_future_04",
+      "date": "2025-12-10",
+      "title": {
+        "ja": "Jon & Coo DAO Governance",
+        "en": "Jon & Coo DAO Governance"
+      },
+      "description": {
+        "ja": "エコシステムの意思決定を分散化するためのガバナンスモジュール起動。トークンホルダーによるプロジェクト方針の策定と、自律分散型組織（DAO）への移行プロセス開始。",
+        "en": "Activation of governance modules to decentralize ecosystem decision-making. Token holders begin formulating project direction, marking the transition to a Decentralized Autonomous Organization (DAO)."
+      },
+      "location": "DAO",
+      "status": "upcoming",
+      "tags": ["Governance", "DAO", "Future"]
+    }
+  ]
+}

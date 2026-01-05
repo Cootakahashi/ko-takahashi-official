@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "ja": {
+      "title": "Articles & Insights | 高橋 高",
+      "description": "テクノロジー、デザイン、日本文化に関する高橋高の考察と記事アーカイブ。"
+    },
+    "en": {
+      "title": "Articles & Insights | Ko Takahashi",
+      "description": "Thoughts and article archives by Ko Takahashi on technology, design, and Japanese culture."
+    }
+  },
+  "articles": [
+    {
+      "id": "internal_001",
+      "title": {
+        "ja": "Jon & Coo Inc. 創業の哲学: なぜ今、文化OSなのか",
+        "en": "The Philosophy of Jon & Coo Inc.: Why Culture OS Now?"
+      },
+      "summary": {
+        "ja": "テクノロジーの進化が加速する中で、私たちが失いつつある「手触り」や「空気感」。Jon & Coo Inc.が目指す、デジタルとフィジカルの境界線を溶かすアプローチについて。",
+        "en": "As technology accelerates, we lose the 'texture' and 'atmosphere' of life. Jon & Coo Inc.'s approach to dissolving the boundary between digital and physical."
+      },
+      "platform": "Internal",
+      "url": "internal_001",
+      "date": "2024.04.01",
+      "tags": ["Philosophy", "Vision", "Corporate"]
+    },
+    {
+      "id": "internal_002",
+      "title": {
+        "ja": "デジタルにおける「静寂」のデザイン",
+        "en": "Designing 'Silence' in the Digital Age"
+      },
+      "summary": {
+        "ja": "UIデザインにおけるノイズの削減は、単なるミニマリズムではありません。ユーザーの認知負荷を下げ、本質的な没入感を生み出すための「引き算の美学」の実践的考察。",
+        "en": "Reducing noise in UI design is more than minimalism. Practical insights on the 'aesthetics of subtraction' to lower cognitive load and create immersion."
+      },
+      "platform": "Internal",
+      "url": "internal_002",
+      "date": "2024.03.20",
+      "tags": ["Design", "UI/UX", "Zen"]
+    },
+    {
+      "id": "art_001",
+      "title": {
+        "ja": "Culture OS: 伝統とコードの交差点",
+        "en": "Culture OS: The Intersection of Tradition and Code"
+      },
+      "summary": {
+        "ja": "日本の「間」がソフトウェアアーキテクチャにどのような影響を与えるか。呼吸するシステムを構築するための哲学的な深掘り。",
+        "en": "Exploring how Japanese 'Ma' (negative space) can inform software architecture. A philosophical deep dive into building systems that breathe."
+      },
+      "platform": "Note",
+      "url": "https://note.com/ko_takahashi",
+      "date": "2024.03.15",
+      "tags": ["Philosophy", "Design"]
+    },
+    {
+      "id": "art_002",
+      "title": {
+        "ja": "Python使いのためのRust: Matsuri Engineの構築",
+        "en": "Rust for Pythonistas: Building the Matsuri Engine"
+      },
+      "summary": {
+        "ja": "なぜMatsuri PlatformのコアにRustを選んだのか。パフォーマンスベンチマークと、パラダイムシフトにおける開発者体験。",
+        "en": "Why we chose Rust for the core of the Matsuri Platform. Performance benchmarks and the developer experience of shifting paradigms."
+      },
+      "platform": "Zenn",
+      "url": "https://zenn.dev/rust_start",
+      "date": "2024.02.10",
+      "tags": ["Tech", "Rust", "Engineering"]
+    },
+    {
+      "id": "art_004",
+      "title": {
+        "ja": "Next.js 14 & R3F: ラグジュアリーWebのための最適化",
+        "en": "Next.js 14 & R3F: Optimization for Luxury Webs"
+      },
+      "summary": {
+        "ja": "Jon & Cooポートフォリオ構築における技術的ケーススタディ。WebGLコンテキストの管理とLCPスコアについて。",
+        "en": "A technical case study on building the Jon & Coo portfolio. Managing WebGL contexts and LCP scores."
+      },
+      "platform": "Qiita",
+      "url": "https://qiita.com/rustprogram2022",
+      "date": "2023.12.05",
+      "tags": ["Next.js", "Three.js", "Performance"]
+    }
+  ]
+}
