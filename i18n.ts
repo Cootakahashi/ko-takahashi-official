@@ -32,8 +32,8 @@ interface TranslationData {
 
 export const translations: Record<LanguageCode, TranslationData> = {
   ja: {
-    meta_title: "高橋 高 (Ko Takahashi) | Official Portfolio",
-    meta_description: "エンジニア・経営者、高橋高の公式ポートフォリオ。Culture OS、Matsuri Platformの開発者。静謐な美意識と論理的思考で、テクノロジーと日本文化の融合を追求する。",
+    meta_title: "高橋 高 (Ko Takahashi) | 新宿拠点のエンジニア・経営者 Official Portfolio",
+    meta_description: "東京・新宿を拠点とするエンジニア・経営者、高橋高の公式ポートフォリオ。Culture OS、Matsuri Platformの開発者。静謐な美意識と論理的思考で、テクノロジーと日本文化の融合を追求する。",
     hero_name: "高橋 高",
     hero_name_sub: "Ko Takahashi",
     hero_role_titles: "Engineer / Entrepreneur / Philosopher",

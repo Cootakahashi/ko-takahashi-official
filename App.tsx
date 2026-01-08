@@ -29,11 +29,11 @@ const GlassCard = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <div
+  <aside
     className={`backdrop-blur-xl bg-black/40 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] rounded-sm ${className}`}
   >
     {children}
-  </div>
+  </aside>
 );
 
 const LanguageSwitcher: React.FC<{
@@ -49,11 +49,17 @@ const LanguageSwitcher: React.FC<{
   ];
 
   return (
-    <div className="flex gap-1 items-center bg-black/60 backdrop-blur-md rounded-full p-1 border border-white/20 shadow-lg">
+    <div
+      className="flex gap-1 items-center bg-black/60 backdrop-blur-md rounded-full p-1 border border-white/20 shadow-lg"
+      role="group"
+      aria-label="Language selection"
+    >
       {languages.map((lang) => (
         <button
           key={lang.code}
           onClick={() => onChange(lang.code)}
+          aria-label={`Switch to ${lang.label}`}
+          aria-pressed={current === lang.code}
           className={`text-[10px] font-mono w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
             current === lang.code
               ? "bg-gold text-obsidian font-bold shadow-[0_0_15px_rgba(212,175,55,0.6)]"
@@ -102,39 +108,45 @@ const CompanyCard: React.FC<{ link: SocialLink; t: any }> = ({ link, t }) => {
       : { description: "", operated_by: "" };
 
   return (
-    <a
-      href={link.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative overflow-hidden flex flex-col justify-between p-10 min-h-[280px] border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] transition-all duration-700 hover:border-gold/40 backdrop-blur-sm"
-    >
-      <div className="absolute top-0 right-0 p-6 opacity-30 group-hover:opacity-100 transition-opacity duration-500">
-        <ArrowUpRight className="w-5 h-5 text-white group-hover:text-gold transition-colors" />
-      </div>
-
-      <div className="relative z-10 mb-8">
-        <CategoryBadge
-          category={link.category}
-          label={t.categories[link.category] || link.category}
-        />
-      </div>
-
-      <div className="relative z-10 mt-auto">
-        <div className="flex items-center gap-4 mb-4 text-white group-hover:text-gold transition-colors duration-500">
-          <Icon className="w-6 h-6 stroke-[1.5]" />
-          <h3 className="font-serif text-3xl tracking-wide font-medium">
-            {link.platform}
-          </h3>
+    <article className="h-full">
+      <a
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${link.platform} - ${companyData.description}`}
+        className="group relative overflow-hidden flex flex-col justify-between p-10 min-h-[280px] h-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] transition-all duration-700 hover:border-gold/40 backdrop-blur-sm"
+      >
+        <div className="absolute top-0 right-0 p-6 opacity-30 group-hover:opacity-100 transition-opacity duration-500">
+          <ArrowUpRight
+            aria-hidden="true"
+            className="w-5 h-5 text-white group-hover:text-gold transition-colors"
+          />
         </div>
-        <div className="h-px w-12 bg-white/10 mb-4 group-hover:w-full group-hover:bg-gold/30 transition-all duration-700" />
-        <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
-          {companyData.description}
-        </p>
-        <p className="text-[10px] text-white/30 font-mono tracking-widest uppercase">
-          {companyData.operated_by}
-        </p>
-      </div>
-    </a>
+
+        <div className="relative z-10 mb-8">
+          <CategoryBadge
+            category={link.category}
+            label={t.categories[link.category] || link.category}
+          />
+        </div>
+
+        <div className="relative z-10 mt-auto">
+          <div className="flex items-center gap-4 mb-4 text-white group-hover:text-gold transition-colors duration-500">
+            <Icon aria-hidden="true" className="w-6 h-6 stroke-[1.5]" />
+            <h3 className="font-serif text-3xl tracking-wide font-medium">
+              {link.platform}
+            </h3>
+          </div>
+          <div className="h-px w-12 bg-white/10 mb-4 group-hover:w-full group-hover:bg-gold/30 transition-all duration-700" />
+          <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
+            {companyData.description}
+          </p>
+          <p className="text-[10px] text-white/30 font-mono tracking-widest uppercase">
+            {companyData.operated_by}
+          </p>
+        </div>
+      </a>
+    </article>
   );
 };
 
@@ -256,7 +268,7 @@ const App: React.FC = () => {
       <Seo currentLang={lang} />
 
       {/* 3D Universe Background */}
-      <div className="fixed inset-0 pointer-events-none">
+      <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
         <Hero3D />
       </div>
 
@@ -266,6 +278,7 @@ const App: React.FC = () => {
         animate={{ y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 w-full px-6 py-6 md:px-12 md:py-8 z-50 flex justify-between items-start pointer-events-none"
+        aria-label="Main navigation"
       >
         {/* Logo - Personal Branding */}
         <div className="flex flex-col pointer-events-auto">
@@ -289,6 +302,7 @@ const App: React.FC = () => {
                 key={item.id}
                 onClick={() => setView(item.id as ViewState)}
                 className="relative group text-xs font-mono font-medium tracking-widest uppercase text-white/80 hover:text-white transition-colors"
+                aria-label={`Navigate to ${item.label}`}
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full"></span>
@@ -301,12 +315,14 @@ const App: React.FC = () => {
             <button
               onClick={() => setView("story")}
               className="text-[10px] bg-black/50 border border-white/20 backdrop-blur px-3 py-1 rounded text-white"
+              aria-label="Navigate to Story"
             >
               Story
             </button>
             <button
               onClick={() => setView("schedule")}
               className="text-[10px] bg-black/50 border border-white/20 backdrop-blur px-3 py-1 rounded text-white"
+              aria-label="Navigate to Schedule"
             >
               Events
             </button>
@@ -317,7 +333,10 @@ const App: React.FC = () => {
       </motion.nav>
 
       {/* HERO SECTION - GRID LAYOUT */}
-      <section className="relative min-h-screen w-full grid grid-cols-12 grid-rows-[1fr_auto_1fr] md:grid-rows-1 gap-4 px-6 md:px-12 lg:px-24 items-center z-10 pt-32 pb-12">
+      <section
+        className="relative min-h-screen w-full grid grid-cols-12 grid-rows-[1fr_auto_1fr] md:grid-rows-1 gap-4 px-6 md:px-12 lg:px-24 items-center z-10 pt-32 pb-12"
+        aria-label="Hero Section"
+      >
         {/* Left Column: Typography */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -328,9 +347,12 @@ const App: React.FC = () => {
           {/* Main Title Group */}
           <div className="relative z-10">
             {/* Huge English Watermark */}
-            <h2 className="font-serif text-[12vw] md:text-[8vw] leading-none text-white/5 absolute -top-[0.6em] left-0 select-none pointer-events-none mix-blend-overlay">
+            <span
+              className="font-serif text-[12vw] md:text-[8vw] leading-none text-white/5 absolute -top-[0.6em] left-0 select-none pointer-events-none mix-blend-overlay block"
+              aria-hidden="true"
+            >
               {t.hero_name_sub}
-            </h2>
+            </span>
 
             {/* Sharp Japanese Title */}
             <h1 className="font-jp font-medium text-[12vw] md:text-[6vw] text-white tracking-widest drop-shadow-2xl leading-[1.1]">
@@ -339,7 +361,10 @@ const App: React.FC = () => {
           </div>
 
           <div className="mt-8 flex items-center gap-6">
-            <div className="h-[2px] w-12 bg-gold shadow-[0_0_10px_#D4AF37]"></div>
+            <div
+              className="h-[2px] w-12 bg-gold shadow-[0_0_10px_#D4AF37]"
+              aria-hidden="true"
+            ></div>
             <p className="font-mono text-xs md:text-sm text-gold tracking-[0.3em] uppercase font-bold drop-shadow-md">
               {t.hero_role_titles}
             </p>
@@ -354,23 +379,36 @@ const App: React.FC = () => {
           className="col-span-12 md:col-start-9 md:col-span-4 flex flex-col justify-center mt-8 md:mt-0"
         >
           <GlassCard className="p-8 border-l-4 border-l-gold/80 hover:bg-black/50 transition-colors duration-500">
+            {/* Profile Image */}
+            <div className="mb-8 overflow-hidden rounded-sm border border-white/10 relative group">
+              <div className="absolute inset-0 bg-gold/10 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
+              <img
+                src="/ko/takahashi-ko.jpg"
+                alt="Ko Takahashi"
+                className="w-full h-64 object-cover object-top grayscale-[0.3] contrast-125 group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+              />
+            </div>
+
             {/* Header: Personal Identity & Location */}
-            <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+            <header className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
               <div>
-                <h3 className="font-serif italic text-gold text-2xl">
+                <h2 className="font-serif italic text-gold text-2xl">
                   Ko Takahashi
-                </h3>
-                <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest">
+                </h2>
+                <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest block">
                   Official Identity
                 </span>
               </div>
               <div className="flex items-center gap-3 bg-white/5 px-3 py-1 rounded-full border border-white/5">
-                <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse shadow-[0_0_8px_#D4AF37]"></div>
+                <div
+                  className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse shadow-[0_0_8px_#D4AF37]"
+                  aria-hidden="true"
+                ></div>
                 <span className="text-[10px] font-mono tracking-widest text-white/70 uppercase">
-                  Tokyo, Japan
+                  Shinjuku, Tokyo
                 </span>
               </div>
-            </div>
+            </header>
 
             <p className="font-serif text-lg leading-relaxed text-white/90 drop-shadow-sm text-justify">
               {t.bio_text}
@@ -379,6 +417,7 @@ const App: React.FC = () => {
               <button
                 onClick={() => setView("story")}
                 className="text-xs font-mono text-gold hover:text-white transition-colors underline underline-offset-4 decoration-gold/50"
+                aria-label="Read my full story"
               >
                 READ MY STORY
               </button>
@@ -392,6 +431,7 @@ const App: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
           className="col-span-12 flex justify-center items-end h-full pb-8 pointer-events-none md:absolute md:bottom-8 md:left-1/2 md:-translate-x-1/2"
+          aria-hidden="true"
         >
           <div className="flex flex-col items-center gap-3">
             <span className="text-[10px] font-mono tracking-widest text-white/30 uppercase">
@@ -405,17 +445,26 @@ const App: React.FC = () => {
       {/* Content Container - Solid background starts here for readability */}
       <div className="relative bg-obsidian z-20">
         {/* Gradient Transition from 3D to Solid */}
-        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-transparent to-obsidian -translate-y-full pointer-events-none"></div>
+        <div
+          className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-transparent to-obsidian -translate-y-full pointer-events-none"
+          aria-hidden="true"
+        ></div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
           {/* PRIMARY VENTURES */}
-          <section className="mb-48">
+          <section className="mb-48" aria-labelledby="ventures-title">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 border-b border-white/10 pb-8">
-              <h3 className="text-5xl md:text-7xl font-serif text-white tracking-tight">
+              <h2
+                id="ventures-title"
+                className="text-5xl md:text-7xl font-serif text-white tracking-tight"
+              >
                 Core{" "}
                 <span className="text-gold italic font-light">Ventures</span>
-              </h3>
-              <span className="hidden md:block text-xs font-mono text-white/30 mb-2 tracking-widest">
+              </h2>
+              <span
+                className="hidden md:block text-xs font-mono text-white/30 mb-2 tracking-widest"
+                aria-hidden="true"
+              >
                 01 — SELECT PROJECTS
               </span>
             </div>
@@ -436,23 +485,36 @@ const App: React.FC = () => {
           </section>
 
           {/* ARCHIVE GRID */}
-          <section>
+          <section aria-labelledby="archive-title">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
               <div>
-                <span className="block text-xs font-mono text-gold mb-2 tracking-widest">
+                <span
+                  className="block text-xs font-mono text-gold mb-2 tracking-widest"
+                  aria-hidden="true"
+                >
                   DIGITAL PRESENCE
                 </span>
-                <h3 className="text-4xl md:text-5xl font-serif text-white/90">
+                <h2
+                  id="archive-title"
+                  className="text-4xl md:text-5xl font-serif text-white/90"
+                >
                   The <span className="text-white italic">Archive</span>
-                </h3>
+                </h2>
               </div>
 
               {/* Filter Chips */}
-              <nav className="flex flex-wrap gap-2">
+              <nav
+                className="flex flex-wrap gap-2"
+                aria-label="Category filter"
+              >
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setFilter(cat)}
+                    aria-label={`Filter by ${
+                      t.categories[cat as keyof typeof t.categories] || cat
+                    }`}
+                    aria-pressed={filter === cat}
                     className={`text-[10px] md:text-xs px-5 py-2 rounded-sm border transition-all duration-300 tracking-wider uppercase font-mono ${
                       filter === cat
                         ? "border-gold text-obsidian bg-gold font-bold shadow-[0_0_15px_rgba(212,175,55,0.4)]"
@@ -475,7 +537,7 @@ const App: React.FC = () => {
                 &copy; {new Date().getFullYear()} Ko Takahashi. All Rights
                 Reserved.
               </p>
-              <p className="tracking-widest">TOKYO / KYOTO / METAVERSE</p>
+              <p className="tracking-widest">SHINJUKU / TOKYO / METAVERSE</p>
             </div>
             <div className="flex gap-8">
               <a href="#" className="hover:text-gold transition-colors">

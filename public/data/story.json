@@ -14,7 +14,7 @@
         "title": "The Origin",
         "jpTitle": "起源",
         "content": "すべては、日本の深い山間にある神社の参道から始まりました。静寂に包まれた鳥居、苔むした石段。幼少期に肌で感じたその「不可視な空気感」こそが、私の原点です。成長し、プログラミングという新たな言語を手にしたとき、私は一つの問いを抱きました。「このデジタルの冷たい画面に、あの体温を持った静寂を宿すことはできるだろうか？」",
-        "image": "https://images.unsplash.com/photo-1478436127897-769e1a3f0c7e?q=80&w=2535&auto=format&fit=crop",
+        "image": "/ko/ko-takahashi_.jpg",
         "imageCaption": "The texture of silence found in memory."
       },
       {
@@ -22,7 +22,7 @@
         "title": "Zen & Code",
         "jpTitle": "禅と技術",
         "content": "エンジニアリングは現代の武道です。キーボードを叩く指先には、刀を振るうような研ぎ澄まされた集中（Zone）が必要です。私は「引き算の美学」をコードに持ち込みました。不要な機能を削ぎ落とし、ユーザーの認知をクリアにする。Jon & Coo Inc.で実践している『Zen-Tech』は、単なるデザインスタイルではなく、情報過多な現代社会に対する私なりの処方箋なのです。",
-        "image": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop",
+        "image": "/ko/ko_takahashi.jpg",
         "imageCaption": "Stripping away the noise to reveal the essence."
       },
       {
@@ -30,7 +30,7 @@
         "title": "Culture OS",
         "jpTitle": "文化OS",
         "content": "いま、私は「Culture OS」という概念の実装に挑んでいます。それは、祭りや地域の絆といったアナログな価値を、ブロックチェーンやDAOという技術で永続化させる試みです。過去を保存するのではなく、未来へ接続する。私が書くコードの一行一行が、日本の精神性を世界へ届ける架け橋になると信じて、今日もディスプレイに向かっています。",
-        "image": "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2670&auto=format&fit=crop",
+        "image": "/ko/ko-takahashi.png",
         "imageCaption": "Bridging the ancient spirit with future protocols."
       }
     ],
@@ -51,7 +51,7 @@
         "title": "The Origin",
         "jpTitle": "Origin",
         "content": "It all began on the approach to a shrine deep in the mountains of Japan. The silence wrapping the Torii gates, the moss-covered stone steps. That 'invisible atmosphere' I felt on my skin as a child is my origin point. When I grew up and acquired the new language of programming, I held one question: 'Can we imbue these cold digital screens with that warm, living silence?'",
-        "image": "https://images.unsplash.com/photo-1478436127897-769e1a3f0c7e?q=80&w=2535&auto=format&fit=crop",
+        "image": "/ko/ko-takahashi_.jpg",
         "imageCaption": "The texture of silence found in memory."
       },
       {
@@ -59,7 +59,7 @@
         "title": "Zen & Code",
         "jpTitle": "Zen Tech",
         "content": "Engineering is a modern martial art. The fingertips striking the keyboard require the same honed focus (Zone) as wielding a katana. I brought the 'aesthetics of subtraction' into my code. Stripping away unnecessary functions to clear the user's cognition. The 'Zen-Tech' we practice at Jon & Coo Inc. is not just a design style; it is my prescription for this information-overloaded modern society.",
-        "image": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop",
+        "image": "/ko/ko_takahashi.jpg",
         "imageCaption": "Stripping away the noise to reveal the essence."
       },
       {
@@ -67,7 +67,7 @@
         "title": "Culture OS",
         "jpTitle": "Culture OS",
         "content": "Now, I am challenging myself to implement the concept of 'Culture OS'. It is an attempt to perpetuate analog values—like festivals and community bonds—using technologies like Blockchain and DAO. Not preserving the past, but connecting it to the future. I face my display today believing that every line of code I write becomes a bridge delivering the Japanese spirit to the world.",
-        "image": "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2670&auto=format&fit=crop",
+        "image": "/ko/ko-takahashi.png",
         "imageCaption": "Bridging the ancient spirit with future protocols."
       }
     ],

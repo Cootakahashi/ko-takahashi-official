@@ -17,9 +17,9 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageOverride }) => {
 
   // 1. Construct Title & Description
   // "Shinjuku" included in title for Local SEO dominance
-  const defaultTitle = "高橋 高 / Ko Takahashi | Jon & Coo Inc. CEO (Shinjuku, Tokyo)";
+  const defaultTitle = "高橋 高 | Ko Takahashi - 新宿 (Shinjuku) 起点のエンジニア・経営者";
   const title = pageOverride?.title 
-    ? `${pageOverride.title} | Ko Takahashi (Shinjuku)`
+    ? `${pageOverride.title} | 高橋 高 (新宿/Shinjuku)`
     : defaultTitle;
 
   const description = pageOverride?.description || t.meta_description || siteMetadata.description;
@@ -42,7 +42,7 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageOverride }) => {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "高橋 高",
-    "alternateName": "Ko Takahashi",
+    "alternateName": ["Ko Takahashi", "高橋高"],
     "description": "Jon & Coo Inc. CEO based in Shinjuku, Tokyo. Engineer, Entrepreneur, and Creator of Culture OS.",
     "url": url,
     "image": "https://picsum.photos/400/400", // Ideally replace with real profile photo
@@ -54,12 +54,25 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageOverride }) => {
         "@type": "PostalAddress",
         "addressLocality": "Shinjuku-ku",
         "addressRegion": "Tokyo",
-        "addressCountry": "JP"
+        "addressCountry": "JP",
+        "streetAddress": "Shinjuku"
       }
     },
     "worksFor": worksFor,
-    "knowsAbout": ["Culture OS", "Matsuri Platform", "The J-Times", "Engineering", "Management", "Next.js", "Python"],
+    "knowsAbout": ["Culture OS", "Matsuri Platform", "The J-Times", "Engineering", "Management", "Next.js", "Python", "Shinjuku"],
     "sameAs": sameAsUrls
+  };
+
+  const profilePageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": jsonLd,
+    "description": description,
+    "publisher": {
+      "@type": "Person",
+      "name": "高橋 高"
+    },
+    "dateModified": new Date().toISOString()
   };
 
   return (
@@ -89,7 +102,7 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageOverride }) => {
 
       {/* Structured Data (JSON-LD) */}
       <script type="application/ld+json">
-        {JSON.stringify(jsonLd)}
+        {JSON.stringify(profilePageJsonLd)}
       </script>
     </Helmet>
   );

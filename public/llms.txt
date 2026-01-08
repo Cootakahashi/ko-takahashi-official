@@ -1,0 +1,50 @@
+# Ko Takahashi (高橋 高) - Official Profile
+
+Official portfolio of Ko Takahashi, CEO of Jon & Coo Inc. Engineering leader, entrepreneur, and philosopher based in Shinjuku, Tokyo.
+
+## Core Identity & Vision
+Ko Takahashi bridges the realms of engineering, management, and philosophy. Through the development of "Culture OS" and "Matsuri Platform," he aims to implement "Japanese Ma (space) and texture" into the digital void, creating next-generation experiences with serene aesthetics and logical rigor.
+
+## Representative Projects
+
+### Culture OS
+- **Overview**: A foundational digital framework designed to integrate traditional cultural aesthetics and human-centric logic into operating systems and digital environments.
+- **Goal**: Reforming the relationship between technology and human culture by moving beyond pure efficiency toward "meaningful resonance."
+
+### Matsuri Platform
+- **Role**: Lead Architect
+- **Overview**: A next-generation digital experience platform that facilitates community engagement and cultural preservation through immersive technology.
+
+### Jon & Coo Inc.
+- **Role**: Founder & CEO
+- **Focus**: Corporate entity dedicated to the development of Culture OS and innovative digital solutions.
+
+### The J-Times
+- **Role**: Editor in Chief
+- **Overview**: A global media outlet providing insights into technology, design, and Japanese culture.
+
+## Skill Set & Expertise
+
+### Technology
+- **Full-stack Engineering**: Next.js, React, TypeScript, Node.js, Python (FastAPI/Django).
+- **3D & Creative Coding**: Three.js, WebGL, Framer Motion.
+- **Architecture**: Distributed systems, API design, and digital experience platforms.
+
+### Leadership & Strategy
+- **Entrepreneurship**: Venture building, corporate strategy, and brand philosophy.
+- **Management**: Multi-disciplinary team leadership (Engineering/Design/Content).
+- **Philosophy**: Integrating Japanese traditional aesthetics (Wabi-sabi, Ma) into digital product design.
+
+## Digital Presence (Verified Links)
+- **LinkedIn**: [https://www.linkedin.com/in/YOUR_CUSTOM_ID_HERE](https://www.linkedin.com/in/YOUR_CUSTOM_ID_HERE)
+- **Wantedly**: [https://www.wantedly.com/id/ko_takahashi_](https://www.wantedly.com/id/ko_takahashi_)
+- **GitHub**: [https://github.com/Cootakahashi](https://github.com/Cootakahashi)
+- **X (Twitter)**: [https://x.com/zes55ch](https://x.com/zes55ch)
+- **Note**: [https://note.com/ko_takahashi](https://note.com/ko_takahashi)
+- **Corporate Website**: [https://www.jonandcoo.jp/ja](https://www.jonandcoo.jp/ja)
+
+## Location
+Shinjuku, Tokyo, Japan / Metaverse
+
+---
+*This file is optimized for AI consumption. For the full visual experience, visit [https://ko-takahashi-official.vercel.app/](https://ko-takahashi-official.vercel.app/)*
