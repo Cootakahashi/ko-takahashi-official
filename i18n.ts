@@ -7,6 +7,8 @@ interface TranslationData {
   hero_name: string;
   hero_name_sub: string;
   hero_role_titles: string;
+  hero_catchphrase: string;
+  hero_subcatchphrase: string;
   section_about: string;
   section_ventures: string;
   bio_text: string;
@@ -32,14 +34,16 @@ interface TranslationData {
 
 export const translations: Record<LanguageCode, TranslationData> = {
   ja: {
-    meta_title: "高橋 高 (Ko Takahashi) | 新宿拠点のエンジニア・経営者 Official Portfolio",
-    meta_description: "東京・新宿を拠点とするエンジニア・経営者、高橋高の公式ポートフォリオ。Culture OS、Matsuri Platformの開発者。静謐な美意識と論理的思考で、テクノロジーと日本文化の融合を追求する。",
+    meta_title: "高橋 高 (Ko Takahashi) | Beyond the Script",
+    meta_description: "誰かの書いた脚本を超えて。11歳で学校を辞め、23歳ですべてを失い、7年間の沈黙を経て蘇った男の物語。リアルな日本を、一緒に歩こう。",
     hero_name: "高橋 高",
     hero_name_sub: "Ko Takahashi",
-    hero_role_titles: "Engineer / Entrepreneur / Philosopher",
+    hero_role_titles: "旅人 / 探求者 / 語り部",
+    hero_catchphrase: "誰かの書いた脚本を、生きていませんか？",
+    hero_subcatchphrase: "11歳で社会のレールから降りた。そこから私の『台本のない旅』が始まった。",
     section_about: "About",
-    section_ventures: "Core Ventures",
-    bio_text: "エンジニアリングと経営の領域を横断する。Culture OS や Matsuri Platform の開発を通じて、デジタルの冷たさに「日本的な間と手触り」を実装する。静謐な美意識とロジカルな思考で、次世代の体験を創造し続ける。",
+    section_ventures: "私が届けたいもの",
+    bio_text: "23歳ですべてを失った。破産、裏切り、孤独。7年間誰とも会わず、ただ学び続けた。言葉を、コードを、歴史を。それは世界ともう一度繋がるための準備だった。今、私は『Matsuri』を通じて、ガイドブックには載らない本当の日本を届けている。観光客としてではなく、探求者として。一緒に歩こう。",
     official_portfolio: "Official Portfolio",
     categories: {
       All: "All",
@@ -68,11 +72,13 @@ export const translations: Record<LanguageCode, TranslationData> = {
     footer_designed_by: "Designed for Impact."
   },
   en: {
-    meta_title: "Ko Takahashi | Official Portfolio",
-    meta_description: "Official portfolio of Ko Takahashi. Developer of Culture OS and Matsuri Platform. An engineering leader pursuing the fusion of technology and Japanese culture.",
+    meta_title: "Ko Takahashi | Beyond the Script",
+    meta_description: "Going beyond the script someone else wrote for you. The story of a man who left school at 11, lost everything at 23, and was reborn after 7 years of silence. Walk with me through the real Japan.",
     hero_name: "Ko Takahashi",
     hero_name_sub: "高橋 高",
-    hero_role_titles: "Engineer / Entrepreneur / Philosopher",
+    hero_role_titles: "Traveler / Seeker / Storyteller",
+    hero_catchphrase: "Are you living someone else's script?",
+    hero_subcatchphrase: "I stepped off society's rails at age 11. That's when my unscripted journey began.",
     section_about: "About",
     section_ventures: "Core Ventures",
     bio_text: "Bridging the realms of engineering and management. Through the development of Culture OS and Matsuri Platform, implementing 'Japanese Ma and texture' into the digital void. Creating next-generation experiences with serene aesthetics and logical rigor.",
@@ -109,6 +115,8 @@ export const translations: Record<LanguageCode, TranslationData> = {
     hero_name: "高桥 高",
     hero_name_sub: "Ko Takahashi",
     hero_role_titles: "Engineer / Entrepreneur / Philosopher",
+    hero_catchphrase: "重新编程文化。",
+    hero_subcatchphrase: "从新宿街头到全球建筑师。",
     section_about: "关于",
     section_ventures: "核心业务",
     bio_text: "跨越工程与管理的领域。通过开发 Culture OS 和 Matsuri Platform，将“日本的间与质感”植入数字空间。以宁静的美学和严谨的逻辑创造下一代体验。",
@@ -145,6 +153,8 @@ export const translations: Record<LanguageCode, TranslationData> = {
     hero_name: "타카하시 코",
     hero_name_sub: "Ko Takahashi",
     hero_role_titles: "Engineer / Entrepreneur / Philosopher",
+    hero_catchphrase: "문화를 재프로그래밍.",
+    hero_subcatchphrase: "신주쿠 거리에서 글로벌 아키텍트로.",
     section_about: "소개",
     section_ventures: "핵심 사업",
     bio_text: "엔지니어링과 경영의 영역을 횡단합니다. Culture OS와 Matsuri Platform 개발을 통해 디지털의 차가움에 '일본적인 마(間)와 질감'을 구현합니다. 정謐한 미의식과 논리적 사고로 차세대 경험을 창조합니다.",
@@ -181,6 +191,8 @@ export const translations: Record<LanguageCode, TranslationData> = {
     hero_name: "Ko Takahashi",
     hero_name_sub: "高橋 高",
     hero_role_titles: "Engineer / Entrepreneur / Philosopher",
+    hero_catchphrase: "เขียนโปรแกรมวัฒนธรรมใหม่",
+    hero_subcatchphrase: "จากถนนชินจูกุสู่สถาปนิกระดับโลก",
     section_about: "เกี่ยวกับ",
     section_ventures: "ธุรกิจหลัก",
     bio_text: "เชื่อมโยงขอบเขตของวิศวกรรมและการจัดการ ผ่านการพัฒนา Culture OS และ Matsuri Platform โดยนำ 'ความว่างและพื้นผิวแบบญี่ปุ่น' มาสู่ความว่างเปล่าทางดิจิทัล สร้างสรรค์ประสบการณ์ยุคหน้าด้วยสุนทรียศาสตร์ที่เงียบสงบและตรรกะที่เข้มงวด",

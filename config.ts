@@ -3,7 +3,7 @@ import { SiteMetadata, SocialLink } from './types';
 // Default metadata (JA SEO optimized)
 export const siteMetadata: SiteMetadata = {
   title: "高橋 高 (Ko Takahashi) | Official Portfolio",
-  description: "エンジニア・経営者、高橋高の公式ポートフォリオ。Culture OS、Matsuri Platformの開発者。静謐な美意識と論理的思考で、テクノロジーと日本文化の融合を追求する。新宿を拠点に世界へ。",
+  description: "起業家・哲学者、高橋高の公式ポートフォリオ。Culture OS、Matsuri Platformの開発者。静謐な美意識と論理的思考で、テクノロジーと日本文化の融合を追求する。新宿を拠点に世界へ。",
   keywords: [
     "高橋高", 
     "高橋 高", 
@@ -57,18 +57,6 @@ export const socialLinks: SocialLink[] = [
     iconName: "linkedin"
   },
   {
-    platform: "Wantedly",
-    url: "https://www.wantedly.com/id/ko_takahashi_",
-    category: "Business",
-    iconName: "briefcase"
-  },
-  {
-    platform: "Wellfound",
-    url: "https://wellfound.com/u/ko-takahashi",
-    category: "Business",
-    iconName: "globe"
-  },
-  {
     platform: "GitHub",
     url: "https://github.com/Cootakahashi",
     category: "Tech",
@@ -103,35 +91,5 @@ export const socialLinks: SocialLink[] = [
     url: "https://jp.pinterest.com/kotakahashi_japan/",
     category: "Visual",
     iconName: "image"
-  },
-  {
-    platform: "Behance",
-    url: "https://www.behance.net/e83da994",
-    category: "Visual",
-    iconName: "layout"
-  },
-  {
-    platform: "Facebook",
-    url: "https://www.facebook.com/profile.php?id=61569756842460",
-    category: "Personal",
-    iconName: "facebook"
-  },
-  {
-    platform: "Lit.link",
-    url: "https://lit.link/ko_takahashi",
-    category: "Personal",
-    iconName: "link"
-  },
-  {
-    platform: "Peatix",
-    url: "https://peatix.com/user/25610780",
-    category: "Business",
-    iconName: "calendar"
-  },
-  {
-    platform: "Crowdworks",
-    url: "https://crowdworks.jp/public/employees/3091591",
-    category: "Business",
-    iconName: "users"
   }
 ];

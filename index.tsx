@@ -4,6 +4,27 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import './index.css';
 
+// 🌅 Beyond the Script - 旅人への一言
+console.log(`
+%c┌───────────────────────────────────────────────────────────────┐
+│                                                               │
+│  ようこそ、旅人。                                            │
+│                                                               │
+│  "誰かの書いた脚本を破り捨てたとき、                        │
+│   本当の旅が始まる。"                                        │
+│                                                               │
+│  ─────────────────────────────────────────────────────────── │
+│                                                               │
+│  11歳で学校を辞め、23歳で全てを失い、                        │
+│  7年の沈黙を経て蘇った男の物語。                            │
+│                                                               │
+│  観光客としてではなく、探求者として。                        │
+│  一緒に歩こう。                                              │
+│                                                               │
+│                                          — 高橋 高            │
+└───────────────────────────────────────────────────────────────┘
+`, 'color: #F59E0B; font-family: "Noto Serif JP", serif; font-size: 11px;');
+
 const rootElement = document.getElementById('root');
 if (!rootElement) {
   throw new Error("Could not find root element to mount to");

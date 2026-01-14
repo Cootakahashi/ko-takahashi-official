@@ -1,6 +1,6 @@
 # Ko Takahashi (高橋 高) - Official Profile
 
-Official portfolio of Ko Takahashi, CEO of Jon & Coo Inc. Engineering leader, entrepreneur, and philosopher based in Shinjuku, Tokyo.
+Official portfolio of Ko Takahashi, CEO of Jon & Coo Inc. Entrepreneur, philosopher, and engineering leader based in Shinjuku, Tokyo.
 
 ## Core Identity & Vision
 Ko Takahashi bridges the realms of engineering, management, and philosophy. Through the development of "Culture OS" and "Matsuri Platform," he aims to implement "Japanese Ma (space) and texture" into the digital void, creating next-generation experiences with serene aesthetics and logical rigor.
@@ -37,7 +37,6 @@ Ko Takahashi bridges the realms of engineering, management, and philosophy. Thro
 
 ## Digital Presence (Verified Links)
 - **LinkedIn**: [https://www.linkedin.com/in/YOUR_CUSTOM_ID_HERE](https://www.linkedin.com/in/YOUR_CUSTOM_ID_HERE)
-- **Wantedly**: [https://www.wantedly.com/id/ko_takahashi_](https://www.wantedly.com/id/ko_takahashi_)
 - **GitHub**: [https://github.com/Cootakahashi](https://github.com/Cootakahashi)
 - **X (Twitter)**: [https://x.com/zes55ch](https://x.com/zes55ch)
 - **Note**: [https://note.com/ko_takahashi](https://note.com/ko_takahashi)

@@ -8,6 +8,11 @@ import StoryView from "./components/StoryView";
 import ScheduleView from "./components/ScheduleView";
 import ArticlesView from "./components/ArticlesView";
 import ArticleDetailView from "./components/ArticleDetailView";
+import HybridBentoGrid from "./components/HybridBentoGrid";
+import CultureOSShowcase from "./components/CultureOSShowcase";
+import SEOSkillsSection from "./components/SEOSkillsSection";
+import InteractivePortrait from "./components/InteractivePortrait";
+import { CustomCursor, ScrollProgress, GlitchText, MagneticButton } from "./components/MicroInteractions";
 import { getJsonData } from "./lib/data-loader";
 import {
   ArrowUpRight,
@@ -264,8 +269,12 @@ const App: React.FC = () => {
 
   // --- Main Home View ---
   return (
-    <main className="relative min-h-screen bg-obsidian text-white selection:bg-gold selection:text-obsidian overflow-hidden font-sans">
+    <main className="relative min-h-screen bg-obsidian text-white selection:bg-gold selection:text-obsidian overflow-hidden font-sans cursor-none md:cursor-none">
       <Seo currentLang={lang} />
+      
+      {/* World-class micro-interactions */}
+      <CustomCursor />
+      <ScrollProgress />
 
       {/* 3D Universe Background */}
       <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
@@ -346,18 +355,28 @@ const App: React.FC = () => {
         >
           {/* Main Title Group */}
           <div className="relative z-10">
-            {/* Huge English Watermark */}
+            {/* Subtle Watermark Background */}
             <span
-              className="font-serif text-[12vw] md:text-[8vw] leading-none text-white/5 absolute -top-[0.6em] left-0 select-none pointer-events-none mix-blend-overlay block"
+              className="font-serif text-[12vw] md:text-[8vw] leading-none text-white/[0.03] absolute -top-[0.6em] left-0 select-none pointer-events-none block"
               aria-hidden="true"
             >
-              {t.hero_name_sub}
+              旅
             </span>
 
-            {/* Sharp Japanese Title */}
-            <h1 className="font-jp font-medium text-[12vw] md:text-[6vw] text-white tracking-widest drop-shadow-2xl leading-[1.1]">
-              {t.hero_name}
+            {/* Main Catchphrase - Emotional Impact */}
+            <h1 className="font-serif text-[8vw] md:text-[4vw] lg:text-[3.5vw] text-white tracking-tight leading-[1.2] mb-6">
+              {t.hero_catchphrase}
             </h1>
+            
+            {/* Sub Catchphrase - Warm tone */}
+            <p className="font-serif italic text-base md:text-lg text-amber-400/80 mb-8 max-w-xl leading-relaxed">
+              {t.hero_subcatchphrase}
+            </p>
+
+            {/* Name */}
+            <h2 className="font-jp font-normal text-2xl md:text-3xl text-white/60 tracking-widest">
+              {t.hero_name}
+            </h2>
           </div>
 
           <div className="mt-8 flex items-center gap-6">
@@ -379,14 +398,9 @@ const App: React.FC = () => {
           className="col-span-12 md:col-start-9 md:col-span-4 flex flex-col justify-center mt-8 md:mt-0"
         >
           <GlassCard className="p-8 border-l-4 border-l-gold/80 hover:bg-black/50 transition-colors duration-500">
-            {/* Profile Image */}
-            <div className="mb-8 overflow-hidden rounded-sm border border-white/10 relative group">
-              <div className="absolute inset-0 bg-gold/10 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
-              <img
-                src="/ko/takahashi-ko.jpg"
-                alt="Ko Takahashi"
-                className="w-full h-64 object-cover object-top grayscale-[0.3] contrast-125 group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
-              />
+            {/* Interactive WebGL Portrait */}
+            <div className="mb-8 h-72 relative">
+              <InteractivePortrait className="w-full h-full" />
             </div>
 
             {/* Header: Personal Identity & Location */}
@@ -451,6 +465,15 @@ const App: React.FC = () => {
         ></div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
+          {/* THE HYBRID - Three Faces */}
+          <HybridBentoGrid t={t} />
+
+          {/* CULTURE OS SHOWCASE */}
+          <CultureOSShowcase t={t} />
+
+          {/* SEO SKILLS SECTION */}
+          <SEOSkillsSection />
+
           {/* PRIMARY VENTURES */}
           <section className="mb-48" aria-labelledby="ventures-title">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 border-b border-white/10 pb-8">

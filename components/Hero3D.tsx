@@ -1,88 +1,83 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 /**
- * AccretionDisk Component
- * Generates a high-density spiral of particles resembling a black hole's accretion disk or a galaxy core.
- * Uses logarithmic spiral math for natural flow.
+ * Beyond the Script - Cinematic Hero Background
+ * 夜明けの空と温かみのあるパーティクル
+ * フィルムグレインとドキュメンタリー風の演出
  */
-const AccretionDisk = () => {
+
+// 夜明けの星空と温かい光のパーティクル
+const DawnParticles = () => {
   const ref = useRef<THREE.Points>(null!);
-  
-  // High particle count but lightweight (Points)
-  const count = 8000;
+  const count = 3000;
   
   const [positions, colors, sizes] = useMemo(() => {
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
-    const sizes = new Float32Array(count);
+    const pos = new Float32Array(count * 3);
+    const col = new Float32Array(count * 3);
+    const siz = new Float32Array(count);
 
-    const centerColor = new THREE.Color('#FFF5E1'); // Bright white-gold center
-    const midColor = new THREE.Color('#D4AF37');    // Pure Gold
-    const outerColor = new THREE.Color('#8A6000');  // Dark Gold/Bronze
-    const voidColor = new THREE.Color('#050505');   // Deep Space Black
+    // 温かい色のパレット（夜明け）
+    const warmColors = [
+      new THREE.Color('#FFE4B5'), // Moccasin - 柔らかいオレンジ
+      new THREE.Color('#FFA07A'), // Light Salmon - 夜明けのピンク
+      new THREE.Color('#87CEEB'), // Sky Blue - 空の青
+      new THREE.Color('#FFEFD5'), // Papaya Whip - 温かいクリーム
+      new THREE.Color('#E6E6FA'), // Lavender - 静かな紫
+    ];
 
     for (let i = 0; i < count; i++) {
-      // Distribution: More particles near center, fading out
-      const r = Math.random();
-      const radius = (Math.pow(r, 3) * 8) + 0.5; // Exponential distribution for core density
-
-      // Spiral Angle
-      const branchAngle = (i % 3) * ((Math.PI * 2) / 3); // 3 arms
-      const spinAngle = radius * 0.8;
+      // 広がりのある球状分布（空のような広がり）
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      const radius = 5 + Math.random() * 15;
       
-      // Random spread
-      const randomX = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * (radius * 0.3);
-      const randomY = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * (radius * 0.1); // Flat disk
-      const randomZ = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * (radius * 0.3);
-
-      const x = Math.cos(branchAngle + spinAngle) * radius + randomX;
-      const y = randomY;
-      const z = Math.sin(branchAngle + spinAngle) * radius + randomZ;
-
-      positions[i * 3] = x;
-      positions[i * 3 + 1] = y;
-      positions[i * 3 + 2] = z;
-
-      // Color Logic based on distance
-      const color = new THREE.Color();
-      if (radius < 2) {
-        color.copy(centerColor).lerp(midColor, radius / 2);
-      } else {
-        color.copy(midColor).lerp(outerColor, (radius - 2) / 6);
-      }
+      // 上半分に集中（空のイメージ）
+      const y = Math.abs(Math.cos(phi)) * radius;
       
-      // Random sparkles
-      if (Math.random() > 0.98) color.setHex(0xffffff);
+      pos[i * 3] = Math.sin(phi) * Math.cos(theta) * radius;
+      pos[i * 3 + 1] = y - 3; // 少し下げて視界の中に
+      pos[i * 3 + 2] = Math.sin(phi) * Math.sin(theta) * radius - 5;
 
-      colors[i * 3] = color.r;
-      colors[i * 3 + 1] = color.g;
-      colors[i * 3 + 2] = color.b;
+      // 温かい色をランダムに
+      const color = warmColors[Math.floor(Math.random() * warmColors.length)];
+      col[i * 3] = color.r;
+      col[i * 3 + 1] = color.g;
+      col[i * 3 + 2] = color.b;
 
-      // Size logic: Center particles are smaller/denser, outer are larger dust
-      sizes[i] = Math.random() < 0.1 ? 0.03 : 0.015;
+      // 様々なサイズ
+      siz[i] = Math.random() * 0.04 + 0.01;
     }
-    return [positions, colors, sizes];
+    
+    return [pos, col, siz];
   }, []);
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
+    
     if (ref.current) {
-      // Slow, majestic rotation
-      ref.current.rotation.y = t * 0.08;
-      // Subtle tilt breathing
-      ref.current.rotation.z = Math.sin(t * 0.1) * 0.05;
+      // ゆっくりと回転（瞬きのような動き）
+      ref.current.rotation.y = t * 0.02;
+      
+      // ゆっくり呼吸するような動き
+      const positions = ref.current.geometry.attributes.position.array as Float32Array;
+      for (let i = 0; i < count; i++) {
+        const i3 = i * 3;
+        // 小さな揺らぎ
+        positions[i3 + 1] += Math.sin(t + i * 0.01) * 0.001;
+      }
+      ref.current.geometry.attributes.position.needsUpdate = true;
     }
   });
 
   return (
-    <Points ref={ref} positions={positions} colors={colors} sizes={sizes} stride={3} frustumCulled={false}>
+    <Points ref={ref} positions={positions} colors={colors} sizes={sizes}>
       <PointMaterial
         transparent
         vertexColors
-        size={0.015}
+        size={0.03}
         sizeAttenuation={true}
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -92,102 +87,122 @@ const AccretionDisk = () => {
   );
 };
 
-/**
- * BackgroundStars Component
- * Static background stars to provide depth and parallax context.
- */
-const BackgroundStars = () => {
+// 静かに流れる雲のようなパーティクル
+const FloatingDust = () => {
   const ref = useRef<THREE.Points>(null!);
-  const count = 2000;
+  const count = 500;
   
-  const [positions, colors] = useMemo(() => {
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
+  const [positions] = useMemo(() => {
+    const pos = new Float32Array(count * 3);
     
-    for(let i=0; i<count; i++) {
-      // Sphere distribution
-      const r = 20 + Math.random() * 30;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-      
-      positions[i*3] = r * Math.sin(phi) * Math.cos(theta);
-      positions[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
-      positions[i*3+2] = r * Math.cos(phi);
-      
-      // Blue-ish stars for background contrast against Gold foreground
-      const starColor = new THREE.Color().setHSL(0.6, 0.5, Math.random());
-      colors[i*3] = starColor.r;
-      colors[i*3+1] = starColor.g;
-      colors[i*3+2] = starColor.b;
+    for (let i = 0; i < count; i++) {
+      pos[i * 3] = (Math.random() - 0.5) * 20;
+      pos[i * 3 + 1] = Math.random() * 8 - 2;
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 10 - 3;
     }
-    return [positions, colors];
+    
+    return [pos];
   }, []);
 
   useFrame((state) => {
-    // Very slow background rotation
     if (ref.current) {
-      ref.current.rotation.y = state.clock.getElapsedTime() * 0.01;
+      const t = state.clock.getElapsedTime();
+      const positions = ref.current.geometry.attributes.position.array as Float32Array;
+      
+      for (let i = 0; i < count; i++) {
+        const i3 = i * 3;
+        // ゆっくり左から右へ流れる
+        positions[i3] += 0.005;
+        if (positions[i3] > 10) positions[i3] = -10;
+        
+        // 小さな上下の揺らぎ
+        positions[i3 + 1] += Math.sin(t * 0.5 + i) * 0.002;
+      }
+      ref.current.geometry.attributes.position.needsUpdate = true;
     }
   });
 
   return (
-    <Points ref={ref} positions={positions} colors={colors}>
+    <Points ref={ref} positions={positions}>
       <PointMaterial
         transparent
-        vertexColors
-        size={0.03}
+        color="#FFF8DC" // Cornsilk - 温かい白
+        size={0.02}
         sizeAttenuation={true}
         depthWrite={false}
-        opacity={0.4}
-        blending={THREE.AdditiveBlending}
+        opacity={0.3}
       />
     </Points>
-  )
-}
+  );
+};
 
+// マウスパララックス
 const CameraRig = () => {
   useFrame((state) => {
-    // Mouse Parallax: Inverse movement for depth feeling
     const x = state.pointer.x * 0.3;
-    const y = state.pointer.y * 0.3;
+    const y = state.pointer.y * 0.2;
     
-    // Smooth Lerp
     state.camera.position.x += (x - state.camera.position.x) * 0.02;
-    state.camera.position.y += (y + 2 - state.camera.position.y) * 0.02; // Keep camera slightly elevated (+2)
+    state.camera.position.y += (y + 1 - state.camera.position.y) * 0.02;
     
-    state.camera.lookAt(0, 0, 0);
+    state.camera.lookAt(0, 0, -5);
   });
   return null;
-}
+};
 
+/**
+ * Hero3D - Beyond the Script
+ * シネマティックな夜明けの背景
+ */
 const Hero3D: React.FC = () => {
   return (
-    <div className="absolute inset-0 z-0 bg-[#020202]">
+    <div className="absolute inset-0 z-0">
+      {/* グラデーション背景（夜明けの空） */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #533483 80%, #e94560 95%, #ff6b6b 100%)',
+          opacity: 0.7
+        }}
+      />
+      
       <Canvas
-        camera={{ position: [0, 2, 7], fov: 40 }}
-        dpr={[1, 2]} // Limit DPR to 2 for performance on 4k screens
+        camera={{ position: [0, 1, 5], fov: 50 }}
+        dpr={[1, 2]}
         gl={{ 
-          antialias: false, // Disable MSAA for performance (particles look fine without it)
+          antialias: true,
           powerPreference: "high-performance",
           toneMapping: THREE.ACESFilmicToneMapping,
         }}
       >
-        <fog attach="fog" args={['#020202', 5, 20]} />
+        <fog attach="fog" args={['#1a1a2e', 10, 30]} />
         
-        {/* Floating motion for the whole system */}
-        <Float speed={2} rotationIntensity={0.1} floatIntensity={0.2}>
-          <AccretionDisk />
+        <Float speed={0.5} rotationIntensity={0.1} floatIntensity={0.3}>
+          <DawnParticles />
         </Float>
         
-        <BackgroundStars />
+        <FloatingDust />
         <CameraRig />
+        
+        {/* 温かいアンビエントライト */}
+        <ambientLight intensity={0.3} color="#FFF8DC" />
       </Canvas>
       
-      {/* Cinematic Vignette Overlay (CSS) */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#000000_120%)] pointer-events-none opacity-90" />
+      {/* フィルムグレイン */}
+      <div 
+        className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-[0.08]"
+        style={{
+          backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')"
+        }}
+      />
       
-      {/* Noise Texture for Film Grain */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+      {/* ビネット（フィルム風の周辺減光） */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%)'
+        }}
+      />
     </div>
   );
 };

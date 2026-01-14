@@ -4,16 +4,83 @@
 
 @layer base {
   body {
-    @apply bg-obsidian text-slate-200 overflow-x-hidden;
+    @apply bg-slate-950 text-slate-200 overflow-x-hidden;
   }
   
   ::selection {
-    background: #D4AF37;
-    color: #050505;
+    background: #F59E0B;
+    color: #0F172A;
   }
 }
 
+/* 3D Flip Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Vertical writing mode */
 .vertical-rl {
   writing-mode: vertical-rl;
   text-orientation: upright;
+}
+
+/* Soft glow animation */
+@keyframes soft-glow {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+  }
+}
+
+.animate-soft-glow {
+  animation: soft-glow 3s ease-in-out infinite;
+}
+
+/* Film grain overlay */
+.film-grain {
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+/* Cinematic fade */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Warm pulse */
+@keyframes warm-pulse {
+  0%, 100% { 
+    opacity: 0.5;
+  }
+  50% { 
+    opacity: 1;
+  }
+}
+
+.animate-warm-pulse {
+  animation: warm-pulse 2s ease-in-out infinite;
 }
