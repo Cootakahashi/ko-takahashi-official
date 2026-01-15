@@ -15,49 +15,40 @@ export const articlesData = {
   },
   articles: [
     {
-      id: "art_001",
-      title: "Culture OS: The Intersection of Tradition and Code",
-      summary: "Exploring how Japanese 'Ma' (negative space) can inform software architecture. A philosophical deep dive into building systems that breathe.",
-      platform: "Note",
-      url: "https://note.com/ko_takahashi",
-      date: "2024.03.15",
-      tags: ["Philosophy", "Design"]
-    },
-    {
-      id: "art_002",
-      title: "Rust for Pythonistas: Building the Matsuri Engine",
-      summary: "Why we chose Rust for the core of the Matsuri Platform. Performance benchmarks and the developer experience of shifting paradigms.",
-      platform: "Zenn",
-      url: "https://zenn.dev/rust_start",
-      date: "2024.02.10",
-      tags: ["Tech", "Rust", "Engineering"]
-    },
-    {
-      id: "art_003",
-      title: "Silent UI: Reducing Cognitive Load in Enterprise Apps",
-      summary: "Techniques for creating 'Zen' digital environments. How visual silence leads to higher user productivity.",
-      platform: "Internal",
-      url: "#",
-      date: "2024.01.28",
-      tags: ["UI/UX", "Productivity"]
-    },
-    {
-      id: "art_004",
-      title: "Next.js 14 & R3F: Optimization for Luxury Webs",
-      summary: "A technical case study on building the Jon & Coo portfolio. Managing WebGL contexts and LCP scores.",
+      id: "qiita_001",
+      title: "Goodbye to ChatGPT's 'Amnesia'. Implementing 'Super Long-Term Memory' (Memory as a Service) API with Django x Railway",
+      summary: "The biggest reason why we don't feel attached to AI is amnesia. How to implement a 'brain' that permanently remembers conversations with users using Django and pgvector.",
       platform: "Qiita",
-      url: "https://qiita.com/rustprogram2022",
-      date: "2023.12.05",
-      tags: ["Next.js", "Three.js", "Performance"]
+      url: "https://qiita.com/rustprogram2022/items/52d645ef0785a51749f1",
+      date: "2026.01.01",
+      tags: ["Python", "Django", "AI", "RAG"]
     },
     {
-      id: "art_005",
-      title: "The J-Times: Decentralizing Media Narratives",
-      summary: "The architectural decisions behind our global media outlet. Immutable logs and community governance.",
-      platform: "Note",
-      url: "https://note.com/ko_takahashi",
-      date: "2023.11.20",
-      tags: ["Web3", "Media"]
+      id: "qiita_002",
+      title: "Is 'Look at the Tech' just sour grapes? Reading the 'Real Price' of Blockchain that isn't on the charts on the night of the crash",
+      summary: "Irreversible infrastructure progress proceeding behind the price collapse. A comprehensive research report on the structural disconnect between market price and intrinsic value.",
+      platform: "Qiita",
+      url: "https://qiita.com/rustprogram2022/items/b3bfbe8522df351f1ce1",
+      date: "2026.01.02",
+      tags: ["Blockchain", "Web3", "Economy"]
+    },
+    {
+      id: "zenn_001",
+      title: "Consulting worries with AI? How to interact with a 'non-denying good understander' where you can spill your true feelings",
+      summary: "Why does AI become a 'shelter for the heart'? A proposal for a healthy new relationship with AI that replies immediately even at 3 AM and takes secrets to the grave.",
+      platform: "Zenn",
+      url: "https://zenn.dev/rust_start/articles/74d89153bf6c4c",
+      date: "2026.01.03",
+      tags: ["AI", "Mental Health", "Life"]
+    },
+    {
+      id: "zenn_002",
+      title: "All Solana Token Design Technologies 2026: Token-2022 Utilization and Security Strategy",
+      summary: "A comprehensive technical explanation of on-chain business logic using Token-2022 (Token Extensions) and countermeasures against Solana-specific security threats.",
+      platform: "Zenn",
+      url: "https://zenn.dev/rust_start/articles/cbde2deec0e520",
+      date: "2026.01.04",
+      tags: ["Solana", "Rust", "Security", "Blockchain"]
     }
   ] as Article[]
 };

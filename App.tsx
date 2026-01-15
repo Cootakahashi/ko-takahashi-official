@@ -466,7 +466,7 @@ const App: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
           {/* THE HYBRID - Three Faces */}
-          <HybridBentoGrid t={t} />
+          <HybridBentoGrid t={t} onNavigate={() => setView("story")} />
 
           {/* CULTURE OS SHOWCASE */}
           <CultureOSShowcase t={t} />

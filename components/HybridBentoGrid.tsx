@@ -55,9 +55,10 @@ const cardData: BentoCardData[] = [
 interface FlipCardProps {
   card: BentoCardData;
   index: number;
+  onNavigate?: () => void;
 }
 
-const FlipCard: React.FC<FlipCardProps> = ({ card, index }) => {
+const FlipCard: React.FC<FlipCardProps> = ({ card, index, onNavigate }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -69,6 +70,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ card, index }) => {
       className="relative h-[380px] perspective-1000 cursor-pointer"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
+      onClick={onNavigate}
     >
       <motion.div
         className="relative w-full h-full transition-transform duration-700"
@@ -118,6 +120,11 @@ const FlipCard: React.FC<FlipCardProps> = ({ card, index }) => {
           
           {/* Divider */}
           <div className={`h-px w-16 bg-gradient-to-r ${card.accentColor.replace('text-', 'from-')} to-transparent mt-8`} />
+
+          {/* Read More Button on Back */}
+          <div className="mt-8 flex justify-end">
+            <span className="text-xs font-mono text-white/50 border-b border-white/30 pb-1">VIEW FULL STORY</span>
+          </div>
         </div>
       </motion.div>
     </motion.div>
@@ -126,9 +133,10 @@ const FlipCard: React.FC<FlipCardProps> = ({ card, index }) => {
 
 interface HybridBentoGridProps {
   t?: any;
+  onNavigate?: () => void;
 }
 
-const HybridBentoGrid: React.FC<HybridBentoGridProps> = ({ t }) => {
+const HybridBentoGrid: React.FC<HybridBentoGridProps> = ({ t, onNavigate }) => {
   return (
     <section className="mb-32" aria-labelledby="journey-title">
       {/* Section Header */}
@@ -156,7 +164,7 @@ const HybridBentoGrid: React.FC<HybridBentoGridProps> = ({ t }) => {
       {/* Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cardData.map((card, index) => (
-          <FlipCard key={card.id} card={card} index={index} />
+          <FlipCard key={card.id} card={card} index={index} onNavigate={onNavigate} />
         ))}
       </div>
       

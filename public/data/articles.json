@@ -11,79 +11,64 @@
   },
   "articles": [
     {
-      "id": "internal_001",
+      "id": "qiita_001",
       "title": {
-        "ja": "Jon & Coo Inc. 創業の哲学: なぜ今、文化OSなのか",
-        "en": "The Philosophy of Jon & Coo Inc.: Why Culture OS Now?"
+        "ja": "ChatGPTの「記憶喪失」にサヨナラ。Django×Railwayで実装する「超・長期記憶」(Memory as a Service) API",
+        "en": "Goodbye to ChatGPT's 'Amnesia'. Implementing 'Super Long-Term Memory' (Memory as a Service) API with Django x Railway"
       },
       "summary": {
-        "ja": "テクノロジーの進化が加速する中で、私たちが失いつつある「手触り」や「空気感」。Jon & Coo Inc.が目指す、デジタルとフィジカルの境界線を溶かすアプローチについて。",
-        "en": "As technology accelerates, we lose the 'texture' and 'atmosphere' of life. Jon & Coo Inc.'s approach to dissolving the boundary between digital and physical."
-      },
-      "platform": "Internal",
-      "url": "internal_001",
-      "date": "2024.04.01",
-      "tags": ["Philosophy", "Vision", "Corporate"]
-    },
-    {
-      "id": "internal_002",
-      "title": {
-        "ja": "デジタルにおける「静寂」のデザイン",
-        "en": "Designing 'Silence' in the Digital Age"
-      },
-      "summary": {
-        "ja": "UIデザインにおけるノイズの削減は、単なるミニマリズムではありません。ユーザーの認知負荷を下げ、本質的な没入感を生み出すための「引き算の美学」の実践的考察。",
-        "en": "Reducing noise in UI design is more than minimalism. Practical insights on the 'aesthetics of subtraction' to lower cognitive load and create immersion."
-      },
-      "platform": "Internal",
-      "url": "internal_002",
-      "date": "2024.03.20",
-      "tags": ["Design", "UI/UX", "Zen"]
-    },
-    {
-      "id": "art_001",
-      "title": {
-        "ja": "Culture OS: 伝統とコードの交差点",
-        "en": "Culture OS: The Intersection of Tradition and Code"
-      },
-      "summary": {
-        "ja": "日本の「間」がソフトウェアアーキテクチャにどのような影響を与えるか。呼吸するシステムを構築するための哲学的な深掘り。",
-        "en": "Exploring how Japanese 'Ma' (negative space) can inform software architecture. A philosophical deep dive into building systems that breathe."
-      },
-      "platform": "Note",
-      "url": "https://note.com/ko_takahashi",
-      "date": "2024.03.15",
-      "tags": ["Philosophy", "Design"]
-    },
-    {
-      "id": "art_002",
-      "title": {
-        "ja": "Python使いのためのRust: Matsuri Engineの構築",
-        "en": "Rust for Pythonistas: Building the Matsuri Engine"
-      },
-      "summary": {
-        "ja": "なぜMatsuri PlatformのコアにRustを選んだのか。パフォーマンスベンチマークと、パラダイムシフトにおける開発者体験。",
-        "en": "Why we chose Rust for the core of the Matsuri Platform. Performance benchmarks and the developer experience of shifting paradigms."
-      },
-      "platform": "Zenn",
-      "url": "https://zenn.dev/rust_start",
-      "date": "2024.02.10",
-      "tags": ["Tech", "Rust", "Engineering"]
-    },
-    {
-      "id": "art_004",
-      "title": {
-        "ja": "Next.js 14 & R3F: ラグジュアリーWebのための最適化",
-        "en": "Next.js 14 & R3F: Optimization for Luxury Webs"
-      },
-      "summary": {
-        "ja": "Jon & Cooポートフォリオ構築における技術的ケーススタディ。WebGLコンテキストの管理とLCPスコアについて。",
-        "en": "A technical case study on building the Jon & Coo portfolio. Managing WebGL contexts and LCP scores."
+        "ja": "AIに「愛着」がわかない最大の理由は記憶喪失。Djangoとpgvectorを用いて、ユーザーとの対話を永続的に記憶する「脳」の実装手法。",
+        "en": "The biggest reason why we don't feel attached to AI is amnesia. How to implement a 'brain' that permanently remembers conversations with users using Django and pgvector."
       },
       "platform": "Qiita",
-      "url": "https://qiita.com/rustprogram2022",
-      "date": "2023.12.05",
-      "tags": ["Next.js", "Three.js", "Performance"]
+      "url": "https://qiita.com/rustprogram2022/items/52d645ef0785a51749f1",
+      "date": "2026.01.01",
+      "tags": ["Python", "Django", "AI", "RAG"]
+    },
+    {
+      "id": "qiita_002",
+      "title": {
+        "ja": "『技術を見ろ』は負け惜しみか？ 暴落した夜にこそ読む、チャートには映らないブロックチェーンの『本当の値段』",
+        "en": "Is 'Look at the Tech' just sour grapes? Reading the 'Real Price' of Blockchain that isn't on the charts on the night of the crash"
+      },
+      "summary": {
+        "ja": "価格崩壊の裏で進行する「不可逆的なインフラ化」。市場価格と本質的価値の構造的断絶に関する包括的なリサーチレポート。",
+        "en": "Irreversible infrastructure progress proceeding behind the price collapse. A comprehensive research report on the structural disconnect between market price and intrinsic value."
+      },
+      "platform": "Qiita",
+      "url": "https://qiita.com/rustprogram2022/items/b3bfbe8522df351f1ce1",
+      "date": "2026.01.02",
+      "tags": ["Blockchain", "Web3", "Economy"]
+    },
+    {
+      "id": "zenn_001",
+      "title": {
+        "ja": "悩み相談はAIへ？ 誰にも言えない本音を吐き出せる、「否定しない良き理解者」との付き合い方",
+        "en": "Consulting worries with AI? How to interact with a 'non-denying good understander' where you can spill your true feelings"
+      },
+      "summary": {
+        "ja": "なぜAIが「心の避難所」になるのか？深夜3時でも即レスし、秘密を墓場まで持っていくAIとの、健全で新しい付き合い方の提案。",
+        "en": "Why does AI become a 'shelter for the heart'? A proposal for a healthy new relationship with AI that replies immediately even at 3 AM and takes secrets to the grave."
+      },
+      "platform": "Zenn",
+      "url": "https://zenn.dev/rust_start/articles/74d89153bf6c4c",
+      "date": "2026.01.03",
+      "tags": ["AI", "Mental Health", "Life"]
+    },
+    {
+      "id": "zenn_002",
+      "title": {
+        "ja": "Solanaトークン設計の全技術2026：Token-2022活用とセキュリティ戦略",
+        "en": "All Solana Token Design Technologies 2026: Token-2022 Utilization and Security Strategy"
+      },
+      "summary": {
+        "ja": "Token-2022 (Token Extensions) によるビジネスロジックのオンチェーン化と、Solana特有のセキュリティ脅威への対策を網羅した技術解説。",
+        "en": "A comprehensive technical explanation of on-chain business logic using Token-2022 (Token Extensions) and countermeasures against Solana-specific security threats."
+      },
+      "platform": "Zenn",
+      "url": "https://zenn.dev/rust_start/articles/cbde2deec0e520",
+      "date": "2026.01.04",
+      "tags": ["Solana", "Rust", "Security", "Blockchain"]
     }
   ]
 }

@@ -163,14 +163,8 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
       }
     ],
     "sameAs": [
-      "https://twitter.com/zes55ch",
-      "https://github.com/Cootakahashi",
-      "https://qiita.com/rustprogram2022",
-      "https://note.com/ko_takahashi",
-      "https://zenn.dev/ko_and_coo",
-      "https://www.jonandcoo.jp",
-      "https://matsuri.group",
-      "https://j-times.org"
+      ...socialLinks.map(link => link.url),
+      ...companyLinks.map(link => link.url)
     ],
     "award": [
       "Self-made entrepreneur",

@@ -52,21 +52,9 @@ export const companyLinks: SocialLink[] = [
 export const socialLinks: SocialLink[] = [
   {
     platform: "LinkedIn",
-    url: "https://www.linkedin.com/in/YOUR_CUSTOM_ID_HERE",
+    url: "https://www.linkedin.com/in/ko-takahashi-jp",
     category: "Business",
     iconName: "linkedin"
-  },
-  {
-    platform: "GitHub",
-    url: "https://github.com/Cootakahashi",
-    category: "Tech",
-    iconName: "github"
-  },
-  {
-    platform: "Qiita",
-    url: "https://qiita.com/rustprogram2022",
-    category: "Tech",
-    iconName: "code"
   },
   {
     platform: "Zenn",
@@ -76,9 +64,27 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: "Note",
-    url: "https://note.com/ko_takahashi",
+    url: "https://note.com/ko_takahashi_jp",
     category: "Visual",
     iconName: "pen-tool"
+  },
+  {
+    platform: "Instagram",
+    url: "https://www.instagram.com/ko_takahashi_/",
+    category: "Visual",
+    iconName: "instagram"
+  },
+  {
+    platform: "Medium",
+    url: "https://medium.com/@ko_takahashi",
+    category: "Business",
+    iconName: "layout-list"
+  },
+  {
+    platform: "Dev.to",
+    url: "https://dev.to/ko_takahashi",
+    category: "Tech",
+    iconName: "code-2"
   },
   {
     platform: "X (Twitter)",
