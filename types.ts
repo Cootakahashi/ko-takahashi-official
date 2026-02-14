@@ -3,7 +3,7 @@ export type LanguageCode = 'ja' | 'en' | 'zh' | 'ko' | 'th';
 export interface SocialLink {
   platform: string;
   url: string;
-  category: 'Business' | 'Tech' | 'Visual' | 'Personal' | 'Corporate' | 'Platform' | 'Media';
+  category: 'Business' | 'Tech' | 'Visual' | 'Personal' | 'Corporate' | 'Platform' | 'Media' | 'DAO';
   iconName?: string;
   id?: string; // key for translation lookup
 }

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Compass, Users, ExternalLink, Heart } from 'lucide-react';
+import { Compass, Users, ExternalLink, Heart, ScrollText } from 'lucide-react';
 
 interface CultureOSShowcaseProps {
   t?: any;
@@ -18,7 +18,7 @@ const MatsuriInviteCard: React.FC = () => (
     href="https://matsuri.group/ja"
     target="_blank"
     rel="noopener noreferrer"
-    className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-amber-950/30 via-rose-950/20 to-slate-950/30 p-10 md:p-14 hover:border-amber-500/40 transition-all duration-700 col-span-2"
+    className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-amber-950/30 via-rose-950/20 to-slate-950/30 p-10 md:p-14 hover:border-amber-500/40 transition-all duration-700 h-full"
   >
     {/* 背景のソフトなパターン */}
     <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_30%_30%,_#FFA07A_0%,_transparent_50%)]" />
@@ -51,6 +51,47 @@ const MatsuriInviteCard: React.FC = () => (
     {/* 装飾的な日本語テキスト */}
     <span className="absolute -bottom-8 -right-8 text-[12rem] font-jp text-white/[0.02] select-none pointer-events-none leading-none">
       祭
+    </span>
+  </motion.a>
+);
+
+// Whitepaper カード
+const WhitepaperCard: React.FC = () => (
+  <motion.a
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay: 0.15 }}
+    href="https://www.matsuri-dao.com/docs/intro"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-violet-950/40 via-indigo-950/30 to-slate-950/50 p-8 flex flex-col justify-between hover:border-violet-400/40 transition-all duration-500"
+  >
+    {/* Subtle glow effect */}
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_50%_50%,_rgba(139,92,246,0.08)_0%,_transparent_70%)]" />
+    
+    <div className="relative z-10">
+      <div className="flex items-center gap-3 mb-6">
+        <ScrollText className="w-5 h-5 text-violet-400/80" />
+        <span className="text-xs font-mono text-violet-400/70 tracking-widest uppercase">Matsuri DAO</span>
+      </div>
+      
+      <h4 className="font-serif text-xl text-white mb-3 group-hover:text-violet-300 transition-colors duration-500">Whitepaper</h4>
+      
+      <p className="text-white/50 text-sm leading-relaxed font-serif">
+        Matsuri Coin (MTC) — 文化を通貨に。
+        Solana上で日本文化を守るトークン。
+      </p>
+    </div>
+    
+    <div className="flex items-center gap-2 text-white/30 group-hover:text-violet-400 transition-colors text-xs font-mono mt-6">
+      <span>READ WHITEPAPER</span>
+      <ExternalLink className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+    </div>
+    
+    {/* 装飾的テキスト */}
+    <span className="absolute -bottom-4 -right-4 text-[8rem] font-jp text-white/[0.02] select-none pointer-events-none leading-none">
+      幣
     </span>
   </motion.a>
 );
@@ -147,9 +188,12 @@ const CultureOSShowcase: React.FC<CultureOSShowcaseProps> = ({ t }) => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <MatsuriInviteCard />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="md:col-span-2">
+          <MatsuriInviteCard />
+        </div>
         <div className="flex flex-col gap-6">
+          <WhitepaperCard />
           <TeamCard />
           <StoryLinkCard />
         </div>

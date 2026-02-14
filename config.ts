@@ -40,6 +40,13 @@ export const companyLinks: SocialLink[] = [
     id: "matsuri"
   },
   {
+    platform: "Matsuri DAO",
+    url: "https://www.matsuri-dao.com",
+    category: "DAO",
+    iconName: "scroll",
+    id: "matsuri_dao"
+  },
+  {
     platform: "The J-Times",
     url: "https://www.j-times.org/",
     category: "Media",

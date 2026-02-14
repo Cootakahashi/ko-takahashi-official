@@ -21,6 +21,7 @@ interface TranslationData {
     Corporate: string;
     Platform: string;
     Media: string;
+    DAO: string;
   };
   companies: {
     [key: string]: {
@@ -53,7 +54,8 @@ export const translations: Record<LanguageCode, TranslationData> = {
       Personal: "Personal",
       Corporate: "Corporate",
       Platform: "Platform",
-      Media: "Media"
+      Media: "Media",
+      DAO: "DAO"
     },
     companies: {
       "jon_coo": {
@@ -63,6 +65,10 @@ export const translations: Record<LanguageCode, TranslationData> = {
       "matsuri": {
         description: "Next-gen Digital Experience Platform.",
         operated_by: "LEAD ARCHITECT"
+      },
+      "matsuri_dao": {
+        description: "Matsuri Coin (MTC) ホワイトペーパー。文化をブロックチェーンへ。",
+        operated_by: "FOUNDER"
       },
       "j_times": {
         description: "Global Media Outlet.",
@@ -91,7 +97,8 @@ export const translations: Record<LanguageCode, TranslationData> = {
       Personal: "Personal",
       Corporate: "Corporate",
       Platform: "Platform",
-      Media: "Media"
+      Media: "Media",
+      DAO: "DAO"
     },
     companies: {
       "jon_coo": {
@@ -101,6 +108,10 @@ export const translations: Record<LanguageCode, TranslationData> = {
       "matsuri": {
         description: "Next-gen Digital Experience Platform.",
         operated_by: "LEAD ARCHITECT"
+      },
+      "matsuri_dao": {
+        description: "Matsuri Coin (MTC) Whitepaper. Culture on-chain.",
+        operated_by: "FOUNDER"
       },
       "j_times": {
         description: "Global Media Outlet.",
@@ -129,7 +140,8 @@ export const translations: Record<LanguageCode, TranslationData> = {
       Personal: "个人",
       Corporate: "企业",
       Platform: "平台",
-      Media: "媒体"
+      Media: "媒体",
+      DAO: "DAO"
     },
     companies: {
       "jon_coo": {
@@ -139,6 +151,10 @@ export const translations: Record<LanguageCode, TranslationData> = {
       "matsuri": {
         description: "下一代数字体验平台。",
         operated_by: "LEAD ARCHITECT"
+      },
+      "matsuri_dao": {
+        description: "Matsuri Coin (MTC) 白皮书。文化上链。",
+        operated_by: "FOUNDER"
       },
       "j_times": {
         description: "全球媒体渠道。",
@@ -167,7 +183,8 @@ export const translations: Record<LanguageCode, TranslationData> = {
       Personal: "개인",
       Corporate: "기업",
       Platform: "플랫폼",
-      Media: "미디어"
+      Media: "미디어",
+      DAO: "DAO"
     },
     companies: {
       "jon_coo": {
@@ -177,6 +194,10 @@ export const translations: Record<LanguageCode, TranslationData> = {
       "matsuri": {
         description: "차세대 디지털 경험 플랫폼.",
         operated_by: "LEAD ARCHITECT"
+      },
+      "matsuri_dao": {
+        description: "Matsuri Coin (MTC) 백서. 문화를 온체인으로.",
+        operated_by: "FOUNDER"
       },
       "j_times": {
         description: "글로벌 미디어 아울렛.",
@@ -205,7 +226,8 @@ export const translations: Record<LanguageCode, TranslationData> = {
       Personal: "ส่วนตัว",
       Corporate: "องค์กร",
       Platform: "แพลตฟอร์ม",
-      Media: "สื่อ"
+      Media: "สื่อ",
+      DAO: "DAO"
     },
     companies: {
       "jon_coo": {
@@ -215,6 +237,10 @@ export const translations: Record<LanguageCode, TranslationData> = {
       "matsuri": {
         description: "แพลตฟอร์มประสบการณ์ดิจิทัลยุคหน้า",
         operated_by: "LEAD ARCHITECT"
+      },
+      "matsuri_dao": {
+        description: "Matsuri Coin (MTC) สมุดปกขาว วัฒนธรรมบนบล็อกเชน",
+        operated_by: "FOUNDER"
       },
       "j_times": {
         description: "สื่อระดับโลก",

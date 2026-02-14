@@ -19,6 +19,7 @@ import {
   Building2,
   Layers,
   Newspaper,
+  ScrollText,
   ChevronDown,
   MapPin,
 } from "lucide-react";
@@ -86,6 +87,7 @@ const CategoryBadge: React.FC<{ category: string; label: string }> = ({
     Corporate: "text-gold border-gold/40 bg-gold/5",
     Platform: "text-blue-300 border-blue-400/40 bg-blue-400/5",
     Media: "text-emerald-300 border-emerald-400/40 bg-emerald-400/5",
+    DAO: "text-violet-300 border-violet-400/40 bg-violet-400/5",
   };
   const style =
     colors[category as keyof typeof colors] || "text-white border-white";
@@ -105,6 +107,8 @@ const CompanyCard: React.FC<{ link: SocialLink; t: any }> = ({ link, t }) => {
       ? Newspaper
       : link.iconName === "layers"
       ? Layers
+      : link.iconName === "scroll"
+      ? ScrollText
       : Building2;
 
   const companyData =
@@ -492,7 +496,7 @@ const App: React.FC = () => {
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {companyLinks.map((link, index) => (
                 <motion.div
                   key={link.url}
