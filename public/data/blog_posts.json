@@ -149,6 +149,140 @@
           }
         ]
       }
+    },
+    {
+      "id": "internal_003",
+      "ja": {
+        "title": "独学プログラマーの7年間: Rustから始まった再生の道",
+        "description": "23歳で破産した後、京都の図書館で出会った一冊の本から始まった独学の記録。",
+        "content": [
+          { "type": "h2", "text": "京都の図書館で出会った一冊" },
+          { "type": "p", "text": "2021年、京都。ウーバーイーツのバッグを背負い、顔を隠して歩いていた日々。平安神宮の横にある図書館で、運命の一冊に出会いました。『プログラミングは世界を変える』。かつてADAコインで技術を知らずに負けた悔しさが蘇りました。「これしかない。これで食っていくんだ」。" },
+          { "type": "h2", "text": "なぜRustから始めたのか" },
+          { "type": "p", "text": "最初に選んだ言語はPythonでした。統計学、データサイエンスの入り口として。しかし、本質的なシステムを理解するために、Rustに出会いました。メモリ安全性、所有権システム、ゼロコスト抽象化。Rustは「曖昧さを許さない言語」です。ごまかしが効かない。それが、かつて虚像を売っていた自分にとって、最高の矯正器具でした。" },
+          { "type": "quote", "text": "Rustコンパイラは、世界で最も厳しいメンター。嘘をつけば、コンパイルが通らない。" },
+          { "type": "h2", "text": "学習のフレームワーク" },
+          { "type": "p", "text": "独学で最も重要だったのは「学習の構造化」です。闇雲に本を読むのではなく、以下のサイクルを回しました。" },
+          { "type": "list", "items": ["1. 概念を理解する（本・ドキュメント）", "2. 手を動かす（小さなプロジェクトを作る）", "3. 壊す（意図的にエラーを起こして理解を深める）", "4. 教える（ブログ記事にまとめて言語化する）"] },
+          { "type": "h2", "text": "ChatGPTの衝撃、そして転換" },
+          { "type": "p", "text": "血の滲むような思いで学んだ自然言語処理やコード生成が、チャット画面一つで誰でもできてしまう。絶望しました。しかし、その絶望の淵で気づいたのです。「逆に考えれば、このAIを使えば、俺一人でも巨大なシステムが作れるんじゃないか？」。AIは敵ではなく、最強の相棒でした。" },
+          { "type": "p", "text": "今、私はRust、Python、TypeScriptを使い、Culture OSやMatsuri Platformを一人で設計・実装しています。7年前の破産した自分には想像もできなかった世界です。独学は孤独ですが、その孤独の中にこそ、本物の強さが宿ると信じています。" }
+        ]
+      },
+      "en": {
+        "title": "7 Years of Self-Teaching: The Road to Rebirth Starting with Rust",
+        "description": "The self-study journey that began with a book found in a Kyoto library after going bankrupt at 23.",
+        "content": [
+          { "type": "h2", "text": "A Book in a Kyoto Library" },
+          { "type": "p", "text": "2021, Kyoto. Days spent walking with an Uber Eats bag, face hidden. In a library near Heian Shrine, I found a fateful book: 'Programming Changes the World.' The frustration of losing to technology I didn't understand with ADA Coin came flooding back. 'This is it. This is how I'll survive.'" },
+          { "type": "h2", "text": "Why I Started with Rust" },
+          { "type": "p", "text": "My first language was Python—an entry point to statistics and data science. But to truly understand systems, I found Rust. Memory safety, ownership system, zero-cost abstractions. Rust is a language that 'tolerates no ambiguity.' You can't fake it. For someone who once sold illusions, it was the perfect corrective." },
+          { "type": "quote", "text": "The Rust compiler is the world's strictest mentor. Lie, and your code won't compile." },
+          { "type": "h2", "text": "A Framework for Learning" },
+          { "type": "p", "text": "The most important thing in self-teaching was 'structuring the learning.' Instead of reading books randomly, I cycled through:" },
+          { "type": "list", "items": ["1. Understand concepts (books, documentation)", "2. Build (create small projects)", "3. Break (intentionally cause errors to deepen understanding)", "4. Teach (write blog posts to articulate knowledge)"] },
+          { "type": "h2", "text": "The ChatGPT Shock and the Pivot" },
+          { "type": "p", "text": "The NLP and code generation I'd spent years learning—anyone could do it through a chat screen. I was devastated. But at the edge of despair, I realized: 'What if I could use this AI to build massive systems by myself?' AI wasn't the enemy—it was the ultimate partner." },
+          { "type": "p", "text": "Now I use Rust, Python, and TypeScript to design and build Culture OS and Matsuri Platform. A world unimaginable to my bankrupt self seven years ago. Self-teaching is lonely, but I believe true strength lives in that solitude." }
+        ]
+      }
+    },
+    {
+      "id": "internal_004",
+      "ja": {
+        "title": "Matsuri Platform: 観光客ではなく探求者として日本を体験する",
+        "description": "ガイドブックに載らない本当の日本を届けるための設計思想。",
+        "content": [
+          { "type": "h2", "text": "温室のガラスを割る" },
+          { "type": "p", "text": "世界中から日本を訪れる人が増え続けています。しかし、その多くは「温室の中の日本」を消費しているに過ぎません。エアコンの効いた観光バス、ガイドブック通りのルート、SNS映えするスポット。それは日本の表面です。" },
+          { "type": "p", "text": "私がタイやヨーロッパを旅して気づいたのは、最も心に残る体験は「台本のない瞬間」だということ。地元の人との偶然の会話、路地裏の小さな食堂、祭りの熱気。Matsuri Platformは、その「温室のガラスを割る」ための装置です。" },
+          { "type": "h2", "text": "探求者のための設計原則" },
+          { "type": "list", "items": ["ローカルファースト — 地域の人が主体となってコンテンツを生成", "セレンディピティ設計 — 偶然の出会いを促す仕組み", "深度優先 — 広く浅くではなく、一つの場所・文化を深く", "持続可能な交流 — 消費型観光ではなく、相互理解型の体験"] },
+          { "type": "quote", "text": "観光客は写真を撮る。探求者は物語を持ち帰る。" },
+          { "type": "h2", "text": "なぜ日本人が作るべきなのか" },
+          { "type": "p", "text": "世界中に日本文化を紹介するプラットフォームはあります。しかし、その多くは外国企業が運営し、日本文化を「商品」として切り売りしています。利益は外に流れ、文化の文脈は薄められます。日本の本当の価値を、日本人の手で、正しく世界に届ける。それがMatsuri Platformの使命です。" }
+        ]
+      },
+      "en": {
+        "title": "Matsuri Platform: Experience Japan as an Explorer, Not a Tourist",
+        "description": "Design philosophy for delivering the real Japan that guidebooks don't cover.",
+        "content": [
+          { "type": "h2", "text": "Breaking the Greenhouse Glass" },
+          { "type": "p", "text": "More people visit Japan every year. But most consume 'Japan in a greenhouse'—air-conditioned tour buses, guidebook routes, Instagram spots. That's Japan's surface." },
+          { "type": "p", "text": "Traveling through Thailand and Europe, I realized the most memorable experiences are 'unscripted moments.' A chance conversation with a local, a tiny backstreet restaurant, festival energy. Matsuri Platform is the tool for 'breaking the greenhouse glass.'" },
+          { "type": "h2", "text": "Design Principles for Explorers" },
+          { "type": "list", "items": ["Local-first — Locals generate the content", "Serendipity design — Mechanisms that encourage chance encounters", "Depth-first — Deep into one place/culture, not shallow across many", "Sustainable exchange — Mutual understanding, not consumptive tourism"] },
+          { "type": "quote", "text": "Tourists take photos. Explorers bring back stories." },
+          { "type": "h2", "text": "Why It Must Be Built by Japanese" },
+          { "type": "p", "text": "Platforms introducing Japanese culture exist worldwide. But most are run by foreign companies, selling Japanese culture as a 'product.' Profits flow out, cultural context is diluted. Delivering Japan's true value, by Japanese hands, accurately to the world—that is Matsuri Platform's mission." }
+        ]
+      }
+    },
+    {
+      "id": "internal_005",
+      "ja": {
+        "title": "11歳で学校を辞めた理由と、そこから学んだこと",
+        "description": "既存のレールを降りることの代償と、代わりに得たもの。",
+        "content": [
+          { "type": "h2", "text": "「右向け右」への違和感" },
+          { "type": "p", "text": "11歳の自分にとって、学校は「右向け右」のシステムでした。全員が同じ方向を向き、同じペースで歩く。なぜ？と聞いても「そういうものだから」としか返ってこない。「お前らのルールでは生きない」。そう決意して、私は学校という世界から離脱しました。" },
+          { "type": "h2", "text": "代償" },
+          { "type": "p", "text": "美化するつもりはありません。学校を辞めた代償は大きかった。同世代の友人関係、基礎学力の体系的な習得、社会性の基盤。これらを失いました。18歳で起業できたのは能力ではなく、他に選択肢がなかったからです。23歳の破産は、その代償の集大成でした。" },
+          { "type": "h2", "text": "代わりに得たもの" },
+          { "type": "p", "text": "しかし、レールを降りたことで得たものもあります。" },
+          { "type": "list", "items": ["自分で問いを立てる力 — 教えられるのを待つのではなく、自分で知りたいことを見つける", "失敗への耐性 — 社会のセーフティネットなしに生きることで、失敗を恐れなくなる", "独自の視座 — 同質的な環境の外にいることで、社会を別の角度から見られる", "自走する学習力 — 7年間の独学で4ヶ国語とプログラミングを習得した基盤"] },
+          { "type": "quote", "text": "レールを降りることは自由ではない。自分のレールを敷く責任を負うことだ。" },
+          { "type": "p", "text": "11歳の選択を後悔しているかと聞かれれば、答えはNoです。しかし、全ての人に勧めるかと聞かれれば、それもNoです。レールの外の世界は自由ですが、地図がありません。自分で道を作る覚悟がなければ、ただの迷子になるだけです。" }
+        ]
+      },
+      "en": {
+        "title": "Why I Left School at 11 and What I Learned",
+        "description": "The cost of leaving the track, and what was gained instead.",
+        "content": [
+          { "type": "h2", "text": "Discomfort with 'Turn Right When Told'" },
+          { "type": "p", "text": "For my 11-year-old self, school was a 'turn right when told' system. Everyone facing the same direction, walking at the same pace. When I asked why, the answer was always 'that's just how it is.' 'I won't live by your rules.' With that resolve, I left the world of school." },
+          { "type": "h2", "text": "The Cost" },
+          { "type": "p", "text": "I won't romanticize it. The cost of leaving school was steep. Peer friendships, systematic foundational education, the basics of socialization—all lost. I started a business at 18 not because of ability, but because there were no other options. My bankruptcy at 23 was the culmination of that cost." },
+          { "type": "h2", "text": "What Was Gained Instead" },
+          { "type": "p", "text": "But leaving the track also gave me something." },
+          { "type": "list", "items": ["The ability to form my own questions — Not waiting to be taught, but finding what I want to know", "Failure tolerance — Living without society's safety net removes the fear of failure", "Unique perspective — Being outside homogeneous environments lets you see society from different angles", "Self-driven learning — The foundation for self-teaching 4 languages and programming in 7 years"] },
+          { "type": "quote", "text": "Leaving the track isn't freedom. It's accepting the responsibility of laying your own track." },
+          { "type": "p", "text": "If asked whether I regret the choice at 11, the answer is No. But if asked whether I'd recommend it to everyone, that's also No. The world outside the track is free, but there's no map. Without the resolve to build your own path, you're just lost." }
+        ]
+      }
+    },
+    {
+      "id": "internal_006",
+      "ja": {
+        "title": "AIアーキテクトという生き方: AIに使われるのではなく、AIを使う側へ",
+        "description": "ChatGPTに膝から崩れ落ちそうになった日。そこから見えたアーキテクトの思想。",
+        "content": [
+          { "type": "h2", "text": "ChatGPTに打ちのめされた日" },
+          { "type": "p", "text": "2023年。血の滲むような努力で学んだ自然言語処理、統計モデル、コード生成。それが、チャット画面一つで誰でも一瞬でできてしまう。世界が沸き立つ中、私は膝から崩れ落ちそうでした。「俺が積み上げてきたものは、無駄だったのか？」" },
+          { "type": "h2", "text": "絶望の先にあった反転" },
+          { "type": "p", "text": "しかし、絶望の淵で一つの真実に気づきました。「逆に考えれば、このAIを使えば、俺一人でも巨大なシステムが作れるんじゃないか？」。演出ができずに諦めた動画制作も、一人では限界があったシステム開発も、AIという「最強の相棒」がいれば全て実現できる。" },
+          { "type": "quote", "text": "AIに使われる側ではなく、AIを使って世界を変えるアーキテクトになるんだ。" },
+          { "type": "h2", "text": "アーキテクトの条件" },
+          { "type": "p", "text": "AIアーキテクトとは、AIに指示を出す人ではありません。AIと協働して、一人では到達できない規模のビジョンを実現する人です。そのために必要なのは：" },
+          { "type": "list", "items": ["明確なビジョン — AIはツール。何を作りたいかを知っているのは人間だけ", "技術の深い理解 — AIの出力を評価・修正するには、自分自身が技術を理解している必要がある", "哲学 — 何を作るべきか、何を作るべきでないかの判断基準", "実行力 — ビジョンをコードに落とし込み、世に出すまでやり抜く力"] },
+          { "type": "p", "text": "Culture OS、Matsuri Platform、The J-Times。これらは全て、AIと私の協働から生まれました。一人の人間が、AIの力を借りて、世界規模のプロジェクトを動かす。それがAIアーキテクトという生き方です。" }
+        ]
+      },
+      "en": {
+        "title": "Living as an AI Architect: From Being Used by AI to Using AI",
+        "description": "The day ChatGPT nearly brought me to my knees, and the Architect's philosophy that emerged.",
+        "content": [
+          { "type": "h2", "text": "The Day ChatGPT Devastated Me" },
+          { "type": "p", "text": "2023. The NLP, statistical models, and code generation I had spent years learning with blood-sweating effort—anyone could do it instantly through a chat screen. As the world buzzed with excitement, I nearly collapsed to my knees. 'Was everything I built up meaningless?'" },
+          { "type": "h2", "text": "The Reversal Beyond Despair" },
+          { "type": "p", "text": "But at the edge of despair, I noticed a truth. 'What if I could use this AI to build massive systems by myself?' Video production I'd given up on, system development that had limits for one person—with AI as the 'ultimate partner,' everything became possible." },
+          { "type": "quote", "text": "Not on the side that gets used by AI. I'll become an Architect who uses AI to change the world." },
+          { "type": "h2", "text": "What Makes an Architect" },
+          { "type": "p", "text": "An AI Architect isn't someone who gives orders to AI. It's someone who collaborates with AI to realize visions at a scale one person could never achieve alone. What's needed:" },
+          { "type": "list", "items": ["Clear vision — AI is a tool. Only humans know what they want to build", "Deep technical understanding — Evaluating and refining AI output requires your own expertise", "Philosophy — Judgment criteria for what should and shouldn't be built", "Execution — The tenacity to translate vision into code and ship it to the world"] },
+          { "type": "p", "text": "Culture OS, Matsuri Platform, The J-Times—all born from collaboration between AI and me. One person, leveraging AI's power, driving world-scale projects. That's the life of an AI Architect." }
+        ]
+      }
     }
   ]
 }

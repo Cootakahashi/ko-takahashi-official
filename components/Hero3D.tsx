@@ -155,18 +155,28 @@ const CameraRig = () => {
  * シネマティックな夜明けの背景
  */
 const Hero3D: React.FC = () => {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
   return (
     <div className="absolute inset-0 z-0">
       {/* グラデーション背景（夜明けの空） */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
           background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #533483 80%, #e94560 95%, #ff6b6b 100%)',
           opacity: 0.7
         }}
       />
-      
-      <Canvas
+
+      {reducedMotion ? null : <Canvas
         camera={{ position: [0, 1, 5], fov: 50 }}
         dpr={[1, 2]}
         gl={{ 
@@ -186,8 +196,8 @@ const Hero3D: React.FC = () => {
         
         {/* 温かいアンビエントライト */}
         <ambientLight intensity={0.3} color="#FFF8DC" />
-      </Canvas>
-      
+      </Canvas>}
+
       {/* フィルムグレイン */}
       <div 
         className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-[0.08]"

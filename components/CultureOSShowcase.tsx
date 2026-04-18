@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Compass, Users, ExternalLink, Heart, ScrollText } from 'lucide-react';
 
 interface CultureOSShowcaseProps {
-  t?: any;
+  t?: Record<string, unknown>;
 }
 
 // メインのMatsuri招待カード
@@ -18,6 +18,7 @@ const MatsuriInviteCard: React.FC = () => (
     href="https://matsuri.group/ja"
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="Explore Matsuri Platform — Experience real Japan as an explorer"
     className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-amber-950/30 via-rose-950/20 to-slate-950/30 p-10 md:p-14 hover:border-amber-500/40 transition-all duration-700 h-full"
   >
     {/* 背景のソフトなパターン */}
@@ -65,6 +66,7 @@ const WhitepaperCard: React.FC = () => (
     href="https://www.matsuri-dao.com/docs/intro"
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="Read the Matsuri DAO whitepaper — Matsuri Coin (MTC) on Solana"
     className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-violet-950/40 via-indigo-950/30 to-slate-950/50 p-8 flex flex-col justify-between hover:border-violet-400/40 transition-all duration-500"
   >
     {/* Subtle glow effect */}
@@ -123,7 +125,8 @@ const TeamCard: React.FC = () => (
       href="https://www.jonandcoo.jp/ja"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 text-white/30 hover:text-blue-400 transition-colors text-xs font-mono mt-6"
+      aria-label="Meet the Jon & Coo team"
+      className="flex items-center gap-2 text-white/40 hover:text-blue-400 transition-colors text-xs font-mono mt-6"
     >
       <span>MEET THE TEAM</span>
       <ExternalLink className="w-3 h-3" />
@@ -134,11 +137,13 @@ const TeamCard: React.FC = () => (
 // ストーリーを読むカード
 const StoryLinkCard: React.FC<{ onNavigate?: () => void }> = ({ onNavigate }) => (
   <motion.button
+    type="button"
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8, delay: 0.3 }}
     onClick={onNavigate}
+    aria-label="Read the full story of Ko Takahashi"
     className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-rose-950/30 to-slate-950/50 p-8 flex flex-col justify-between text-left hover:border-rose-400/40 transition-all duration-500"
   >
     <div>

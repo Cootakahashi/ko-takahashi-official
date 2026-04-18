@@ -277,20 +277,38 @@ interface InteractivePortraitProps {
 }
 
 const InteractivePortrait: React.FC<InteractivePortraitProps> = ({ className = '' }) => {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
   return (
     <div className={`relative ${className}`}>
-      <Canvas
-        camera={{ position: [0, 0, 3], fov: 45 }}
-        dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true }}
-      >
-        <PortraitMesh imageUrl="/ko/takahashi-ko.jpg" />
-        <EdgeParticles />
-        
-        {/* Ambient light */}
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[2, 2, 2]} intensity={0.5} />
-      </Canvas>
+      {reducedMotion ? (
+        <img
+          src="/ko/takahashi-ko.webp"
+          alt="Ko Takahashi"
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <Canvas
+          camera={{ position: [0, 0, 3], fov: 45 }}
+          dpr={[1, 2]}
+          gl={{ antialias: true, alpha: true }}
+        >
+          <PortraitMesh imageUrl="/ko/takahashi-ko.jpg" />
+          <EdgeParticles />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[2, 2, 2]} intensity={0.5} />
+        </Canvas>
+      )}
       
       {/* Frame */}
       <div className="absolute inset-0 border border-gold/20 pointer-events-none" />

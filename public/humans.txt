@@ -1,0 +1,27 @@
+/* TEAM */
+Creator: Ko Takahashi (高橋 高)
+Role: CEO & Founder, Jon & Coo Inc.
+Location: Shinjuku, Tokyo, Japan
+Contact: https://ko-takahashi.com/links
+Twitter: @zes55ch
+LinkedIn: ko-takahashi-jp
+
+/* SITE */
+Last update: 2026-03
+Language: Japanese, English, Chinese, Korean, Thai
+Standards: HTML5, CSS3, ECMAScript 2022
+Frameworks: React 18, Vite, TailwindCSS, Three.js, Framer Motion
+Type system: TypeScript (strict mode)
+Schema: Schema.org JSON-LD (@graph pattern)
+AI optimization: llms.txt, llms-full.txt, FAQPage (20 questions)
+Hosting: Vercel
+Domain: ko-takahashi.com
+
+/* THANKS */
+React — facebook.github.io/react
+Three.js — threejs.org
+Framer Motion — framer.com/motion
+TailwindCSS — tailwindcss.com
+Vite — vitejs.dev
+Lucide Icons — lucide.dev
+Google Fonts — fonts.google.com

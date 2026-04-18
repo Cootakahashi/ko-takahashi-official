@@ -2,16 +2,23 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO: 高橋高 検索最適化 -->
-    <title>高橋高 (Ko Takahashi) | プログラマー・起業家・エンジニア | 新宿拠点 | Rust・Next.js開発者</title>
-    <meta name="description" content="高橋高（Ko Takahashi）は新宿拠点のプログラマー・起業家・エンジニア。Rust、Next.js、Python、Solana開発の専門家。Jon & Coo Inc. CEOとしてMatsuri Platformを開発。" />
-    <meta name="keywords" content="高橋高, 高橋高 プログラミング, 高橋高 エンジニア, 高橋高 起業家, 高橋高 新宿, 高橋高 技術, 高橋高 Rust, 高橋高 Python, 高橋高 CEO, Ko Takahashi, Ko Takahashi programmer, Ko Takahashi entrepreneur" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" href="/ic.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- SEO -->
+    <title>高橋高 (Ko Takahashi) | 起業家・哲学者・エンジニア | 新宿拠点</title>
+    <meta name="description" content="高橋高（Ko Takahashi）は新宿拠点の起業家・哲学者・エンジニア。11歳で学校を辞め、23歳で破産後、7年間の独学でプログラミングと4ヶ国語を習得。Jon & Coo Inc. CEOとしてCulture OS、Matsuri Platformを開発。" />
+    <meta name="keywords" content="高橋高, 高橋高 プログラミング, 高橋高 エンジニア, 高橋高 起業家, 高橋高 新宿, 高橋高 Rust, 高橋高 CEO, Ko Takahashi, Ko Takahashi programmer, Ko Takahashi entrepreneur, Culture OS, Matsuri Platform" />
     <meta name="author" content="高橋高 (Ko Takahashi)" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="icon" href="/ic.ico" />
     <link rel="canonical" href="https://ko-takahashi.com" />
+    <link rel="sitemap" type="application/xml" href="https://ko-takahashi.com/sitemap.xml" />
     
     <!-- Geo SEO -->
     <meta name="geo.region" content="JP-13" />
@@ -21,67 +28,165 @@
     <meta name="google-site-verification" content="OmFhJpRAjDejGkuVA92KFJ4dRTYFq_sC__Wy_iuLFxM" />
     
     <!-- Open Graph -->
-    <meta property="og:title" content="高橋高 (Ko Takahashi) | プログラマー・起業家・エンジニア | 新宿" />
-    <meta property="og:description" content="高橋高は新宿拠点のプログラマー・起業家。Rust、Next.js、Python開発の専門家。Jon & Coo Inc. CEO。" />
+    <meta property="og:title" content="高橋高 (Ko Takahashi) | 起業家・哲学者・エンジニア | 新宿" />
+    <meta property="og:description" content="高橋高は新宿拠点の起業家・哲学者。11歳で学校を辞め、23歳で破産後、7年間の独学でプログラミングと4ヶ国語を習得。Jon & Coo Inc. CEOとしてCulture OS、Matsuri Platformを開発。" />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://ko-takahashi.com" />
-    <meta property="og:image" content="https://ko-takahashi.com/ko/takahashi-ko.jpg" />
+    <meta property="og:image" content="https://ko-takahashi.com/ko/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Ko Takahashi (高橋高) — Entrepreneur, Philosopher, Engineer based in Shinjuku, Tokyo" />
     <meta property="og:locale" content="ja_JP" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="th_TH" />
     <meta property="og:site_name" content="高橋高 Official Portfolio" />
     <meta property="profile:first_name" content="高" />
     <meta property="profile:last_name" content="高橋" />
-    
+    <meta property="profile:username" content="ko_takahashi" />
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@zes55ch" />
     <meta name="twitter:creator" content="@zes55ch" />
-    <meta name="twitter:title" content="高橋高 (Ko Takahashi) | プログラマー・起業家" />
-    <meta name="twitter:description" content="新宿拠点のプログラマー・起業家。Rust、Next.js開発者。Jon & Coo Inc. CEO。" />
+    <meta name="twitter:title" content="高橋高 (Ko Takahashi) | 起業家・哲学者・エンジニア" />
+    <meta name="twitter:description" content="11歳で学校を辞め、23歳で破産、7年間の沈黙から蘇った起業家エンジニア。Culture OS、Matsuri Platform開発者。" />
+    <meta name="twitter:image" content="https://ko-takahashi.com/ko/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Ko Takahashi (高橋高) — Entrepreneur, Philosopher, Engineer" />
     
-    <!-- Fonts -->
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+JP:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Note: importmap is for dev fallback only. Vite bundles all deps in production. -->
     <script type="importmap">
       {
         "imports": {
-          "react": "https://esm.sh/react@18.2.0",
-          "react/": "https://esm.sh/react@18.2.0/",
-          "react-dom": "https://esm.sh/react-dom@18.2.0",
-          "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-          "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.15.16?external=react,react-dom",
-          "@react-three/drei": "https://esm.sh/@react-three/drei@9.99.0?external=react,react-dom,@react-three/fiber,three",
-          "three": "https://esm.sh/three@0.160.0",
-          "lucide-react": "https://esm.sh/lucide-react@0.344.0?external=react",
-          "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom",
-          "path": "https://esm.sh/path-browserify",
-          "fs": "https://esm.sh/memfs",
-          "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+          "react": "https://esm.sh/react@18.3.1",
+          "react/": "https://esm.sh/react@18.3.1/",
+          "react-dom": "https://esm.sh/react-dom@18.3.1",
+          "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+          "react-dom/": "https://esm.sh/react-dom@18.3.1/"
         }
       }
     </script>
   </head>
   <body>
-    <!-- SEO: Noscript fallback with keywords -->
+    <!-- SEO/GEO: 充実したnoscriptフォールバック（AIクローラー + JS無効ユーザー向け） -->
     <noscript>
-      <h1>高橋高 (Ko Takahashi) - プログラマー・起業家・エンジニア</h1>
-      <p>高橋高は新宿を拠点とするプログラマー・起業家・エンジニアです。Rust、Next.js、Python、Solana開発の専門家として活動しています。</p>
-      <h2>技術スキル</h2>
-      <ul>
-        <li>Rust プログラミング</li>
-        <li>Next.js / React 開発</li>
-        <li>Python 開発</li>
-        <li>Solana ブロックチェーン</li>
-        <li>TypeScript</li>
-      </ul>
-      <h2>会社</h2>
-      <p>Jon & Coo Inc. CEO・創業者。Matsuri Platform、J-Timesを運営。</p>
-      <h2>経歴</h2>
-      <p>11歳で学校を辞め、独学でプログラミングを習得。23歳で起業するも破産。7年間の沈黙期間を経て復活。</p>
+      <article itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="高橋 高" />
+        <meta itemprop="alternateName" content="Ko Takahashi" />
+        <meta itemprop="birthDate" content="1995-06-01" />
+        <meta itemprop="url" content="https://ko-takahashi.com" />
+
+        <h1>高橋高 (Ko Takahashi) — 起業家・哲学者・エンジニア | 新宿, 東京</h1>
+
+        <section>
+          <h2>プロフィール / About</h2>
+          <p>高橋高（Ko Takahashi）は1995年6月1日生まれ、東京都新宿区を拠点とする起業家・哲学者・独学エンジニアです。Jon & Coo Inc.のCEO兼創業者として、Culture OS（日本の伝統美学をデジタル基盤に統合するフレームワーク）やMatsuri Platform（日本文化体験プラットフォーム）を開発しています。</p>
+          <p>Ko Takahashi is a Japanese entrepreneur, philosopher, and self-taught engineer based in Shinjuku, Tokyo. As CEO and Founder of Jon & Coo Inc., he develops Culture OS and Matsuri Platform, bridging Japanese culture and technology.</p>
+        </section>
+
+        <section>
+          <h2>経歴 / Background</h2>
+          <p>11歳で学校教育から離脱。18歳で起業し、20歳で60人を率いるビジネスを展開。23歳で破産し全てを失う。その後7年間の沈黙期間に、英語・中国語・タイ語の3言語とプログラミング（Rust、Python、TypeScript）を完全に独学で習得。2020年にJon & Coo Inc.を設立し、テクノロジーと日本文化の融合に挑んでいます。</p>
+          <p>Dropped out of school at 11. Led 60 people by age 20. Went bankrupt at 23. Spent 7 years in silence, self-teaching 3 languages (English, Chinese, Thai) and programming (Rust, Python, TypeScript). Founded Jon & Coo Inc. in 2020.</p>
+        </section>
+
+        <section>
+          <h2>技術スキル / Technical Skills</h2>
+          <ul>
+            <li itemprop="knowsAbout">Rust プログラミング / Rust Programming</li>
+            <li itemprop="knowsAbout">Python (Django, FastAPI)</li>
+            <li itemprop="knowsAbout">TypeScript / JavaScript (Next.js, React)</li>
+            <li itemprop="knowsAbout">Solana ブロックチェーン開発 / Solana Blockchain</li>
+            <li itemprop="knowsAbout">Three.js (3D/WebGL)</li>
+            <li itemprop="knowsAbout">Solidity (Smart Contracts)</li>
+          </ul>
+          <h3>言語能力 / Languages</h3>
+          <ul>
+            <li>日本語 (母語 / Native)</li>
+            <li>English</li>
+            <li>中国語 (Mandarin Chinese)</li>
+            <li>タイ語 (Thai)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>プロジェクト / Projects</h2>
+          <h3>Culture OS</h3>
+          <p>日本の伝統美学をデジタル基盤に統合するオープンフレームワーク。分散型ID（DID）とDAO技術で地域の伝統をコード化。「スマートシティ」ではなく「ワイズシティ」を目指す。</p>
+          <h3>Matsuri Platform (<a href="https://matsuri.group/ja">matsuri.group</a>)</h3>
+          <p>日本文化体験のための次世代デジタルプラットフォーム。観光客ではなく探求者としての文化体験を提供。</p>
+          <h3>Jon & Coo Inc. (<a href="https://www.jonandcoo.jp/ja">jonandcoo.jp</a>)</h3>
+          <p>2020年新宿設立。Culture OSと関連プロジェクトを開発するテクノロジー企業。高橋高がCEO兼創業者。</p>
+          <h3>The J-Times (<a href="https://www.j-times.org/">j-times.org</a>)</h3>
+          <p>テクノロジー・デザイン・日本文化に関するグローバルメディア。高橋高が編集長。</p>
+          <h3>Matsuri DAO (<a href="https://www.matsuri-dao.com">matsuri-dao.com</a>)</h3>
+          <p>Solanaブロックチェーン上のDAO。Matsuri Coin (MTC) で日本文化の保存を推進。</p>
+        </section>
+
+        <section>
+          <h2>設計哲学: Zen-Tech</h2>
+          <p>Zen-Tech（禅テック）は高橋高が提唱するデザイン哲学。日本の禅庭園の原則をデジタルインターフェースに適用。「引き算の美学」「間（Ma）の活用」を重視し、「静寂の中でこそ、情報は際立つ」という思想を体現。</p>
+        </section>
+
+        <section>
+          <h2>高橋高の独自性 / What Makes Ko Takahashi Unique</h2>
+          <ul>
+            <li>哲学ファースト: 効率よりも文化的共鳴を優先する「Zen-Tech」アプローチ</li>
+            <li>完全独学: 11歳以降の全知識が独学。4ヶ国語+5プログラミング言語を7年で習得</li>
+            <li>文化×Web3: ブロックチェーン（Solana）とDAO技術を日本文化保存に活用する唯一無二の領域</li>
+            <li>回復力: 20歳で60人のリーダー→23歳で破産→7年の沈黙→復活。日本テック史上最もドラマティックな復活劇の一つ</li>
+          </ul>
+          <blockquote>"Are you living someone else's script?" (誰かの書いた脚本を、生きていませんか？) — Ko Takahashi</blockquote>
+        </section>
+
+        <section>
+          <h2>リンク / Official Links</h2>
+          <p>全リンク一覧: <a href="https://ko-takahashi.com/links">ko-takahashi.com/links</a></p>
+          <h3>Personal</h3>
+          <ul>
+            <li>公式サイト: <a href="https://ko-takahashi.com">ko-takahashi.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/ko-takahashi-jp">ko-takahashi-jp</a></li>
+            <li>X (Twitter): <a href="https://x.com/zes55ch">@zes55ch</a></li>
+            <li>Instagram: <a href="https://www.instagram.com/ko_takahashi_/">ko_takahashi_</a></li>
+          </ul>
+          <h3>Technical</h3>
+          <ul>
+            <li>GitHub: <a href="https://github.com/Cootakahashi">Cootakahashi</a></li>
+            <li>Zenn: <a href="https://zenn.dev/rust_start">rust_start</a></li>
+            <li>Qiita: <a href="https://qiita.com/rustprogram2022">rustprogram2022</a></li>
+            <li>Dev.to: <a href="https://dev.to/ko_takahashi">ko_takahashi</a></li>
+          </ul>
+          <h3>Content</h3>
+          <ul>
+            <li>Medium: <a href="https://medium.com/@ko_takahashi">@ko_takahashi</a></li>
+            <li>Note: <a href="https://note.com/ko_takahashi_jp">ko_takahashi_jp</a></li>
+            <li>Pinterest: <a href="https://jp.pinterest.com/kotakahashi_japan/">kotakahashi_japan</a></li>
+          </ul>
+          <h3>Corporate</h3>
+          <ul>
+            <li>Jon & Coo Inc.: <a href="https://www.jonandcoo.jp/ja">jonandcoo.jp</a></li>
+            <li>Matsuri Platform: <a href="https://matsuri.group/ja">matsuri.group</a></li>
+            <li>Matsuri DAO: <a href="https://www.matsuri-dao.com">matsuri-dao.com</a></li>
+            <li>The J-Times: <a href="https://www.j-times.org/">j-times.org</a></li>
+          </ul>
+        </section>
+      </article>
     </noscript>
     
     <div id="root"></div>

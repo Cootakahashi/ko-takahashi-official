@@ -19,7 +19,7 @@ export const siteMetadata: SiteMetadata = {
     "Design"
   ],
   location: "Shinjuku, Tokyo, Japan",
-  ogImage: "https://picsum.photos/1200/630", // Placeholder, ideally should be a real OGP image
+  ogImage: "https://ko-takahashi.com/ko/og-image.jpg",
   twitterId: "@zes55ch"
 };
 
@@ -62,6 +62,18 @@ export const socialLinks: SocialLink[] = [
     url: "https://www.linkedin.com/in/ko-takahashi-jp",
     category: "Business",
     iconName: "linkedin"
+  },
+  {
+    platform: "GitHub",
+    url: "https://github.com/Cootakahashi",
+    category: "Tech",
+    iconName: "github"
+  },
+  {
+    platform: "Qiita",
+    url: "https://qiita.com/rustprogram2022",
+    category: "Tech",
+    iconName: "file-text"
   },
   {
     platform: "Zenn",

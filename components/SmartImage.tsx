@@ -49,7 +49,7 @@ export const SmartImage: React.FC<SmartImageProps> = ({
     // Prevent infinite loop if fallback itself fails (though unlikely with Unsplash)
     const fallback = getFallbackUrl(fallbackKey);
     if (currentSrc !== fallback) {
-      console.warn(`[SmartImage] Image failed to load: ${currentSrc}. Switching to fallback.`);
+      if (import.meta.env.DEV) console.warn(`[SmartImage] Image failed: ${currentSrc}`);
       setCurrentSrc(fallback);
     }
   };
@@ -58,11 +58,12 @@ export const SmartImage: React.FC<SmartImageProps> = ({
     <motion.img
       {...motionProps}
       src={currentSrc}
-      alt={alt || "Ko Takahashi Portfolio - Visual Element (Shinjuku/Tokyo)"}
+      alt={alt || "Ko Takahashi Portfolio - Visual Element"}
       className={className}
       onError={handleError}
-      // Spread other standard HTML img props
-      {...props as any} 
+      loading="lazy"
+      decoding="async"
+      {...(props as React.ComponentPropsWithoutRef<'img'>)}
     />
   );
 };

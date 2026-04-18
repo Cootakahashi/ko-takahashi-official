@@ -1,18 +1,18 @@
 /**
  * Safely loads JSON data from the /data directory via fetch.
- * Works in Browser/Client-side environments.
+ * Returns typed data or null on failure. Errors are silent in production.
  */
-export async function getJsonData(filename: string) {
+export async function getJsonData<T = unknown>(filename: string): Promise<T | null> {
   try {
-    // In a browser environment, we fetch from the public path
     const response = await fetch(`/data/${filename}`);
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${filename}: ${response.statusText}`);
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
-    const data = await response.json();
-    return data;
+    return await response.json() as T;
   } catch (error) {
-    console.error(`[DataLoader] Error loading ${filename}:`, error);
+    if (import.meta.env.DEV) {
+      console.error(`[DataLoader] Failed to load ${filename}:`, error);
+    }
     return null;
   }
 }

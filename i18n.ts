@@ -1,37 +1,5 @@
-import { LanguageCode } from './types';
-export type { LanguageCode };
-
-interface TranslationData {
-  meta_title: string;
-  meta_description: string;
-  hero_name: string;
-  hero_name_sub: string;
-  hero_role_titles: string;
-  hero_catchphrase: string;
-  hero_subcatchphrase: string;
-  section_about: string;
-  section_ventures: string;
-  bio_text: string;
-  categories: {
-    All: string;
-    Business: string;
-    Tech: string;
-    Visual: string;
-    Personal: string;
-    Corporate: string;
-    Platform: string;
-    Media: string;
-    DAO: string;
-  };
-  companies: {
-    [key: string]: {
-      description: string;
-      operated_by: string;
-    }
-  };
-  footer_designed_by: string;
-  official_portfolio: string;
-}
+import { LanguageCode, TranslationData } from './types';
+export type { LanguageCode, TranslationData };
 
 export const translations: Record<LanguageCode, TranslationData> = {
   ja: {

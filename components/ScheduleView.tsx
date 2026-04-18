@@ -3,31 +3,35 @@
 import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { ArrowLeft, MapPin, ExternalLink, Calendar, CircleDot } from 'lucide-react';
-import { LanguageCode } from '../types';
+import type { LanguageCode, ScheduleEvent } from '../types';
+
+interface LocalizedEvent extends Omit<ScheduleEvent, 'title' | 'description'> {
+  title: string;
+  description: string;
+}
 
 interface ScheduleViewProps {
   onBack?: () => void;
-  initialData?: any;
+  initialData?: { events: ScheduleEvent[]; meta?: Record<string, unknown> };
 }
 
 const ScheduleView: React.FC<ScheduleViewProps> = ({ onBack, initialData }) => {
   const [lang, setLang] = useState<LanguageCode>('ja');
-  
+
   const events = initialData?.events || [];
-  
-  // Transform data for current language
-  const localizedEvents = events.map((e: any) => ({
+
+  const localizedEvents: LocalizedEvent[] = events.map((e) => ({
     ...e,
-    title: e.title[lang] || e.title['ja'] || e.title,
-    description: e.description[lang] || e.description['ja'] || e.description
+    title: e.title[lang] || e.title['ja'],
+    description: e.description[lang] || e.description['ja']
   }));
 
-  const upcomingEvents = localizedEvents.filter((e: any) => e.status === 'upcoming');
-  const pastEvents = localizedEvents.filter((e: any) => e.status === 'past');
+  const upcomingEvents = localizedEvents.filter((e) => e.status === 'upcoming');
+  const pastEvents = localizedEvents.filter((e) => e.status === 'past');
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
       transition: { staggerChildren: 0.1 }
     }
@@ -35,92 +39,101 @@ const ScheduleView: React.FC<ScheduleViewProps> = ({ onBack, initialData }) => {
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: { duration: 0.5 }
     }
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="relative min-h-screen w-full bg-obsidian text-white z-50 overflow-y-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       {/* Cyber Grid Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       </div>
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full p-6 z-50 flex justify-between items-center bg-gradient-to-b from-obsidian to-transparent">
         {onBack ? (
-          <button 
+          <button
+            type="button"
             onClick={onBack}
-            className="flex items-center gap-2 text-white/50 hover:text-gold transition-colors duration-300 font-serif italic"
+            className="flex items-center gap-2 text-white/50 hover:text-gold transition-colors duration-300 font-serif italic focus-visible:ring-2 focus-visible:ring-gold/60"
+            aria-label="Return to home"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             <span>Return</span>
           </button>
         ) : (
-          <a 
+          <a
             href="/"
             className="flex items-center gap-2 text-white/50 hover:text-gold transition-colors duration-300 font-serif italic"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             <span>Home</span>
           </a>
         )}
-         <button onClick={() => setLang(lang === 'ja' ? 'en' : 'ja')} className="text-xs font-mono text-gold border border-gold/30 px-3 py-1 rounded-full">
+        <button
+          type="button"
+          onClick={() => setLang(lang === 'ja' ? 'en' : 'ja')}
+          className="text-xs font-mono text-gold border border-gold/30 px-3 py-1 rounded-full"
+          aria-label={`Switch language to ${lang === 'ja' ? 'English' : 'Japanese'}`}
+        >
           {lang.toUpperCase()}
         </button>
       </nav>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 md:py-32">
-        
-        {/* Header */}
+
+        {/* Header — proper heading hierarchy */}
         <header className="mb-20">
-           <h1 className="font-mono text-xs text-gold mb-2 tracking-[0.3em] uppercase">System Timeline</h1>
-           <h2 className="font-serif text-5xl md:text-6xl text-white">The Grid</h2>
+           <span className="font-mono text-xs text-gold mb-2 tracking-[0.3em] uppercase block">System Timeline</span>
+           <h1 className="font-serif text-5xl md:text-6xl text-white">The Grid</h1>
         </header>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="space-y-24"
         >
           {/* Upcoming Section */}
-          <section>
-            <div className="flex items-center gap-4 mb-12">
-               <CircleDot className="w-4 h-4 text-gold animate-pulse" />
-               <h3 className="text-xl font-serif text-white">Incoming Data</h3>
-               <div className="h-px bg-white/10 flex-1"></div>
-            </div>
-
-            <div className="grid gap-6">
-              {upcomingEvents.map((event: any) => (
-                <EventCard key={event.id} event={event} variants={itemVariants} />
-              ))}
-            </div>
-          </section>
+          {upcomingEvents.length > 0 && (
+            <section aria-labelledby="upcoming-title">
+              <div className="flex items-center gap-4 mb-12">
+                 <CircleDot className="w-4 h-4 text-gold animate-pulse" aria-hidden="true" />
+                 <h2 id="upcoming-title" className="text-xl font-serif text-white">Incoming Data</h2>
+                 <div className="h-px bg-white/10 flex-1" aria-hidden="true" />
+              </div>
+              <div className="grid gap-6" role="list">
+                {upcomingEvents.map((event) => (
+                  <EventCard key={event.id} event={event} variants={itemVariants} />
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Past Section */}
-          <section className="opacity-60 grayscale-[0.5]">
-             <div className="flex items-center gap-4 mb-12">
-               <div className="w-2 h-2 rounded-full bg-white/20"></div>
-               <h3 className="text-xl font-serif text-white/60">Archived Logs</h3>
-               <div className="h-px bg-white/10 flex-1"></div>
-            </div>
-
-            <div className="grid gap-6">
-              {pastEvents.map((event: any) => (
-                <EventCard key={event.id} event={event} variants={itemVariants} />
-              ))}
-            </div>
-          </section>
+          {pastEvents.length > 0 && (
+            <section className="opacity-60 grayscale-[0.5]" aria-labelledby="past-title">
+               <div className="flex items-center gap-4 mb-12">
+                 <div className="w-2 h-2 rounded-full bg-white/20" aria-hidden="true" />
+                 <h2 id="past-title" className="text-xl font-serif text-white/60">Archived Logs</h2>
+                 <div className="h-px bg-white/10 flex-1" aria-hidden="true" />
+              </div>
+              <div className="grid gap-6" role="list">
+                {pastEvents.map((event) => (
+                  <EventCard key={event.id} event={event} variants={itemVariants} />
+                ))}
+              </div>
+            </section>
+          )}
 
         </motion.div>
 
@@ -134,18 +147,21 @@ const ScheduleView: React.FC<ScheduleViewProps> = ({ onBack, initialData }) => {
   );
 };
 
-const EventCard: React.FC<{ event: any; variants: Variants }> = ({ event, variants }) => {
+const EventCard: React.FC<{ event: LocalizedEvent; variants: Variants }> = ({ event, variants }) => {
   return (
-    <motion.div 
+    <motion.article
       variants={variants}
+      role="listitem"
       className="group relative flex flex-col md:flex-row gap-6 md:gap-12 p-8 border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-gold/30 hover:bg-white/[0.04]"
+      itemScope
+      itemType="https://schema.org/Event"
     >
       {/* Date Column */}
       <div className="md:w-48 shrink-0 flex flex-col justify-start">
-        <div className="flex items-center gap-2 text-gold font-mono text-sm tracking-widest mb-2">
-          <Calendar className="w-3 h-3" />
+        <time className="flex items-center gap-2 text-gold font-mono text-sm tracking-widest mb-2" dateTime={event.date} itemProp="startDate">
+          <Calendar className="w-3 h-3" aria-hidden="true" />
           {event.date}
-        </div>
+        </time>
         <div className="flex flex-wrap gap-2 mt-2">
           {event.tags.map((tag: string) => (
             <span key={tag} className="text-[10px] uppercase border border-white/10 px-2 py-1 text-white/40">
@@ -157,33 +173,35 @@ const EventCard: React.FC<{ event: any; variants: Variants }> = ({ event, varian
 
       {/* Content Column */}
       <div className="flex-1">
-        <h4 className="text-2xl font-serif mb-3 text-white group-hover:text-gold transition-colors duration-300">
+        <h3 className="text-2xl font-serif mb-3 text-white group-hover:text-gold transition-colors duration-300" itemProp="name">
           {event.title}
-        </h4>
-        <p className="text-white/60 leading-relaxed mb-6 font-light">
+        </h3>
+        <p className="text-white/60 leading-relaxed mb-6 font-light" itemProp="description">
           {event.description}
         </p>
-        
+
         <div className="flex items-center gap-6 text-xs font-mono text-white/40">
-           <div className="flex items-center gap-2">
-             <MapPin className="w-3 h-3" />
-             {event.location}
+           <div className="flex items-center gap-2" itemProp="location" itemScope itemType="https://schema.org/Place">
+             <MapPin className="w-3 h-3" aria-hidden="true" />
+             <span itemProp="name">{event.location}</span>
            </div>
            {event.link && (
-             <a 
-               href={event.link} 
-               target="_blank" 
+             <a
+               href={event.link}
+               target="_blank"
                rel="noopener noreferrer"
-               className="flex items-center gap-2 hover:text-white transition-colors"
+               className="flex items-center gap-2 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-gold/60"
+               itemProp="url"
+               aria-label={`Link to ${event.title}`}
              >
-               <ExternalLink className="w-3 h-3" />
+               <ExternalLink className="w-3 h-3" aria-hidden="true" />
                LINK
              </a>
            )}
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
-}
+};
 
 export default ScheduleView;

@@ -6,15 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:prerender": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "9.99.0",
     "@react-three/fiber": "8.15.16",
     "framer-motion": "11.0.8",
-    "fs": "latest",
     "lucide-react": "0.344.0",
-    "path": "latest",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",

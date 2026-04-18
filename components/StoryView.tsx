@@ -3,11 +3,11 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Flame, Skull, Globe, Zap, BookOpen, Sparkles, Crown } from 'lucide-react';
-import { LanguageCode } from '../types';
+import type { LanguageCode, StoryData } from '../types';
 
 interface StoryViewProps {
   onBack?: () => void;
-  initialData?: any;
+  initialData?: StoryData | null;
 }
 
 // 章のデータ - 壮大なサガ

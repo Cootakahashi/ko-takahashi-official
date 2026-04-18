@@ -1,10 +1,10 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { SocialLink } from '../types';
+import { SocialLink, TranslationData } from '../types';
 
 interface ArchiveGridProps {
   links: SocialLink[];
-  t: any;
+  t: TranslationData;
 }
 
 const CategoryBadge: React.FC<{ category: string; label: string }> = ({ category, label }) => {
@@ -24,7 +24,7 @@ const CategoryBadge: React.FC<{ category: string; label: string }> = ({ category
   );
 };
 
-const LinkCard: React.FC<{ link: SocialLink; t: any }> = ({ link, t }) => (
+const LinkCard: React.FC<{ link: SocialLink; t: TranslationData }> = ({ link, t }) => (
   <article className="h-full">
     <a
       href={link.url}

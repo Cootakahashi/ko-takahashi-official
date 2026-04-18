@@ -6,13 +6,26 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 /**
  * CustomCursor - A sophisticated custom cursor with trailing effect
  * Creates a magnetic cursor that interacts with interactive elements
+ * Respects prefers-reduced-motion and touch devices
  */
 export const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const cursorDotRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
-  
+  const [isEnabled, setIsEnabled] = useState(false);
+
+  // Only enable on non-touch, non-reduced-motion devices
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const touch = window.matchMedia('(pointer: coarse)');
+    setIsEnabled(!mq.matches && !touch.matches);
+
+    const handler = () => setIsEnabled(!mq.matches && !touch.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
@@ -58,6 +71,8 @@ export const CustomCursor: React.FC = () => {
       document.removeEventListener('mouseout', handleMouseLeave);
     };
   }, [mouseX, mouseY]);
+
+  if (!isEnabled) return null;
 
   return (
     <>
@@ -367,11 +382,19 @@ export const ScrollProgress: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-[2px] z-[100] bg-white/5">
+    <div className="fixed top-0 left-0 w-full h-[2px] z-[100]">
       <motion.div
-        className="h-full bg-gradient-to-r from-gold via-gold-light to-white"
+        className="h-full bg-gradient-to-r from-gold/80 via-gold to-amber-300/60"
         style={{ width: `${progress * 100}%` }}
+        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       />
+      {/* Glow at the tip */}
+      {progress > 0.01 && (
+        <div
+          className="absolute top-0 h-[6px] w-8 bg-gold/40 blur-md -translate-y-1/2"
+          style={{ left: `${progress * 100}%`, transform: `translateX(-100%) translateY(-25%)` }}
+        />
+      )}
     </div>
   );
 };

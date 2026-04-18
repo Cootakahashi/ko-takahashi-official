@@ -69,6 +69,96 @@
       "url": "https://zenn.dev/rust_start/articles/cbde2deec0e520",
       "date": "2026.01.04",
       "tags": ["Solana", "Rust", "Security", "Blockchain"]
+    },
+    {
+      "id": "internal_001",
+      "title": {
+        "ja": "Jon & Coo Inc. 創業の哲学: なぜ今、文化OSなのか",
+        "en": "The Philosophy of Jon & Coo Inc.: Why Culture OS Now?"
+      },
+      "summary": {
+        "ja": "デジタル社会で失われた「手触り」を取り戻す。効率のスマートシティではなく、物語が息づくワイズシティを目指して。",
+        "en": "Restoring the lost 'texture' of digital society. Not a Smart City of efficiency, but a Wise City where stories breathe."
+      },
+      "platform": "Internal",
+      "url": "",
+      "date": "2025.11.15",
+      "tags": ["Philosophy", "Culture OS", "Startup"]
+    },
+    {
+      "id": "internal_002",
+      "title": {
+        "ja": "デジタルにおける「静寂」のデザイン",
+        "en": "Designing 'Silence' in the Digital Age"
+      },
+      "summary": {
+        "ja": "通知、ポップアップ、点滅するバナー。ノイズの海から脱出するための「Zen-Tech」デザイン原則。",
+        "en": "Notifications, pop-ups, flashing banners. The 'Zen-Tech' design principles for escaping the sea of noise."
+      },
+      "platform": "Internal",
+      "url": "",
+      "date": "2025.12.01",
+      "tags": ["Design", "UX", "Zen-Tech"]
+    },
+    {
+      "id": "internal_003",
+      "title": {
+        "ja": "独学プログラマーの7年間: Rustから始まった再生の道",
+        "en": "7 Years of Self-Teaching: The Road to Rebirth Starting with Rust"
+      },
+      "summary": {
+        "ja": "23歳で破産した後、京都の図書館で出会った一冊の本。そこから始まったRust、Python、TypeScriptの独学記録。",
+        "en": "A book found in a Kyoto library after going bankrupt at 23. The self-study journey through Rust, Python, and TypeScript."
+      },
+      "platform": "Internal",
+      "url": "",
+      "date": "2026.01.10",
+      "tags": ["Rust", "Python", "Self-taught", "Career"]
+    },
+    {
+      "id": "internal_004",
+      "title": {
+        "ja": "Matsuri Platform: 観光客ではなく探求者として日本を体験する",
+        "en": "Matsuri Platform: Experience Japan as an Explorer, Not a Tourist"
+      },
+      "summary": {
+        "ja": "ガイドブックに載らない本当の日本。温室のガラスを割って、本当の空気を吸うための設計思想。",
+        "en": "The real Japan that guidebooks don't cover. Design philosophy for breaking the greenhouse glass and breathing real air."
+      },
+      "platform": "Internal",
+      "url": "",
+      "date": "2026.02.01",
+      "tags": ["Matsuri", "Tourism", "Culture", "Product"]
+    },
+    {
+      "id": "internal_005",
+      "title": {
+        "ja": "11歳で学校を辞めた理由と、そこから学んだこと",
+        "en": "Why I Left School at 11 and What I Learned"
+      },
+      "summary": {
+        "ja": "「お前らのルールでは生きない」。11歳の決断から20年。既存のレールを降りることの代償と、代わりに得たもの。",
+        "en": "\"I won't live by your rules.\" 20 years after an 11-year-old's decision. The cost of leaving the track—and what was gained instead."
+      },
+      "platform": "Internal",
+      "url": "",
+      "date": "2026.02.15",
+      "tags": ["Education", "Philosophy", "Life"]
+    },
+    {
+      "id": "internal_006",
+      "title": {
+        "ja": "AIアーキテクトという生き方: AIに使われるのではなく、AIを使う側へ",
+        "en": "Living as an AI Architect: From Being Used by AI to Using AI"
+      },
+      "summary": {
+        "ja": "ChatGPTに膝から崩れ落ちそうになった日。そこから見えた「AIの最強の相棒」としての可能性と、アーキテクトの思想。",
+        "en": "The day ChatGPT nearly brought me to my knees. The vision of AI as the 'ultimate partner' and the Architect's philosophy."
+      },
+      "platform": "Internal",
+      "url": "",
+      "date": "2026.03.01",
+      "tags": ["AI", "Career", "Philosophy", "Future"]
     }
   ]
 }

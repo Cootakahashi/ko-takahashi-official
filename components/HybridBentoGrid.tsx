@@ -68,9 +68,16 @@ const FlipCard: React.FC<FlipCardProps> = ({ card, index, onNavigate }) => {
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.6 }}
       className="relative h-[380px] perspective-1000 cursor-pointer"
+      role="button"
+      tabIndex={0}
+      aria-label={`${card.title}: ${card.description}. Click to read full story.`}
+      aria-expanded={isFlipped}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
+      onFocus={() => setIsFlipped(true)}
+      onBlur={() => setIsFlipped(false)}
       onClick={onNavigate}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onNavigate?.(); } }}
     >
       <motion.div
         className="relative w-full h-full transition-transform duration-700"
@@ -132,7 +139,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ card, index, onNavigate }) => {
 };
 
 interface HybridBentoGridProps {
-  t?: any;
+  t?: Record<string, unknown>;
   onNavigate?: () => void;
 }
 

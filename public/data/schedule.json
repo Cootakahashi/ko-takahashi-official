@@ -22,7 +22,7 @@
         "en": "Official release of the Matsuri Engine. Redefining local Japanese festivals in digital space and enabling global participation via decentralized protocols. achieving bidirectionality between physical and digital."
       },
       "location": "Tokyo / Metaverse",
-      "status": "upcoming",
+      "status": "past",
       "tags": ["Release", "Matsuri", "Web3"],
       "link": "https://matsuri.group"
     },
@@ -38,7 +38,7 @@
         "en": "Activation of 'The J-Times' decentralized media protocol. A next-generation journalism infrastructure using immutable on-chain archiving to accurately transmit Japanese context to the world."
       },
       "location": "Global / On-chain",
-      "status": "upcoming",
+      "status": "past",
       "tags": ["Media", "Blockchain", "Launch"],
       "link": "https://www.j-times.org/"
     },
@@ -54,7 +54,7 @@
         "en": "Full integration of SSI (Self-Sovereign Identity) into Culture OS. Pilot phase tokenizing local community memberships as NFTs, seamlessly linked with physical access rights and voting power."
       },
       "location": "Kyoto / Ethereum L2",
-      "status": "upcoming",
+      "status": "past",
       "tags": ["Dev", "Identity", "Smart Contracts"]
     },
     {
@@ -69,7 +69,7 @@
         "en": "Activation of governance modules to decentralize ecosystem decision-making. Token holders begin formulating project direction, marking the transition to a Decentralized Autonomous Organization (DAO)."
       },
       "location": "DAO",
-      "status": "upcoming",
+      "status": "past",
       "tags": ["Governance", "DAO", "Future"]
     }
   ]

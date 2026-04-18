@@ -13,17 +13,25 @@ export default defineConfig(({ mode }) => {
       plugins: [
         react(),
         Sitemap({
-          hostname: 'https://jon-and-coo.com',
-          dynamicRoutes: [
-            '/story',
-            '/schedule',
-            '/articles'
-          ]
-        })
+          hostname: 'https://ko-takahashi.com',
+          dynamicRoutes: ['/story', '/schedule', '/articles', '/about', '/links'],
+          changefreq: 'weekly',
+          priority: 0.8,
+          lastmod: new Date().toISOString(),
+        }),
       ],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+      // NOTE: API keys must NOT be exposed to client bundles.
+      // Use server-side API routes or edge functions instead.
+      // define: { 'process.env.GEMINI_API_KEY': ... } — removed for security.
+      build: {
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              'three': ['three', '@react-three/fiber', '@react-three/drei'],
+              'framer': ['framer-motion'],
+            }
+          }
+        }
       },
       resolve: {
         alias: {
