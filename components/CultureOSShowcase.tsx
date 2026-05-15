@@ -43,9 +43,9 @@ const MatsuriInviteCard: React.FC = () => (
         それが私の届けたい「リアルな日本」。
       </p>
       
-      <div className="flex items-center gap-4 text-white/40 group-hover:text-amber-400 transition-colors">
-        <span className="font-serif italic">冒険に出る</span>
-        <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      <div className="inline-flex items-center gap-3 px-5 py-3 rounded-md border border-amber-500/30 bg-amber-500/5 text-amber-400/90 group-hover:border-amber-400/60 group-hover:bg-amber-500/10 group-hover:text-amber-300 transition-all">
+        <span className="font-serif text-sm tracking-wide">冒険に出る</span>
+        <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </div>
     </div>
     

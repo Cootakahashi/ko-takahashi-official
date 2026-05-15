@@ -4,7 +4,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import {
-  ArrowLeft, ExternalLink, Github, Linkedin, Instagram,
+  ArrowLeft, ExternalLink, Linkedin, Instagram,
   Twitter, Code2, FileText, PenTool, Layers, Building2,
   Newspaper, ScrollText, Image, BookOpen, Terminal
 } from 'lucide-react';
@@ -17,7 +17,6 @@ interface LinksViewProps {
 
 const iconMap: Record<string, React.ReactNode> = {
   linkedin: <Linkedin className="w-5 h-5" />,
-  github: <Github className="w-5 h-5" />,
   terminal: <Terminal className="w-5 h-5" />,
   'file-text': <FileText className="w-5 h-5" />,
   'pen-tool': <PenTool className="w-5 h-5" />,
@@ -110,7 +109,7 @@ const LinksView: React.FC<LinksViewProps> = ({ onBack }) => {
     <main className="min-h-screen bg-obsidian text-white font-sans noise-overlay">
       <Helmet>
         <title>高橋高 (Ko Takahashi) — Official Links | 全公式リンク</title>
-        <meta name="description" content="高橋高（Ko Takahashi）の全公式リンク。LinkedIn、GitHub、Zenn、Qiita、Medium、Dev.to、Note、Instagram、X、Jon & Coo、Matsuri Platform、The J-Times。" />
+        <meta name="description" content="高橋高（Ko Takahashi）の全公式リンク。LinkedIn、Zenn、Qiita、Medium、Dev.to、Note、Instagram、X、Jon & Coo、Matsuri Platform、The J-Times。" />
         <link rel="canonical" href="https://ko-takahashi.com/links" />
         <script type="application/ld+json">{JSON.stringify(linksPageSchema)}</script>
       </Helmet>
@@ -185,20 +184,6 @@ const LinksView: React.FC<LinksViewProps> = ({ onBack }) => {
               <LinkButton key={link.url} link={link} index={i + companyLinks.length} />
             ))}
           </div>
-        </section>
-
-        {/* Website Link */}
-        <section className="mb-12" aria-label="Official Website">
-          <motion.a
-            href="https://ko-takahashi.com"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="block text-center py-4 px-6 border border-gold/40 rounded-lg bg-gold/5 hover:bg-gold/10 transition-colors"
-          >
-            <span className="font-serif text-gold text-sm">ko-takahashi.com</span>
-            <span className="block text-[10px] text-white/30 font-mono mt-1">OFFICIAL PORTFOLIO</span>
-          </motion.a>
         </section>
 
         {/* SEO Footer — crawlable text */}

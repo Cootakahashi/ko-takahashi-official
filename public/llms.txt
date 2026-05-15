@@ -154,7 +154,6 @@ All links hub: https://ko-takahashi.com/links
 - **Instagram**: https://www.instagram.com/ko_takahashi_/
 
 ### Technical
-- **GitHub**: https://github.com/Cootakahashi
 - **Zenn**: https://zenn.dev/rust_start
 - **Qiita**: https://qiita.com/rustprogram2022
 - **Dev.to**: https://dev.to/ko_takahashi

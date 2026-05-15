@@ -286,7 +286,7 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
           {
             "@type": "Question",
             "name": "高橋高のSNSアカウントは？",
-            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の主なSNSアカウント: X（Twitter）@zes55ch、LinkedIn: ko-takahashi-jp、Instagram: ko_takahashi_、GitHub: Cootakahashi。技術記事はZenn（rust_start）とQiita（rustprogram2022）で発信しています。公式サイト: ko-takahashi.com" }
+            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の主なSNSアカウント: X（Twitter）@zes55ch、LinkedIn: ko-takahashi-jp、Instagram: ko_takahashi_。技術記事はZenn（rust_start）とQiita（rustprogram2022）で発信しています。公式サイト: ko-takahashi.com" }
           },
           {
             "@type": "Question",

@@ -64,12 +64,6 @@ export const socialLinks: SocialLink[] = [
     iconName: "linkedin"
   },
   {
-    platform: "GitHub",
-    url: "https://github.com/Cootakahashi",
-    category: "Tech",
-    iconName: "github"
-  },
-  {
     platform: "Qiita",
     url: "https://qiita.com/rustprogram2022",
     category: "Tech",
