@@ -6,6 +6,7 @@ import ArchiveGrid from "./components/ArchiveGrid";
 import HybridBentoGrid from "./components/HybridBentoGrid";
 import CultureOSShowcase from "./components/CultureOSShowcase";
 import SEOSkillsSection from "./components/SEOSkillsSection";
+import AppReleaseShowcase from "./components/AppReleaseShowcase";
 import { CustomCursor, ScrollProgress } from "./components/MicroInteractions";
 import { getJsonData } from "./lib/data-loader";
 import { resolveRoute, navigateTo, onPopState, getInitialLang, updateLangParam } from "./lib/router";
@@ -631,6 +632,9 @@ const App: React.FC = () => {
         />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-32">
+
+          {/* NEW iOS RELEASE — Matsuri & The J-Times */}
+          <AppReleaseShowcase lang={lang} />
 
           {/* Section divider — thin gold accent */}
           <div className="flex items-center gap-6 mb-24" aria-hidden="true">
