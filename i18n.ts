@@ -12,7 +12,7 @@ export const translations: Record<LanguageCode, TranslationData> = {
     hero_subcatchphrase: "11歳で社会のレールから降りた。そこから私の『台本のない旅』が始まった。",
     section_about: "About",
     section_ventures: "私が届けたいもの",
-    bio_text: "23歳ですべてを失った。破産、裏切り、孤独。7年間誰とも会わず、ただ学び続けた。言葉を、コードを、歴史を。それは世界ともう一度繋がるための準備だった。今、私は『Matsuri』を通じて、ガイドブックには載らない本当の日本を届けている。観光客としてではなく、探求者として。一緒に歩こう。",
+    bio_text: "23歳で、私は全てを失った。破産、裏切り、孤独——けれどその始まりは、まず私自身が正しくなかったことだ。傲慢で、多くの人を傷つけ、信頼を踏みにじった。罰のように、そこからの日々は転がり落ちた。ホームレスになり、見知らぬ人間から罵声と暴力を浴び、何もできず、寒さの中で死を覚悟した夜もあった。それでも、生かされた。誰とも会わず7年間、ただ学び続けた。言葉を、コードを、歴史を。それは、過去の自分を根こそぎ作り直すためだった。私は、生まれ変わった。それでも、日本がこのまま終わるのを見過ごすことはできない。『Matsuri』は、私の過去の精算であり、日本への恩返しだ。外の国を知った私だからこそ、訪れる人に日本のマナーとあり方を伝える。そして、富が一部に偏らず、関わるすべての人に行きわたり、互いを尊敬し合える環境を。争いのない世界を。観光客としてではなく、探求者として——一緒に歩こう。",
     official_portfolio: "Official Portfolio",
     categories: {
       All: "All",
@@ -43,7 +43,14 @@ export const translations: Record<LanguageCode, TranslationData> = {
         operated_by: "EDITOR IN CHIEF"
       }
     },
-    footer_designed_by: "Designed for Impact."
+    footer_designed_by: "Designed for Impact.",
+    atonement_eyebrow: "Atonement",
+    atonement_title: "過去の精算",
+    atonement_lead: "私はかつて、多くの人を傷つけた。",
+    atonement_body: "高橋 高の過去の言動によって、傷を負った方、被害を受けた方へ。どうか、声を聞かせてほしい。逃げず、ごまかさず、誠実に向き合います。これは謝罪のかたちであり、私が前に進むために避けて通れない、過去の精算です。",
+    atonement_cta_label: "誠実な対応のための窓口",
+    atonement_email: "office@jonandcoo.org",
+    atonement_note: "返信には時間をいただく場合がありますが、必ず読み、私自身が向き合います。"
   },
   en: {
     meta_title: "Ko Takahashi | Beyond the Script",
@@ -86,7 +93,14 @@ export const translations: Record<LanguageCode, TranslationData> = {
         operated_by: "EDITOR IN CHIEF"
       }
     },
-    footer_designed_by: "Designed for Impact."
+    footer_designed_by: "Designed for Impact.",
+    atonement_eyebrow: "",
+    atonement_title: "",
+    atonement_lead: "",
+    atonement_body: "",
+    atonement_cta_label: "",
+    atonement_email: "",
+    atonement_note: ""
   },
   zh: {
     meta_title: "高桥 高 (Ko Takahashi) | Official Portfolio",
@@ -129,7 +143,14 @@ export const translations: Record<LanguageCode, TranslationData> = {
         operated_by: "EDITOR IN CHIEF"
       }
     },
-    footer_designed_by: "为影响力而设计。"
+    footer_designed_by: "为影响力而设计。",
+    atonement_eyebrow: "",
+    atonement_title: "",
+    atonement_lead: "",
+    atonement_body: "",
+    atonement_cta_label: "",
+    atonement_email: "",
+    atonement_note: ""
   },
   ko: {
     meta_title: "타카하시 코 (Ko Takahashi) | Official Portfolio",
@@ -172,7 +193,14 @@ export const translations: Record<LanguageCode, TranslationData> = {
         operated_by: "EDITOR IN CHIEF"
       }
     },
-    footer_designed_by: "임팩트를 위한 디자인."
+    footer_designed_by: "임팩트를 위한 디자인.",
+    atonement_eyebrow: "",
+    atonement_title: "",
+    atonement_lead: "",
+    atonement_body: "",
+    atonement_cta_label: "",
+    atonement_email: "",
+    atonement_note: ""
   },
   th: {
     meta_title: "Ko Takahashi | Official Portfolio",
@@ -215,7 +243,14 @@ export const translations: Record<LanguageCode, TranslationData> = {
         operated_by: "EDITOR IN CHIEF"
       }
     },
-    footer_designed_by: "ออกแบบเพื่อสร้างผลกระทบ"
+    footer_designed_by: "ออกแบบเพื่อสร้างผลกระทบ",
+    atonement_eyebrow: "",
+    atonement_title: "",
+    atonement_lead: "",
+    atonement_body: "",
+    atonement_cta_label: "",
+    atonement_email: "",
+    atonement_note: ""
   }
 };
 

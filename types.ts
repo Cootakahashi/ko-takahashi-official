@@ -129,4 +129,11 @@ export interface TranslationData {
   categories: Record<string, string>;
   companies: Record<string, { description: string; operated_by: string }>;
   footer_designed_by: string;
+  atonement_eyebrow: string;
+  atonement_title: string;
+  atonement_lead: string;
+  atonement_body: string;
+  atonement_cta_label: string;
+  atonement_email: string;
+  atonement_note: string;
 }

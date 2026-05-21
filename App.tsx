@@ -756,6 +756,55 @@ const App: React.FC = () => {
             <ArchiveGrid links={filteredLinks} t={t} />
           </section>
 
+          {/* Atonement — surfaces only in Japanese, where the full confession lives */}
+          {t.atonement_title && (
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-40 max-w-3xl mx-auto"
+              aria-labelledby="atonement-title"
+            >
+              <div className="relative border-l-2 border-l-gold/50 pl-8 md:pl-12 py-2">
+                <p className="text-[10px] font-mono tracking-[0.35em] uppercase text-gold/70 mb-6">
+                  {t.atonement_eyebrow}
+                </p>
+                <h2
+                  id="atonement-title"
+                  className="font-serif text-3xl md:text-4xl text-white/90 mb-8 leading-tight"
+                >
+                  {t.atonement_title}
+                </h2>
+                <p className="font-serif italic text-lg md:text-xl text-gold-light/90 mb-6 leading-relaxed">
+                  {t.atonement_lead}
+                </p>
+                <p className="font-serif text-base md:text-lg text-white/75 leading-loose mb-10">
+                  {t.atonement_body}
+                </p>
+                <div className="border-t border-white/10 pt-8">
+                  <p className="text-[10px] font-mono tracking-[0.25em] uppercase text-white/40 mb-3">
+                    {t.atonement_cta_label}
+                  </p>
+                  <a
+                    href={`mailto:${t.atonement_email}?subject=${encodeURIComponent("過去の精算 / Atonement")}`}
+                    className="group inline-flex items-baseline gap-3 font-mono text-base md:text-lg text-gold hover:text-white transition-colors duration-500"
+                    aria-label={`Email ${t.atonement_email}`}
+                  >
+                    <span className="tracking-wider">{t.atonement_email}</span>
+                    <ArrowUpRight
+                      className="w-4 h-4 -translate-y-px group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500"
+                      aria-hidden="true"
+                    />
+                  </a>
+                  <p className="mt-6 text-xs font-mono text-white/35 leading-relaxed">
+                    {t.atonement_note}
+                  </p>
+                </div>
+              </div>
+            </motion.section>
+          )}
+
           {/* Footer — refined */}
           <footer className="mt-48 border-t border-white/5 pt-16 pb-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-8">
