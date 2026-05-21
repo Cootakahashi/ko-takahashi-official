@@ -64,7 +64,7 @@ const LanguageSwitcher: React.FC<{
 
   return (
     <div
-      className="flex gap-1 items-center bg-black/60 backdrop-blur-md rounded-full p-1 border border-white/20 shadow-lg"
+      className="flex gap-0.5 md:gap-1 items-center bg-black/60 backdrop-blur-md rounded-full p-0.5 md:p-1 border border-white/20 shadow-lg"
       role="group"
       aria-label="Language selection"
     >
@@ -75,7 +75,7 @@ const LanguageSwitcher: React.FC<{
           type="button"
           aria-label={`Switch to ${lang.name}`}
           aria-pressed={current === lang.code}
-          className={`text-[10px] font-mono w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+          className={`text-[9px] md:text-[10px] font-mono w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
             current === lang.code
               ? "bg-gold text-obsidian font-bold shadow-[0_0_15px_rgba(212,175,55,0.6)]"
               : "text-white/50 hover:text-white hover:bg-white/10"
@@ -411,7 +411,7 @@ const App: React.FC = () => {
           </span>
         </div>
 
-        <div className="flex flex-col items-end gap-6 pointer-events-auto">
+        <div className="flex flex-col items-end gap-2 md:gap-6 pointer-events-auto">
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center bg-black/60 backdrop-blur-md rounded-full px-8 py-3 border border-white/10 gap-8 shadow-xl">
             {[
@@ -459,7 +459,7 @@ const App: React.FC = () => {
 
       {/* HERO SECTION - GRID LAYOUT */}
       <section
-        className="relative min-h-screen w-full grid grid-cols-12 grid-rows-[1fr_auto_1fr] md:grid-rows-1 gap-4 px-6 md:px-12 lg:px-24 items-center z-10 pt-32 pb-12"
+        className="relative min-h-screen w-full grid grid-cols-12 grid-rows-[1fr_auto_1fr] md:grid-rows-1 gap-4 px-6 md:px-12 lg:px-24 items-center z-10 pt-44 md:pt-32 pb-12"
         id="main-content"
         aria-label="Hero Section"
       >
