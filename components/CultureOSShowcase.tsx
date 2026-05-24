@@ -19,7 +19,7 @@ const MatsuriInviteCard: React.FC = () => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Explore Matsuri Platform — Experience real Japan as an explorer"
-    className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-amber-950/30 via-rose-950/20 to-slate-950/30 p-10 md:p-14 hover:border-amber-500/40 transition-all duration-700 h-full"
+    className="group relative block overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-amber-950/30 via-rose-950/20 to-slate-950/30 p-10 md:p-14 hover:border-amber-500/40 transition-all duration-700 h-full"
   >
     {/* 背景のソフトなパターン */}
     <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_30%_30%,_#FFA07A_0%,_transparent_50%)]" />
