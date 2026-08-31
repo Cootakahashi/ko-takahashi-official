@@ -111,6 +111,21 @@ const LinksView: React.FC<LinksViewProps> = ({ onBack }) => {
         <title>高橋高 (Ko Takahashi) — Official Links | 全公式リンク</title>
         <meta name="description" content="高橋高（Ko Takahashi）の全公式リンク。LinkedIn、Zenn、Qiita、Medium、Dev.to、Note、Instagram、X、Jon & Coo、Matsuri Platform、The J-Times。" />
         <link rel="canonical" href={`${SITE_URL}/links`} />
+
+        {/* OG / Twitter: このページは共通の <Seo> を使わないため個別に持つ。
+            以前は index.html の全ページ共通タグが埋めていたが、
+            それは下層ページで説明文を潰す原因だったので撤去した。 */}
+        <meta property="og:title" content="高橋高 (Ko Takahashi) — Official Links | 全公式リンク" />
+        <meta property="og:description" content="高橋高（Ko Takahashi）の全公式リンク。LinkedIn、Zenn、Qiita、Medium、Dev.to、Note、Instagram、X、Jon & Coo、Matsuri Platform、The J-Times。" />
+        <meta property="og:url" content={`${SITE_URL}/links`} />
+        <meta property="og:image" content={`${SITE_URL}/ko/og-image.jpg`} />
+        <meta property="og:type" content="profile" />
+        <meta property="og:site_name" content="高橋高 Official" />
+        <meta property="og:locale" content="ja_JP" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="高橋高 (Ko Takahashi) — Official Links | 全公式リンク" />
+        <meta name="twitter:description" content="高橋高（Ko Takahashi）の全公式リンク。LinkedIn、Zenn、Qiita、Medium、Dev.to、Note、Instagram、X、Jon & Coo、Matsuri Platform、The J-Times。" />
+        <meta name="twitter:image" content={`${SITE_URL}/ko/og-image.jpg`} />
         <script type="application/ld+json">{JSON.stringify(linksPageSchema)}</script>
       </Helmet>
 
