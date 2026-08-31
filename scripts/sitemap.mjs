@@ -13,7 +13,7 @@
  *
  * ルート一覧はここが正典。prerender.mjs と components/Seo.tsx もここから読む。
  */
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -79,7 +79,46 @@ export function buildSitemap() {
   ].join('\n');
 }
 
+
+/**
+ * 🔴 vercel.json の言語 rewrite が実測表とズレていないか検査する。
+ *
+ * `vercel.json` は Vercel が **ビルド前に** 読むため、この表から自動生成できない。
+ * つまり手で書いた rewrite と `LANG_AVAILABILITY` は、放っておくと必ずズレる。
+ * ズレると `?lang=en` が日本語のHTMLを返し、しかも **何のエラーも出ない**
+ * （sitemap と hreflang は正しいままなので、外からは気づけない）。
+ *
+ * だからビルドを止める。静かに壊れるより、うるさく落ちる方がいい。
+ */
+export function checkVercelRewrites() {
+  const vercelPath = join(__dirname, '..', 'vercel.json');
+  if (!existsSync(vercelPath)) return;
+  const cfg = JSON.parse(readFileSync(vercelPath, 'utf-8'));
+  const declared = new Set(
+    (cfg.rewrites || [])
+      .filter((r) => Array.isArray(r.has) && r.has.some((h) => h.key === 'lang'))
+      .map((r) => `${r.source}|${r.has.find((h) => h.key === 'lang').value}`)
+  );
+  const needed = new Set(
+    pagePairs()
+      .filter(({ lang }) => lang !== DEFAULT_LANG)
+      .map(({ route, lang }) => `${route}|${lang}`)
+  );
+  const missing = [...needed].filter((k) => !declared.has(k));
+  const extra = [...declared].filter((k) => !needed.has(k));
+  if (missing.length || extra.length) {
+    const fmt = (k) => { const [r, l] = k.split('|'); return `${r}?lang=${l}`; };
+    throw new Error(
+      'vercel.json の言語 rewrite が lib/siteMeta.mjs の表と一致していません。\n' +
+        (missing.length ? `  足りない: ${missing.map(fmt).join(', ')}\n` : '') +
+        (extra.length ? `  余分:     ${extra.map(fmt).join(', ')}\n` : '') +
+        '  → vercel.json の rewrites を直してください（総受けの /(.*) より前に置くこと）。'
+    );
+  }
+}
+
 export function writeSitemap(distDir = join(__dirname, '..', 'dist')) {
+  checkVercelRewrites();
   const xml = buildSitemap();
   writeFileSync(join(distDir, 'sitemap.xml'), xml);
   const pairs = pagePairs();

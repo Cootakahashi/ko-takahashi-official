@@ -15,7 +15,8 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, '..', 'dist');
 
-import { routes, writeSitemap } from './sitemap.mjs';
+import { writeSitemap } from './sitemap.mjs';
+import { pagePairs, DEFAULT_LANG } from '../lib/siteMeta.mjs';
 
 async function prerender() {
   // Check if puppeteer is available
@@ -79,20 +80,27 @@ async function prerender() {
 
   const browser = await puppeteer.default.launch(launchOptions);
 
-  for (const route of routes) {
-    console.log(`  Rendering ${route}...`);
+  for (const { route, lang } of pagePairs()) {
+    const isDefault = lang === DEFAULT_LANG;
+    const label = isDefault ? route : `${route}?lang=${lang}`;
+    console.log(`  Rendering ${label}...`);
     const page = await browser.newPage();
-    await page.goto(`http://localhost:4173${route}`, { waitUntil: 'networkidle0', timeout: 15000 });
+    const url = isDefault
+      ? `http://localhost:4173${route}`
+      : `http://localhost:4173${route}?lang=${lang}`;
+    await page.goto(url, { waitUntil: 'networkidle0', timeout: 15000 });
 
     // Wait for React to render
     await page.waitForSelector('#root > *', { timeout: 10000 });
 
     const html = await page.content();
 
-    // Write to dist
-    const outputDir = route === '/' ? distDir : join(distDir, route);
+    // 既定言語はそのままのパスへ。それ以外は _lang/<言語>/ の下へ置き、
+    // vercel.json のクエリ条件付き rewrite で `?lang=xx` に配る。
+    const baseDir = isDefault ? distDir : join(distDir, '_lang', lang);
+    const outputDir = route === '/' ? baseDir : join(baseDir, route);
     if (!existsSync(outputDir)) mkdirSync(outputDir, { recursive: true });
-    const outputFile = route === '/' ? join(distDir, 'index.html') : join(outputDir, 'index.html');
+    const outputFile = join(outputDir, 'index.html');
 
     writeFileSync(outputFile, html);
     console.log(`  ✓ ${outputFile}`);

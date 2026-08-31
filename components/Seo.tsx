@@ -57,13 +57,21 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
     about: `${baseUrl}/about`,
     links: `${baseUrl}/links`,
   };
-  const url = canonicalMap[pageType] || baseUrl;
+  // 🔴 canonical は「その版自身」を指す。言語ごとに違うURLになる。
+  //    以前は言語に関わらず既定言語のURLを指しており、
+  //    sitemap が「英語版は /?lang=en」と申告する一方で、そのページ自身が
+  //    「自分は / の複製」と名乗る矛盾が起きていた（＝英語版が登録されない）。
+  //    実在しない言語では既定言語のURLを指す（中身が同一なので統合先として正しい）。
+  const baseRoutePath: string = pageType === 'home' ? '/' : `/${pageType}`;
+  const pageLangs: string[] = langsFor(baseRoutePath);
+  const effectiveLang: string = pageLangs.includes(currentLang) ? currentLang : 'ja';
+  const url = canonicalMap[pageType]
+    ? urlFor(baseRoutePath, effectiveLang)
+    : baseUrl;
 
-  // このページで実在する言語（lib/siteMeta.mjs の実測表）。
-  // canonicalMap のキーは route から先頭の / を落としたものなので、戻して引く。
-  const routePath: string = pageType === 'home' ? '/' : `/${pageType}`;
-  const availableLangs: string[] = langsFor(routePath);
-  const altUrl = (l: string): string => urlFor(routePath, l);
+  // hreflang 用。canonical と同じ表・同じURL生成器を使うので、必ず整合する。
+  const availableLangs: string[] = pageLangs;
+  const altUrl = (l: string): string => urlFor(baseRoutePath, l);
 
   // 🔴 Helmet は Fragment を子に取れない（中身が黙って捨てられる）。
   //    条件分岐はここで済ませ、Helmet には要素の配列だけを渡す。
