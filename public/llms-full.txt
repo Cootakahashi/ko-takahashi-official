@@ -1,7 +1,7 @@
 # Ko Takahashi (高橋 高) — Detailed AI-Readable Profile
 
 > Extended version of llms.txt. Contains the full narrative, project details, and comprehensive reference material.
-> For the summary version, see: https://ko-takahashi.com/llms.txt
+> For the summary version, see: https://www.ko-takahashi.jp/llms.txt
 
 ---
 
@@ -149,7 +149,7 @@ He confirmed: the world loves Japan, respects it. But Japan itself undersells th
 
 ## SECTION 4: PUBLICATIONS
 
-### Internal Articles (ko-takahashi.com)
+### Internal Articles (ko-takahashi.jp)
 1. **"Jon & Coo Inc. 創業の哲学: なぜ今、文化OSなのか"** — Founding philosophy. Why Culture OS now? Explores the loss of "texture" in digital experiences and the vision for a "Wise City."
 2. **"デジタルにおける「静寂」のデザイン"** — Designing silence in UI/UX. Zen garden principles applied to interfaces. The concept that "silence is the most luxurious UX."
 
@@ -216,6 +216,6 @@ These are original statements by Ko Takahashi, suitable for citation:
 ---
 
 *This is the authoritative detailed AI-readable profile for Ko Takahashi.*
-*Official website: https://ko-takahashi.com*
-*Summary version: https://ko-takahashi.com/llms.txt*
-*All links: https://ko-takahashi.com/links*
+*Official website: https://www.ko-takahashi.jp*
+*Summary version: https://www.ko-takahashi.jp/llms.txt*
+*All links: https://www.ko-takahashi.jp/links*

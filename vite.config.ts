@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
       plugins: [
         react(),
         Sitemap({
-          hostname: 'https://ko-takahashi.com',
+          hostname: 'https://www.ko-takahashi.jp',
           dynamicRoutes: ['/story', '/schedule', '/articles', '/about', '/links'],
           changefreq: 'weekly',
           priority: 0.8,

@@ -8,7 +8,7 @@ import {
   Twitter, Code2, FileText, PenTool, Layers, Building2,
   Newspaper, ScrollText, Image, BookOpen, Terminal
 } from 'lucide-react';
-import { socialLinks, companyLinks } from '../config';
+import { socialLinks, companyLinks, SITE_URL } from '../config';
 import type { SocialLink } from '../types';
 
 interface LinksViewProps {
@@ -59,10 +59,10 @@ const linksPageSchema = {
   "@type": "CollectionPage",
   "name": "高橋高 (Ko Takahashi) — Official Links",
   "description": "All official links and profiles for Ko Takahashi (高橋高). CEO & Founder of Jon & Coo Inc. Entrepreneur, philosopher, and self-taught engineer based in Shinjuku, Tokyo.",
-  "url": "https://ko-takahashi.com/links",
+  "url": `${SITE_URL}/links`,
   "mainEntity": {
     "@type": "Person",
-    "@id": "https://ko-takahashi.com/#person",
+    "@id": `${SITE_URL}/#person`,
     "name": "高橋 高",
     "alternateName": ["Ko Takahashi", "Takahashi Ko"],
     "sameAs": [
@@ -110,7 +110,7 @@ const LinksView: React.FC<LinksViewProps> = ({ onBack }) => {
       <Helmet>
         <title>高橋高 (Ko Takahashi) — Official Links | 全公式リンク</title>
         <meta name="description" content="高橋高（Ko Takahashi）の全公式リンク。LinkedIn、Zenn、Qiita、Medium、Dev.to、Note、Instagram、X、Jon & Coo、Matsuri Platform、The J-Times。" />
-        <link rel="canonical" href="https://ko-takahashi.com/links" />
+        <link rel="canonical" href={`${SITE_URL}/links`} />
         <script type="application/ld+json">{JSON.stringify(linksPageSchema)}</script>
       </Helmet>
 

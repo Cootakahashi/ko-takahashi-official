@@ -1,3 +1,4 @@
+import { SITE_URL } from '../config';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, Variants } from 'framer-motion';
@@ -32,20 +33,20 @@ const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({ post, meta, onBac
     "description": post.description,
     "author": {
       "@type": "Person",
-      "@id": "https://ko-takahashi.com/#person",
+      "@id": `${SITE_URL}/#person`,
       "name": "高橋 高",
-      "url": "https://ko-takahashi.com"
+      "url": SITE_URL
     },
     "publisher": {
       "@type": "Organization",
-      "@id": "https://ko-takahashi.com/#organization",
+      "@id": `${SITE_URL}/#organization`,
       "name": "Jon & Coo Inc."
     },
     "datePublished": dateISO,
     "dateModified": dateISO,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://ko-takahashi.com/articles`
+      "@id": `${SITE_URL}/articles`
     },
     "inLanguage": lang,
     "keywords": meta?.tags?.join(', ') || ''

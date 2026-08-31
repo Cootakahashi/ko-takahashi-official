@@ -26,4 +26,4 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-Sitemap: https://ko-takahashi.com/sitemap.xml
+Sitemap: https://www.ko-takahashi.jp/sitemap.xml

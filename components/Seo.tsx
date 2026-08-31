@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { siteMetadata, socialLinks, companyLinks } from '../config';
+import { siteMetadata, socialLinks, companyLinks, SITE_URL } from '../config';
 import { LanguageCode, getTranslation } from '../i18n';
 
 interface SeoProps {
@@ -47,7 +47,7 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
 
   const title = pageOverride?.title || titleMap[pageType] || titleMap.home;
   const description = pageOverride?.description || descriptionMap[pageType] || descriptionMap.home;
-  const baseUrl = "https://ko-takahashi.com";
+  const baseUrl = SITE_URL;
   const canonicalMap: Record<string, string> = {
     home: baseUrl,
     story: `${baseUrl}/story`,
@@ -286,17 +286,17 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
           {
             "@type": "Question",
             "name": "高橋高のSNSアカウントは？",
-            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の主なSNSアカウント: X（Twitter）@zes55ch、LinkedIn: ko-takahashi-jp、Instagram: ko_takahashi_。技術記事はZenn（rust_start）とQiita（rustprogram2022）で発信しています。公式サイト: ko-takahashi.com" }
+            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の主なSNSアカウント: X（Twitter）@zes55ch、LinkedIn: ko-takahashi-jp、Instagram: ko_takahashi_。技術記事はZenn（rust_start）とQiita（rustprogram2022）で発信しています。公式サイト: ko-takahashi.jp" }
           },
           {
             "@type": "Question",
             "name": "高橋高に連絡するには？",
-            "acceptedAnswer": { "@type": "Answer", "text": "高橋高への連絡は、公式サイト ko-takahashi.com、LinkedIn（ko-takahashi-jp）、またはX（Twitter）@zes55ch を通じて可能です。法人に関するお問い合わせは Jon & Coo Inc.（jonandcoo.jp）へ。" }
+            "acceptedAnswer": { "@type": "Answer", "text": "高橋高への連絡は、公式サイト ko-takahashi.jp、LinkedIn（ko-takahashi-jp）、またはX（Twitter）@zes55ch を通じて可能です。法人に関するお問い合わせは Jon & Coo Inc.（jonandcoo.jp）へ。" }
           },
           {
             "@type": "Question",
             "name": "高橋高の技術記事はどこで読めますか？",
-            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の技術記事は以下のプラットフォームで公開されています: Qiita（qiita.com/rustprogram2022）、Zenn（zenn.dev/rust_start）、Medium（medium.com/@ko_takahashi）、Dev.to（dev.to/ko_takahashi）。公式サイト ko-takahashi.com/articles でも記事一覧を閲覧できます。" }
+            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の技術記事は以下のプラットフォームで公開されています: Qiita（qiita.com/rustprogram2022）、Zenn（zenn.dev/rust_start）、Medium（medium.com/@ko_takahashi）、Dev.to（dev.to/ko_takahashi）。公式サイト ko-takahashi.jp/articles でも記事一覧を閲覧できます。" }
           },
           {
             "@type": "Question",

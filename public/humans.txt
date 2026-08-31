@@ -2,7 +2,7 @@
 Creator: Ko Takahashi (高橋 高)
 Role: CEO & Founder, Jon & Coo Inc.
 Location: Shinjuku, Tokyo, Japan
-Contact: https://ko-takahashi.com/links
+Contact: https://www.ko-takahashi.jp/links
 Twitter: @zes55ch
 LinkedIn: ko-takahashi-jp
 
@@ -15,7 +15,7 @@ Type system: TypeScript (strict mode)
 Schema: Schema.org JSON-LD (@graph pattern)
 AI optimization: llms.txt, llms-full.txt, FAQPage (20 questions)
 Hosting: Vercel
-Domain: ko-takahashi.com
+Domain: ko-takahashi.jp
 
 /* THANKS */
 React — facebook.github.io/react
