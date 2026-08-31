@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { siteMetadata, socialLinks, companyLinks, SITE_URL } from '../config';
+import { langsFor, urlFor } from '../lib/siteMeta.mjs';
 import { LanguageCode, getTranslation } from '../i18n';
 
 interface SeoProps {
@@ -57,6 +58,24 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
     links: `${baseUrl}/links`,
   };
   const url = canonicalMap[pageType] || baseUrl;
+
+  // このページで実在する言語（lib/siteMeta.mjs の実測表）。
+  // canonicalMap のキーは route から先頭の / を落としたものなので、戻して引く。
+  const routePath: string = pageType === 'home' ? '/' : `/${pageType}`;
+  const availableLangs: string[] = langsFor(routePath);
+  const altUrl = (l: string): string => urlFor(routePath, l);
+
+  // 🔴 Helmet は Fragment を子に取れない（中身が黙って捨てられる）。
+  //    条件分岐はここで済ませ、Helmet には要素の配列だけを渡す。
+  const hreflangLinks =
+    availableLangs.length > 1
+      ? [
+          ...availableLangs.map((l) => (
+            <link key={l} rel="alternate" hrefLang={l} href={altUrl(l)} />
+          )),
+          <link key="x-default" rel="alternate" hrefLang="x-default" href={altUrl('ja')} />,
+        ]
+      : [];
   const image = pageOverride?.image || `${baseUrl}/ko/og-image.jpg`;
 
   // 拡張キーワードリスト（LLMO最適化）
@@ -317,11 +336,12 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
       <meta name="keywords" content={keywords.join(", ")} />
       <link rel="canonical" href={url} />
 
-      {/* hreflang: 多言語対応 — clean URL with lang param */}
-      {(['ja', 'en', 'zh', 'ko', 'th'] as const).map((lang) => (
-        <link key={lang} rel="alternate" hrefLang={lang} href={`${url}?lang=${lang}`} />
-      ))}
-      <link rel="alternate" hrefLang="x-default" href={url} />
+      {/* hreflang: 実際に中身が違う言語だけを申告する（lib/siteMeta.mjs の実測表）。
+          🔴 ja にクエリを付けないのは、canonical と同じ形にするため。
+             自己参照が canonical と一致しないと、Google は集合ごと無効にする。
+          1言語しか無いページでは hreflang を出さない（自分1件だけの申告は
+          情報量がゼロで、誤解のもとになる）。 */}
+      {hreflangLinks}
 
       {/* 追加メタタグ（LLMO最適化） */}
       <meta name="author" content="高橋高 (Ko Takahashi)" />

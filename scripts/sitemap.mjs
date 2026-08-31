@@ -5,43 +5,54 @@
  *
  * 1. `vite-plugin-sitemap` の i18n は `suffix`(/about/en) か `prefix`(/en/about)
  *    しか出せない。このサイトは言語を `?lang=xx` のクエリで持つ（lib/router.ts）ため、
- *    プラグインに任せると **存在しないURL** を検索エンジンに渡すことになる。
- *    （SPA のフォールバックがどんなパスにも 200 を返すので、404 では気づけない）
+ *    プラグインに任せると **存在しないURL** を検索エンジンに渡すことになる
+ *    （SPA のフォールバックがどんなパスにも 200 を返すので、404 では気づけない）。
  *
  * 2. `vercel.json` に buildCommand が無く、Vercel は package.json の `build` を実行する。
  *    prerender の中に置くと **本番ビルドでは一度も走らない**。だから `build` に組み込む。
  *
- * ルート一覧はここが正典。prerender.mjs もここから読む（2箇所で持たない）。
+ * ルート一覧はここが正典。prerender.mjs と components/Seo.tsx もここから読む。
  */
 import { writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+// 🔴 ルート・言語・実在言語の表は lib/siteMeta.mjs が正典。ここでは持たない。
+//    components/Seo.tsx も同じものを読むので、申告と描画が必ず一致する。
+import {
+  SITE_URL,
+  routes,
+  languages,
+  DEFAULT_LANG,
+  langsFor,
+  urlFor,
+  pagePairs,
+} from '../lib/siteMeta.mjs';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-/** lib/router.ts と揃える。 */
-export const routes = ['/', '/story', '/schedule', '/articles', '/about', '/links'];
-
-/** types.ts の LanguageCode と揃える。 */
-export const languages = ['ja', 'en', 'zh', 'ko', 'th'];
-
-export const DEFAULT_LANG = 'ja';
-export const SITE_URL = 'https://www.ko-takahashi.jp';
-
-const urlFor = (route, lang) => {
-  const path = route === '/' ? '' : route;
-  return lang === DEFAULT_LANG ? `${SITE_URL}${path}` : `${SITE_URL}${path}?lang=${lang}`;
-};
+// prerender.mjs が従来どおり import できるよう、そのまま再輸出する。
+export { SITE_URL, routes, languages, DEFAULT_LANG, langsFor, urlFor, pagePairs };
 
 export function buildSitemap() {
   const today = new Date().toISOString().slice(0, 10);
   const entries = [];
 
   for (const route of routes) {
-    for (const lang of languages) {
-      const alts = languages
-        .map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${urlFor(route, l)}" />`)
-        .join('\n');
+    const avail = langsFor(route);
+    for (const lang of avail) {
+      // 代替言語は「実在する言語」だけ。1言語しか無いルートでは hreflang を出さない
+      // （自分1件だけの hreflang は情報量ゼロで、誤解のもとになる）。
+      const alts =
+        avail.length > 1
+          ? avail
+              .map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${urlFor(route, l)}" />`)
+              .concat([
+                `    <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor(route, DEFAULT_LANG)}" />`,
+              ])
+              .join('\n')
+          : null;
+
       entries.push(
         [
           '  <url>',
@@ -50,9 +61,10 @@ export function buildSitemap() {
           `    <changefreq>${route === '/' ? 'weekly' : 'monthly'}</changefreq>`,
           `    <priority>${route === '/' ? '1.0' : '0.8'}</priority>`,
           alts,
-          `    <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor(route, DEFAULT_LANG)}" />`,
           '  </url>',
-        ].join('\n')
+        ]
+          .filter(Boolean)
+          .join('\n')
       );
     }
   }
@@ -70,9 +82,12 @@ export function buildSitemap() {
 export function writeSitemap(distDir = join(__dirname, '..', 'dist')) {
   const xml = buildSitemap();
   writeFileSync(join(distDir, 'sitemap.xml'), xml);
-  const count = routes.length * languages.length;
-  console.log(`✓ sitemap.xml — ${routes.length} routes × ${languages.length} langs = ${count} URLs`);
-  return count;
+  const pairs = pagePairs();
+  const multi = routes.filter((r) => langsFor(r).length > 1).length;
+  console.log(
+    `✓ sitemap.xml — ${pairs.length} URL（${routes.length} ルート / うち多言語 ${multi} 本）`
+  );
+  return pairs.length;
 }
 
 // 直接実行されたときだけ書き出す（import 時は何もしない）
