@@ -149,8 +149,35 @@ export function checkVercelRewrites() {
   }
 }
 
+
+/**
+ * llms.txt / llms-full.txt に、全記事の URL が載っているかを見る。
+ *
+ * これらは AI に向けた案内板で、prose を含む手書きのファイルなので
+ * 自動生成はしない。だが記事を足したときに載せ忘れると、
+ * **AI から見て「その記事は存在しない」**ことになる。
+ * ビルドは止めず、警告だけ出す（内容は人が書くべきものなので）。
+ */
+function warnStaleLlmsTxt() {
+  const slugs = articleSlugs();
+  if (!slugs.length) return;
+  for (const name of ['llms.txt', 'llms-full.txt']) {
+    const f = join(__dirname, '..', 'public', name);
+    if (!existsSync(f)) continue;
+    const body = readFileSync(f, 'utf-8');
+    const missing = slugs.filter((s) => !body.includes(`/articles/${s}`));
+    if (missing.length) {
+      console.warn(
+        `⚠ public/${name} に未掲載の記事が ${missing.length} 本あります（AI からは存在しないことになります）:`
+      );
+      missing.forEach((s) => console.warn(`    /articles/${s}`));
+    }
+  }
+}
+
 export function writeSitemap(distDir = join(__dirname, '..', 'dist')) {
   checkVercelRewrites();
+  warnStaleLlmsTxt();
   const xml = buildSitemap();
   writeFileSync(join(distDir, 'sitemap.xml'), xml);
   const pairs = allPagePairs();
