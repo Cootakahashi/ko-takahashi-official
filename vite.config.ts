@@ -1,7 +1,6 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
-import Sitemap from 'vite-plugin-sitemap';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
@@ -12,13 +11,10 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [
         react(),
-        Sitemap({
-          hostname: 'https://www.ko-takahashi.jp',
-          dynamicRoutes: ['/story', '/schedule', '/articles', '/about', '/links'],
-          changefreq: 'weekly',
-          priority: 0.8,
-          lastmod: new Date().toISOString(),
-        }),
+        // sitemap は scripts/sitemap.mjs が唯一の生成器。
+        // vite-plugin-sitemap の i18n は suffix/prefix 形式しか出せず、
+        // このサイトの `?lang=xx` を表現できないため外した
+        // （存在しないURLを検索エンジンに渡してしまう）。
       ],
       // NOTE: API keys must NOT be exposed to client bundles.
       // Use server-side API routes or edge functions instead.

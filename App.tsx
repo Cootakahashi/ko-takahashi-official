@@ -293,7 +293,7 @@ const App: React.FC = () => {
     return (
       <Suspense fallback={viewFallback}>
         <PageTransition>
-          <Seo currentLang={lang} pageType="home" pageOverride={{ title: "About 高橋高 (Ko Takahashi) | 起業家・哲学者・エンジニア", description: "高橋高の経歴、スキル、設計哲学、プロジェクト一覧。11歳で学校を辞め、23歳で破産後、7年間の独学でプログラミングと4ヶ国語を習得した起業家エンジニアの全て。" }} />
+          <Seo currentLang={lang} pageType="about" pageOverride={{ title: "About 高橋高 (Ko Takahashi) | 起業家・哲学者・エンジニア", description: "高橋高の経歴、スキル、設計哲学、プロジェクト一覧。11歳で学校を辞め、23歳で破産後、7年間の独学でプログラミングと4ヶ国語を習得した起業家エンジニアの全て。" }} />
           <AboutView onBack={() => handleNavigate("home")} lang={lang} />
         </PageTransition>
       </Suspense>
@@ -353,7 +353,10 @@ const App: React.FC = () => {
     return (
       <Suspense fallback={viewFallback}>
         <PageTransition>
-          <Seo currentLang={lang} pageOverride={{ title: postContent?.title }} />
+          {/* 記事は個別URLを持たない（state のみ）ため、canonical は /articles。
+              以前は pageType 未指定でトップを指しており、全記事が
+              「自分はトップページ」と申告していた。 */}
+          <Seo currentLang={lang} pageType="articles" pageOverride={{ title: postContent?.title }} />
           <ArticleDetailView
             post={postContent}
             meta={metaRaw}
