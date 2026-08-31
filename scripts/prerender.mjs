@@ -15,8 +15,44 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, '..', 'dist');
 
-import { writeSitemap } from './sitemap.mjs';
-import { pagePairs, DEFAULT_LANG } from '../lib/siteMeta.mjs';
+import { writeSitemap, allPagePairs } from './sitemap.mjs';
+import { DEFAULT_LANG } from '../lib/siteMeta.mjs';
+
+
+/**
+ * 重複した JSON-LD を畳む。
+ *
+ * helmet は meta を名前で重複排除するが <script> は追記するだけなので、
+ * prerender 中の描画切り替え（トップ用 → ページ用）で古いブロックが残る。
+ * 同じ @type の並びを持つものは最後の 1 つだけ残す（＝確定した状態）。
+ * 種類が違うブロックはそのまま残す。
+ */
+function dedupeJsonLd(html) {
+  const re = /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g;
+  const found = [];
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    let sig;
+    try {
+      const data = JSON.parse(m[1]);
+      const items = Array.isArray(data['@graph']) ? data['@graph'] : [data];
+      sig = items.map((i) => i && i['@type']).join(',');
+    } catch {
+      sig = `unparsed:${m[0].length}`;
+    }
+    found.push({ full: m[0], sig });
+  }
+  const lastIndex = new Map();
+  found.forEach((f, i) => lastIndex.set(f.sig, i));
+  let removed = 0;
+  found.forEach((f, i) => {
+    if (lastIndex.get(f.sig) !== i) {
+      html = html.replace(f.full, '');
+      removed += 1;
+    }
+  });
+  return { html, removed };
+}
 
 async function prerender() {
   // Check if puppeteer is available
@@ -80,7 +116,7 @@ async function prerender() {
 
   const browser = await puppeteer.default.launch(launchOptions);
 
-  for (const { route, lang } of pagePairs()) {
+  for (const { route, lang } of allPagePairs()) {
     const isDefault = lang === DEFAULT_LANG;
     const label = isDefault ? route : `${route}?lang=${lang}`;
     console.log(`  Rendering ${label}...`);
@@ -93,7 +129,9 @@ async function prerender() {
     // Wait for React to render
     await page.waitForSelector('#root > *', { timeout: 10000 });
 
-    const html = await page.content();
+    const raw = await page.content();
+    const { html, removed: dupes } = dedupeJsonLd(raw);
+    if (dupes) console.log(`    （重複した JSON-LD を ${dupes} 個 畳んだ）`);
 
     // 既定言語はそのままのパスへ。それ以外は _lang/<言語>/ の下へ置き、
     // vercel.json のクエリ条件付き rewrite で `?lang=xx` に配る。

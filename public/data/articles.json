@@ -23,7 +23,12 @@
       "platform": "Qiita",
       "url": "https://qiita.com/rustprogram2022/items/52d645ef0785a51749f1",
       "date": "2026.01.01",
-      "tags": ["Python", "Django", "AI", "RAG"]
+      "tags": [
+        "Python",
+        "Django",
+        "AI",
+        "RAG"
+      ]
     },
     {
       "id": "qiita_002",
@@ -38,7 +43,11 @@
       "platform": "Qiita",
       "url": "https://qiita.com/rustprogram2022/items/b3bfbe8522df351f1ce1",
       "date": "2026.01.02",
-      "tags": ["Blockchain", "Web3", "Economy"]
+      "tags": [
+        "Blockchain",
+        "Web3",
+        "Economy"
+      ]
     },
     {
       "id": "zenn_001",
@@ -53,7 +62,11 @@
       "platform": "Zenn",
       "url": "https://zenn.dev/rust_start/articles/74d89153bf6c4c",
       "date": "2026.01.03",
-      "tags": ["AI", "Mental Health", "Life"]
+      "tags": [
+        "AI",
+        "Mental Health",
+        "Life"
+      ]
     },
     {
       "id": "zenn_002",
@@ -68,10 +81,16 @@
       "platform": "Zenn",
       "url": "https://zenn.dev/rust_start/articles/cbde2deec0e520",
       "date": "2026.01.04",
-      "tags": ["Solana", "Rust", "Security", "Blockchain"]
+      "tags": [
+        "Solana",
+        "Rust",
+        "Security",
+        "Blockchain"
+      ]
     },
     {
       "id": "internal_001",
+      "slug": "the-philosophy-of-jon-coo-inc-why-culture-os-now",
       "title": {
         "ja": "Jon & Coo Inc. 創業の哲学: なぜ今、文化OSなのか",
         "en": "The Philosophy of Jon & Coo Inc.: Why Culture OS Now?"
@@ -83,10 +102,15 @@
       "platform": "Internal",
       "url": "",
       "date": "2025.11.15",
-      "tags": ["Philosophy", "Culture OS", "Startup"]
+      "tags": [
+        "Philosophy",
+        "Culture OS",
+        "Startup"
+      ]
     },
     {
       "id": "internal_002",
+      "slug": "designing-silence-in-the-digital-age",
       "title": {
         "ja": "デジタルにおける「静寂」のデザイン",
         "en": "Designing 'Silence' in the Digital Age"
@@ -98,10 +122,15 @@
       "platform": "Internal",
       "url": "",
       "date": "2025.12.01",
-      "tags": ["Design", "UX", "Zen-Tech"]
+      "tags": [
+        "Design",
+        "UX",
+        "Zen-Tech"
+      ]
     },
     {
       "id": "internal_003",
+      "slug": "7-years-of-self-teaching-the-road-to-rebirth",
       "title": {
         "ja": "独学プログラマーの7年間: Rustから始まった再生の道",
         "en": "7 Years of Self-Teaching: The Road to Rebirth Starting with Rust"
@@ -113,10 +142,16 @@
       "platform": "Internal",
       "url": "",
       "date": "2026.01.10",
-      "tags": ["Rust", "Python", "Self-taught", "Career"]
+      "tags": [
+        "Rust",
+        "Python",
+        "Self-taught",
+        "Career"
+      ]
     },
     {
       "id": "internal_004",
+      "slug": "matsuri-platform-experience-japan-as-an-explorer",
       "title": {
         "ja": "Matsuri Platform: 観光客ではなく探求者として日本を体験する",
         "en": "Matsuri Platform: Experience Japan as an Explorer, Not a Tourist"
@@ -128,10 +163,16 @@
       "platform": "Internal",
       "url": "",
       "date": "2026.02.01",
-      "tags": ["Matsuri", "Tourism", "Culture", "Product"]
+      "tags": [
+        "Matsuri",
+        "Tourism",
+        "Culture",
+        "Product"
+      ]
     },
     {
       "id": "internal_005",
+      "slug": "why-i-left-school-at-11-and-what-i-learned",
       "title": {
         "ja": "11歳で学校を辞めた理由と、そこから学んだこと",
         "en": "Why I Left School at 11 and What I Learned"
@@ -143,10 +184,15 @@
       "platform": "Internal",
       "url": "",
       "date": "2026.02.15",
-      "tags": ["Education", "Philosophy", "Life"]
+      "tags": [
+        "Education",
+        "Philosophy",
+        "Life"
+      ]
     },
     {
       "id": "internal_006",
+      "slug": "living-as-an-ai-architect-from-being-used-by-ai-to",
       "title": {
         "ja": "AIアーキテクトという生き方: AIに使われるのではなく、AIを使う側へ",
         "en": "Living as an AI Architect: From Being Used by AI to Using AI"
@@ -158,7 +204,12 @@
       "platform": "Internal",
       "url": "",
       "date": "2026.03.01",
-      "tags": ["AI", "Career", "Philosophy", "Future"]
+      "tags": [
+        "AI",
+        "Career",
+        "Philosophy",
+        "Future"
+      ]
     }
   ]
 }

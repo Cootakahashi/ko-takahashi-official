@@ -10,6 +10,8 @@ interface SeoProps {
   pageOverride?: {
     title?: string;
     description?: string;
+    /** 記事詳細のように canonicalMap で表せないページ用。 */
+    canonical?: string;
     image?: string;
   };
 }
@@ -65,9 +67,11 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
   const baseRoutePath: string = pageType === 'home' ? '/' : `/${pageType}`;
   const pageLangs: string[] = langsFor(baseRoutePath);
   const effectiveLang: string = pageLangs.includes(currentLang) ? currentLang : 'ja';
-  const url = canonicalMap[pageType]
-    ? urlFor(baseRoutePath, effectiveLang)
-    : baseUrl;
+  const url = pageOverride?.canonical
+    ? pageOverride.canonical
+    : canonicalMap[pageType]
+      ? urlFor(baseRoutePath, effectiveLang)
+      : baseUrl;
 
   // hreflang 用。canonical と同じ表・同じURL生成器を使うので、必ず整合する。
   const availableLangs: string[] = pageLangs;

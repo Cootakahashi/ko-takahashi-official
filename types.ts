@@ -34,6 +34,8 @@ export interface PageMeta {
 // Articles
 export interface ArticleMeta {
   id: string;
+  /** 内部記事の URL に使う識別子（外部記事には無い）。public/data が正典。 */
+  slug?: string;
   title: MultiLangText;
   summary: MultiLangText;
   platform: 'Qiita' | 'Zenn' | 'Note' | 'Medium' | 'Dev.to' | 'Internal';
@@ -66,6 +68,8 @@ export interface BlogPostContent {
 
 export interface BlogPost {
   id: string;
+  /** URL に使う固定の識別子（public/data/blog_posts.json が正典）。 */
+  slug?: string;
   ja: BlogPostContent;
   en: BlogPostContent;
 }

@@ -47,7 +47,16 @@ const VIEW_MAP: Record<string, string> = {
  */
 export function resolveRoute(): RouteState {
   const path = window.location.pathname;
-  const view = ROUTE_MAP[path] || 'home';
+
+  // /articles/<slug> は記事詳細。一覧（/articles）とは別のページとして扱う。
+  // slug は public/data/blog_posts.json に固定で持たせてある（題名から
+  // 毎回生成すると、題を直した瞬間に URL が変わってリンクが切れるため）。
+  const article = path.match(/^\/articles\/([A-Za-z0-9][A-Za-z0-9-]*)\/?$/);
+  if (article) {
+    return { view: 'article_detail', articleId: article[1] };
+  }
+
+  const view = ROUTE_MAP[path.replace(/\/$/, '') || '/'] || 'home';
   return { view };
 }
 
@@ -55,7 +64,12 @@ export function resolveRoute(): RouteState {
  * Navigate to a new view, updating the URL and sending GA4 page_view
  */
 export function navigateTo(view: string, articleId?: string): void {
-  const path = VIEW_MAP[view] || '/';
+  // 記事詳細だけは URL に slug を含める。これが無いと、開いている記事を
+  // アドレスで指せない＝検索にも共有にも乗らない。
+  const path =
+    view === 'article_detail' && articleId
+      ? `/articles/${articleId}`
+      : VIEW_MAP[view] || '/';
   const currentLang = new URLSearchParams(window.location.search).get('lang');
   const search = currentLang ? `?lang=${currentLang}` : '';
 

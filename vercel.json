@@ -135,6 +135,72 @@
       "destination": "/_lang/en/about/index.html"
     },
     {
+      "source": "/articles/the-philosophy-of-jon-coo-inc-why-culture-os-now",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/_lang/en/articles/the-philosophy-of-jon-coo-inc-why-culture-os-now/index.html"
+    },
+    {
+      "source": "/articles/designing-silence-in-the-digital-age",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/_lang/en/articles/designing-silence-in-the-digital-age/index.html"
+    },
+    {
+      "source": "/articles/7-years-of-self-teaching-the-road-to-rebirth",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/_lang/en/articles/7-years-of-self-teaching-the-road-to-rebirth/index.html"
+    },
+    {
+      "source": "/articles/matsuri-platform-experience-japan-as-an-explorer",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/_lang/en/articles/matsuri-platform-experience-japan-as-an-explorer/index.html"
+    },
+    {
+      "source": "/articles/why-i-left-school-at-11-and-what-i-learned",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/_lang/en/articles/why-i-left-school-at-11-and-what-i-learned/index.html"
+    },
+    {
+      "source": "/articles/living-as-an-ai-architect-from-being-used-by-ai-to",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/_lang/en/articles/living-as-an-ai-architect-from-being-used-by-ai-to/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

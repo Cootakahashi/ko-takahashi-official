@@ -27,6 +27,8 @@ import {
   langsFor,
   urlFor,
   pagePairs,
+  ARTICLE_LANGS,
+  articleRoute,
 } from '../lib/siteMeta.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -34,12 +36,42 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // prerender.mjs が従来どおり import できるよう、そのまま再輸出する。
 export { SITE_URL, routes, languages, DEFAULT_LANG, langsFor, urlFor, pagePairs };
 
+/**
+ * 記事詳細の slug 一覧。public/data/blog_posts.json が正典。
+ * ここで読むのは node 側だけ（アプリ側は自分が開いている記事しか要らない）。
+ */
+export function articleSlugs() {
+  const f = join(__dirname, '..', 'public', 'data', 'blog_posts.json');
+  if (!existsSync(f)) return [];
+  const data = JSON.parse(readFileSync(f, 'utf-8'));
+  return (data.posts || []).map((p) => p.slug).filter(Boolean);
+}
+
+/**
+ * 生成・申告すべき (ルート, 言語) の全組。固定ページ + 記事詳細。
+ *
+ * 記事は 6 本 × 日英 = 12 ページ。以前は URL を持たず（React の state だけ）、
+ * **検索にも AI にも 1 文字も存在していなかった**。
+ */
+export function allPagePairs() {
+  const articles = articleSlugs().flatMap((slug) =>
+    ARTICLE_LANGS.map((lang) => ({ route: articleRoute(slug), lang }))
+  );
+  return [...pagePairs(), ...articles];
+}
+
+/** 記事詳細を含めた、そのルートの実在言語。 */
+function langsForAny(route) {
+  return route.startsWith('/articles/') ? ARTICLE_LANGS : langsFor(route);
+}
+
 export function buildSitemap() {
   const today = new Date().toISOString().slice(0, 10);
   const entries = [];
 
-  for (const route of routes) {
-    const avail = langsFor(route);
+  const allRoutes = [...routes, ...articleSlugs().map(articleRoute)];
+  for (const route of allRoutes) {
+    const avail = langsForAny(route);
     for (const lang of avail) {
       // 代替言語は「実在する言語」だけ。1言語しか無いルートでは hreflang を出さない
       // （自分1件だけの hreflang は情報量ゼロで、誤解のもとになる）。
@@ -100,7 +132,7 @@ export function checkVercelRewrites() {
       .map((r) => `${r.source}|${r.has.find((h) => h.key === 'lang').value}`)
   );
   const needed = new Set(
-    pagePairs()
+    allPagePairs()
       .filter(({ lang }) => lang !== DEFAULT_LANG)
       .map(({ route, lang }) => `${route}|${lang}`)
   );
@@ -121,10 +153,10 @@ export function writeSitemap(distDir = join(__dirname, '..', 'dist')) {
   checkVercelRewrites();
   const xml = buildSitemap();
   writeFileSync(join(distDir, 'sitemap.xml'), xml);
-  const pairs = pagePairs();
-  const multi = routes.filter((r) => langsFor(r).length > 1).length;
+  const pairs = allPagePairs();
+  const arts = articleSlugs().length;
   console.log(
-    `✓ sitemap.xml — ${pairs.length} URL（${routes.length} ルート / うち多言語 ${multi} 本）`
+    `✓ sitemap.xml — ${pairs.length} URL（固定 ${routes.length} ページ + 記事 ${arts} 本 × ${ARTICLE_LANGS.length} 言語）`
   );
   return pairs.length;
 }
