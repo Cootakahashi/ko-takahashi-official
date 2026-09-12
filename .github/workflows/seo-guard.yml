@@ -1,0 +1,21 @@
+# 初歩的な SEO ミス（canonical / hreflang / og:url の他ドメイン流出、sitemap の
+# 実在しない URL / 言語、noindex 矛盾、空）を PR の時点で落とす。
+# 本番ビルド（Vercel の `npm run build`）でも同じ scripts/seo-guard.mjs が最後に走るので、
+# 違反があればデプロイ自体が失敗する。ここは「マージ前に赤くする」ため。
+name: SEO Guard
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  seo-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run seo:guard:selftest
+      - run: npm run build
