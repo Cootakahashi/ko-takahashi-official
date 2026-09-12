@@ -165,15 +165,20 @@ const ArticleCard: React.FC<{ article: LocalizedArticle; variants: Variants; onC
     >
       {/* Crawlable link wrapper — keyboard accessible, proper semantics */}
       {isInternal ? (
-        <button
-          type="button"
-          onClick={onClick}
+        // 🔴 以前は <button> だったため、一覧ページの HTML に記事へのリンクが
+        //    1 本も無く、記事は「どこからも辿れない孤立ページ」だった
+        //    （sitemap には載るが、リンクを辿るクローラーや AI には見つからない）。
+        //    外部記事は元から <a href> なので、内部記事も同じ形に揃える。
+        //    href があることで、新しいタブで開く・中クリックも効くようになる。
+        <a
+          href={article.slug ? `/articles/${article.slug}` : undefined}
+          onClick={(e) => { e.preventDefault(); onClick(); }}
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } }}
           className="flex flex-col justify-between p-8 h-full text-left w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian"
           aria-label={`Read internal article: ${article.title}`}
         >
           <CardContent article={article} isInternal={isInternal} />
-        </button>
+        </a>
       ) : (
         <a
           href={article.url}

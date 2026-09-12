@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
-import { socialLinks, companyLinks } from "./config";
+import { socialLinks, companyLinks, SITE_URL } from "./config";
 import { LanguageCode, getTranslation } from "./i18n";
 import Seo from "./components/Seo";
 import ArchiveGrid from "./components/ArchiveGrid";
@@ -194,8 +194,10 @@ const App: React.FC = () => {
   const [articlesData, setArticlesData] = useState<ArticlesData | null>(null);
   const [blogPostsData, setBlogPostsData] = useState<BlogPostsData | null>(null);
 
+  // URL が /articles/<slug> なら、その記事を開いた状態で始める。
+  // （直接アクセス・再読み込み・検索からの流入で記事が開くために必要）
   const [selectedArticleId, setSelectedArticleId] = useState<string | null>(
-    null
+    initialRoute.articleId ?? null
   );
 
   const t = getTranslation(lang);
@@ -235,9 +237,16 @@ const App: React.FC = () => {
       } else if (view === "articles" && !articlesData) {
         const data = await getJsonData("articles.json");
         setArticlesData(data);
-      } else if (view === "article_detail" && !blogPostsData) {
-        const data = await getJsonData("blog_posts.json");
-        setBlogPostsData(data);
+      } else if (view === "article_detail") {
+        // 🔴 表示側は blogPostsData と articlesData の両方を要求する。
+        //    /articles/<slug> を直接開いた場合は一覧を経由していないので、
+        //    articles.json も自分で読む必要がある（読まないとトップが出る）。
+        if (!blogPostsData) {
+          setBlogPostsData(await getJsonData("blog_posts.json"));
+        }
+        if (!articlesData) {
+          setArticlesData(await getJsonData("articles.json"));
+        }
       }
     };
     loadData();
@@ -249,8 +258,11 @@ const App: React.FC = () => {
     url: string
   ) => {
     if (isInternal) {
+      // URL には slug を出す（id の internal_001 では検索の手がかりにならない）
+      const slug =
+        blogPostsData?.posts.find((p) => p.id === articleId)?.slug ?? articleId;
       setSelectedArticleId(articleId);
-      handleNavigate("article_detail", articleId);
+      handleNavigate("article_detail", slug);
     } else {
       window.open(url, "_blank", "noopener,noreferrer");
     }
@@ -293,7 +305,7 @@ const App: React.FC = () => {
     return (
       <Suspense fallback={viewFallback}>
         <PageTransition>
-          <Seo currentLang={lang} pageType="home" pageOverride={{ title: "About 高橋高 (Ko Takahashi) | 起業家・哲学者・エンジニア", description: "高橋高の経歴、スキル、設計哲学、プロジェクト一覧。11歳で学校を辞め、23歳で破産後、7年間の独学でプログラミングと4ヶ国語を習得した起業家エンジニアの全て。" }} />
+          <Seo currentLang={lang} pageType="about" pageOverride={{ title: "About 高橋高 (Ko Takahashi) | 起業家・哲学者・エンジニア", description: "高橋高の経歴、スキル、設計哲学、プロジェクト一覧。11歳で学校を辞め、23歳で破産後、7年間の独学でプログラミングと4ヶ国語を習得した起業家エンジニアの全て。" }} />
           <AboutView onBack={() => handleNavigate("home")} lang={lang} />
         </PageTransition>
       </Suspense>
@@ -341,19 +353,37 @@ const App: React.FC = () => {
       </Suspense>
     );
   if (view === "article_detail" && blogPostsData && articlesData) {
+    // selectedArticleId は id（クリック由来）と slug（URL 由来）の
+    // どちらにもなりうるので、両方で引く。
     const postContainer = blogPostsData.posts.find(
-      (p) => p.id === selectedArticleId
+      (p) => p.id === selectedArticleId || p.slug === selectedArticleId
     );
     const postContent = postContainer
       ? postContainer[lang] || postContainer["ja"]
       : null;
     const metaRaw = articlesData.articles.find(
-      (a) => a.id === selectedArticleId
+      (a) => a.id === postContainer?.id
     );
+    const articleSlug = postContainer?.slug ?? postContainer?.id;
     return (
       <Suspense fallback={viewFallback}>
         <PageTransition>
-          <Seo currentLang={lang} pageOverride={{ title: postContent?.title }} />
+          {/* 記事は個別URLを持たない（state のみ）ため、canonical は /articles。
+              以前は pageType 未指定でトップを指しており、全記事が
+              「自分はトップページ」と申告していた。 */}
+          <Seo
+            currentLang={lang}
+            pageType="articles"
+            pageOverride={{
+              title: postContent?.title,
+              description: postContent?.description,
+              // 記事は自分自身の URL を canonical にする。
+              // 以前は一覧（/articles）を指しており、個別に登録されなかった。
+              canonical: articleSlug
+                ? `${SITE_URL}/articles/${articleSlug}${lang === "ja" ? "" : `?lang=${lang}`}`
+                : undefined,
+            }}
+          />
           <ArticleDetailView
             post={postContent}
             meta={metaRaw}

@@ -1,5 +1,22 @@
 import { SiteMetadata, SocialLink } from './types';
 
+/**
+ * このサイトの正規URL。**ここだけを変えれば全体が追随する。**
+ *
+ * 🔴 2026-08-31 まで、canonical と og:url が `https://ko-takahashi.com` を
+ * 指していた。実測するとあれは **別人（高橋功さん）の Apache 製サイト**で、
+ * こちらの所有ではない。外部ドメインを canonical に指定するのは
+ * 「このページの正体はそちらです」と検索エンジンに申告することであり、
+ * 自分を検索結果から降ろす行為だった。
+ *
+ * 本番は Vercel 配信の https://www.ko-takahashi.jp（apex は www へ 307）。
+ */
+export const SITE_URL = 'https://www.ko-takahashi.jp';
+
+/** 末尾スラッシュを付けずに絶対URLを組み立てる。 */
+export const absoluteUrl = (path = '/'): string =>
+  `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`.replace(/\/$/, '') || SITE_URL;
+
 // Default metadata (JA SEO optimized)
 export const siteMetadata: SiteMetadata = {
   title: "高橋 高 (Ko Takahashi) | Official Portfolio",
@@ -19,7 +36,7 @@ export const siteMetadata: SiteMetadata = {
     "Design"
   ],
   location: "Shinjuku, Tokyo, Japan",
-  ogImage: "https://ko-takahashi.com/ko/og-image.jpg",
+  ogImage: `${SITE_URL}/ko/og-image.jpg`,
   twitterId: "@zes55ch"
 };
 

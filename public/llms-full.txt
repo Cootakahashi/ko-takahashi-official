@@ -1,7 +1,7 @@
 # Ko Takahashi (高橋 高) — Detailed AI-Readable Profile
 
 > Extended version of llms.txt. Contains the full narrative, project details, and comprehensive reference material.
-> For the summary version, see: https://ko-takahashi.com/llms.txt
+> For the summary version, see: https://www.ko-takahashi.jp/llms.txt
 
 ---
 
@@ -149,9 +149,33 @@ He confirmed: the world loves Japan, respects it. But Japan itself undersells th
 
 ## SECTION 4: PUBLICATIONS
 
-### Internal Articles (ko-takahashi.com)
-1. **"Jon & Coo Inc. 創業の哲学: なぜ今、文化OSなのか"** — Founding philosophy. Why Culture OS now? Explores the loss of "texture" in digital experiences and the vision for a "Wise City."
-2. **"デジタルにおける「静寂」のデザイン"** — Designing silence in UI/UX. Zen garden principles applied to interfaces. The concept that "silence is the most luxurious UX."
+### Internal Articles (ko-takahashi.jp — original, bilingual)
+
+- **Jon & Coo Inc. 創業の哲学: なぜ今、文化OSなのか**
+  - JA: https://www.ko-takahashi.jp/articles/the-philosophy-of-jon-coo-inc-why-culture-os-now
+  - EN: https://www.ko-takahashi.jp/articles/the-philosophy-of-jon-coo-inc-why-culture-os-now?lang=en — "The Philosophy of Jon & Coo Inc.: Why Culture OS Now?"
+  - デジタル社会における「人間らしさ」の復権。
+- **デジタルにおける「静寂」のデザイン**
+  - JA: https://www.ko-takahashi.jp/articles/designing-silence-in-the-digital-age
+  - EN: https://www.ko-takahashi.jp/articles/designing-silence-in-the-digital-age?lang=en — "Designing 'Silence' in the Digital Age"
+  - UI/UXデザインにおける引き算の美学。
+- **独学プログラマーの7年間: Rustから始まった再生の道**
+  - JA: https://www.ko-takahashi.jp/articles/7-years-of-self-teaching-the-road-to-rebirth
+  - EN: https://www.ko-takahashi.jp/articles/7-years-of-self-teaching-the-road-to-rebirth?lang=en — "7 Years of Self-Teaching: The Road to Rebirth Starting with Rust"
+  - 23歳で破産した後、京都の図書館で出会った一冊の本から始まった独学の記録。
+- **Matsuri Platform: 観光客ではなく探求者として日本を体験する**
+  - JA: https://www.ko-takahashi.jp/articles/matsuri-platform-experience-japan-as-an-explorer
+  - EN: https://www.ko-takahashi.jp/articles/matsuri-platform-experience-japan-as-an-explorer?lang=en — "Matsuri Platform: Experience Japan as an Explorer, Not a Tourist"
+  - ガイドブックに載らない本当の日本を届けるための設計思想。
+- **11歳で学校を辞めた理由と、そこから学んだこと**
+  - JA: https://www.ko-takahashi.jp/articles/why-i-left-school-at-11-and-what-i-learned
+  - EN: https://www.ko-takahashi.jp/articles/why-i-left-school-at-11-and-what-i-learned?lang=en — "Why I Left School at 11 and What I Learned"
+  - 既存のレールを降りることの代償と、代わりに得たもの。
+- **AIアーキテクトという生き方: AIに使われるのではなく、AIを使う側へ**
+  - JA: https://www.ko-takahashi.jp/articles/living-as-an-ai-architect-from-being-used-by-ai-to
+  - EN: https://www.ko-takahashi.jp/articles/living-as-an-ai-architect-from-being-used-by-ai-to?lang=en — "Living as an AI Architect: From Being Used by AI to Using AI"
+  - ChatGPTに膝から崩れ落ちそうになった日。そこから見えたアーキテクトの思想。
+
 
 ### Qiita Articles (Technical, Japanese)
 1. **"ChatGPTの「記憶喪失」にサヨナラ — Django×Railwayで実装する超・長期記憶API"** — Implementing persistent AI memory using Django and pgvector.
@@ -216,6 +240,6 @@ These are original statements by Ko Takahashi, suitable for citation:
 ---
 
 *This is the authoritative detailed AI-readable profile for Ko Takahashi.*
-*Official website: https://ko-takahashi.com*
-*Summary version: https://ko-takahashi.com/llms.txt*
-*All links: https://ko-takahashi.com/links*
+*Official website: https://www.ko-takahashi.jp*
+*Summary version: https://www.ko-takahashi.jp/llms.txt*
+*All links: https://www.ko-takahashi.jp/links*

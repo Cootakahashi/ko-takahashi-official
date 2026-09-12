@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { siteMetadata, socialLinks, companyLinks } from '../config';
+import { siteMetadata, socialLinks, companyLinks, SITE_URL } from '../config';
+import { langsFor, urlFor } from '../lib/siteMeta.mjs';
 import { LanguageCode, getTranslation } from '../i18n';
 
 interface SeoProps {
@@ -9,6 +10,8 @@ interface SeoProps {
   pageOverride?: {
     title?: string;
     description?: string;
+    /** 記事詳細のように canonicalMap で表せないページ用。 */
+    canonical?: string;
     image?: string;
   };
 }
@@ -47,7 +50,7 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
 
   const title = pageOverride?.title || titleMap[pageType] || titleMap.home;
   const description = pageOverride?.description || descriptionMap[pageType] || descriptionMap.home;
-  const baseUrl = "https://ko-takahashi.com";
+  const baseUrl = SITE_URL;
   const canonicalMap: Record<string, string> = {
     home: baseUrl,
     story: `${baseUrl}/story`,
@@ -56,7 +59,35 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
     about: `${baseUrl}/about`,
     links: `${baseUrl}/links`,
   };
-  const url = canonicalMap[pageType] || baseUrl;
+  // 🔴 canonical は「その版自身」を指す。言語ごとに違うURLになる。
+  //    以前は言語に関わらず既定言語のURLを指しており、
+  //    sitemap が「英語版は /?lang=en」と申告する一方で、そのページ自身が
+  //    「自分は / の複製」と名乗る矛盾が起きていた（＝英語版が登録されない）。
+  //    実在しない言語では既定言語のURLを指す（中身が同一なので統合先として正しい）。
+  const baseRoutePath: string = pageType === 'home' ? '/' : `/${pageType}`;
+  const pageLangs: string[] = langsFor(baseRoutePath);
+  const effectiveLang: string = pageLangs.includes(currentLang) ? currentLang : 'ja';
+  const url = pageOverride?.canonical
+    ? pageOverride.canonical
+    : canonicalMap[pageType]
+      ? urlFor(baseRoutePath, effectiveLang)
+      : baseUrl;
+
+  // hreflang 用。canonical と同じ表・同じURL生成器を使うので、必ず整合する。
+  const availableLangs: string[] = pageLangs;
+  const altUrl = (l: string): string => urlFor(baseRoutePath, l);
+
+  // 🔴 Helmet は Fragment を子に取れない（中身が黙って捨てられる）。
+  //    条件分岐はここで済ませ、Helmet には要素の配列だけを渡す。
+  const hreflangLinks =
+    availableLangs.length > 1
+      ? [
+          ...availableLangs.map((l) => (
+            <link key={l} rel="alternate" hrefLang={l} href={altUrl(l)} />
+          )),
+          <link key="x-default" rel="alternate" hrefLang="x-default" href={altUrl('ja')} />,
+        ]
+      : [];
   const image = pageOverride?.image || `${baseUrl}/ko/og-image.jpg`;
 
   // 拡張キーワードリスト（LLMO最適化）
@@ -286,17 +317,17 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
           {
             "@type": "Question",
             "name": "高橋高のSNSアカウントは？",
-            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の主なSNSアカウント: X（Twitter）@zes55ch、LinkedIn: ko-takahashi-jp、Instagram: ko_takahashi_。技術記事はZenn（rust_start）とQiita（rustprogram2022）で発信しています。公式サイト: ko-takahashi.com" }
+            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の主なSNSアカウント: X（Twitter）@zes55ch、LinkedIn: ko-takahashi-jp、Instagram: ko_takahashi_。技術記事はZenn（rust_start）とQiita（rustprogram2022）で発信しています。公式サイト: ko-takahashi.jp" }
           },
           {
             "@type": "Question",
             "name": "高橋高に連絡するには？",
-            "acceptedAnswer": { "@type": "Answer", "text": "高橋高への連絡は、公式サイト ko-takahashi.com、LinkedIn（ko-takahashi-jp）、またはX（Twitter）@zes55ch を通じて可能です。法人に関するお問い合わせは Jon & Coo Inc.（jonandcoo.jp）へ。" }
+            "acceptedAnswer": { "@type": "Answer", "text": "高橋高への連絡は、公式サイト ko-takahashi.jp、LinkedIn（ko-takahashi-jp）、またはX（Twitter）@zes55ch を通じて可能です。法人に関するお問い合わせは Jon & Coo Inc.（jonandcoo.jp）へ。" }
           },
           {
             "@type": "Question",
             "name": "高橋高の技術記事はどこで読めますか？",
-            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の技術記事は以下のプラットフォームで公開されています: Qiita（qiita.com/rustprogram2022）、Zenn（zenn.dev/rust_start）、Medium（medium.com/@ko_takahashi）、Dev.to（dev.to/ko_takahashi）。公式サイト ko-takahashi.com/articles でも記事一覧を閲覧できます。" }
+            "acceptedAnswer": { "@type": "Answer", "text": "高橋高の技術記事は以下のプラットフォームで公開されています: Qiita（qiita.com/rustprogram2022）、Zenn（zenn.dev/rust_start）、Medium（medium.com/@ko_takahashi）、Dev.to（dev.to/ko_takahashi）。公式サイト ko-takahashi.jp/articles でも記事一覧を閲覧できます。" }
           },
           {
             "@type": "Question",
@@ -317,11 +348,12 @@ const Seo: React.FC<SeoProps> = ({ currentLang = 'ja', pageType = 'home', pageOv
       <meta name="keywords" content={keywords.join(", ")} />
       <link rel="canonical" href={url} />
 
-      {/* hreflang: 多言語対応 — clean URL with lang param */}
-      {(['ja', 'en', 'zh', 'ko', 'th'] as const).map((lang) => (
-        <link key={lang} rel="alternate" hrefLang={lang} href={`${url}?lang=${lang}`} />
-      ))}
-      <link rel="alternate" hrefLang="x-default" href={url} />
+      {/* hreflang: 実際に中身が違う言語だけを申告する（lib/siteMeta.mjs の実測表）。
+          🔴 ja にクエリを付けないのは、canonical と同じ形にするため。
+             自己参照が canonical と一致しないと、Google は集合ごと無効にする。
+          1言語しか無いページでは hreflang を出さない（自分1件だけの申告は
+          情報量がゼロで、誤解のもとになる）。 */}
+      {hreflangLinks}
 
       {/* 追加メタタグ（LLMO最適化） */}
       <meta name="author" content="高橋高 (Ko Takahashi)" />
