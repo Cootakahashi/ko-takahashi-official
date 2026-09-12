@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/sitemap.mjs",
+    "build": "vite build && node scripts/sitemap.mjs && node scripts/seo-guard.mjs",
     "build:prerender": "vite build && node scripts/prerender.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "seo:guard": "node scripts/seo-guard.mjs",
+    "seo:guard:selftest": "node scripts/seo-guard.mjs --self-test"
   },
   "dependencies": {
     "@react-three/drei": "9.99.0",

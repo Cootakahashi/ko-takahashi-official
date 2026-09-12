@@ -11,7 +11,11 @@ import { SiteMetadata, SocialLink } from './types';
  *
  * 本番は Vercel 配信の https://www.ko-takahashi.jp（apex は www へ 307）。
  */
-export const SITE_URL = 'https://www.ko-takahashi.jp';
+import { SITE_URL } from './lib/siteMeta.mjs';
+export { SITE_URL };
+// 🔴 2026-09-12: ここにも同じ文字列を持っていた（lib/siteMeta.mjs と二重定義）。
+//    片方だけ直ると canonical と sitemap が別のドメインを名乗る。定義は siteMeta.mjs の 1 行だけ。
+//    scripts/seo-guard.mjs が「ko-takahashi.* の絶対 URL 直書き」をソースから落とす。
 
 /** 末尾スラッシュを付けずに絶対URLを組み立てる。 */
 export const absoluteUrl = (path = '/'): string =>
