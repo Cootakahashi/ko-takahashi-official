@@ -44,9 +44,25 @@ export interface ArticleMeta {
   tags: string[];
 }
 
+/** 連載のリンク集。本文は各面が正本なので、ここには題名とリンクだけを置く（未公開の回は url なし）。 */
+export interface SeriesEpisode {
+  platform: 'Zenn' | 'Note' | 'Medium';
+  title: MultiLangText;
+  status: 'published' | 'upcoming';
+  url?: string;
+}
+
+export interface SeriesData {
+  title: MultiLangText;
+  lead: MultiLangText;
+  portrait: { src: string; alt: MultiLangText };
+  episodes: SeriesEpisode[];
+}
+
 export interface ArticlesData {
   meta: Record<LanguageCode, PageMeta>;
   articles: ArticleMeta[];
+  series?: SeriesData;
 }
 
 // Blog Posts (internal full articles)

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Leaf, FileText, Code2, PenTool, BookOpen } from 'lucide-react';
-import type { LanguageCode, ArticleMeta } from '../types';
+import type { LanguageCode, ArticleMeta, SeriesData } from '../types';
 
 interface LocalizedArticle extends Omit<ArticleMeta, 'title' | 'summary'> {
   title: string;
@@ -12,7 +12,7 @@ interface LocalizedArticle extends Omit<ArticleMeta, 'title' | 'summary'> {
 
 interface ArticlesViewProps {
   onBack?: () => void;
-  initialData?: { articles: ArticleMeta[]; meta?: Record<string, unknown> };
+  initialData?: { articles: ArticleMeta[]; meta?: Record<string, unknown>; series?: SeriesData };
   onArticleClick?: (articleId: string, isInternal: boolean, url: string) => void;
 }
 
@@ -116,6 +116,8 @@ const ArticlesView: React.FC<ArticlesViewProps> = ({ onBack, initialData, onArti
            <h1 className="font-serif text-5xl md:text-6xl text-white">Articles & Insights</h1>
         </header>
 
+        {initialData?.series && <SeriesSection series={initialData.series} lang={lang} />}
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -141,6 +143,57 @@ const ArticlesView: React.FC<ArticlesViewProps> = ({ onBack, initialData, onArti
 
       </div>
     </motion.div>
+  );
+};
+
+// 連載はリンク集だけ。本文を複製すると各面（note/Zenn/Medium）の canonical と衝突する。
+const SeriesSection: React.FC<{ series: SeriesData; lang: LanguageCode }> = ({ series, lang }) => {
+  const t = (text: { ja: string; en: string }) => text[lang as 'ja' | 'en'] || text.ja;
+
+  return (
+    <section className="mb-24 border border-gold/20 bg-white/[0.02] rounded-sm p-8 md:p-10" aria-labelledby="series-heading">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-10">
+        <img
+          src={series.portrait.src}
+          alt={t(series.portrait.alt)}
+          width={480}
+          height={640}
+          loading="lazy"
+          className="w-32 md:w-44 aspect-[3/4] object-cover rounded-sm border border-gold/30 self-center md:self-start"
+        />
+        <div className="flex-1">
+          <h2 id="series-heading" className="font-serif text-3xl md:text-4xl text-white mb-3">{t(series.title)}</h2>
+          <p className="text-sm text-white/60 leading-relaxed font-light mb-8">{t(series.lead)}</p>
+          <ol className="space-y-3">
+            {series.episodes.map((ep, i) => (
+              <li key={`${ep.platform}-${i}`} className="flex items-baseline gap-3">
+                <span className="font-mono text-xs text-gold/60 w-6 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                <span className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest text-gold/80 border border-gold/20 px-2 py-0.5 rounded-full shrink-0">
+                  <PlatformIcon platform={ep.platform} />
+                  {ep.platform}
+                </span>
+                {ep.status === 'published' && ep.url ? (
+                  <a
+                    href={ep.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-serif text-white hover:text-gold transition-colors duration-300 inline-flex items-center gap-2"
+                  >
+                    {t(ep.title)}
+                    <ExternalLink className="w-3 h-3 text-white/30" aria-hidden="true" />
+                  </a>
+                ) : (
+                  <span className="font-serif text-white/50">
+                    {t(ep.title)}
+                    <span className="ml-2 text-xs font-mono text-gold/50">{lang === 'ja' ? '近日' : 'Coming soon'}</span>
+                  </span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
   );
 };
 

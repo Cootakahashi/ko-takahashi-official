@@ -211,5 +211,114 @@
         "Future"
       ]
     }
-  ]
+  ],
+  "series": {
+    "title": {
+      "ja": "連載 — 空いた手で",
+      "en": "Series — With Free Hands"
+    },
+    "lead": {
+      "ja": "AI に会社を運転させ、空いた手で文化の結び目になるまでの記録。",
+      "en": "A record of letting AI run the company, and using the freed-up hands to tie people and culture together."
+    },
+    "portrait": {
+      "src": "/ko/series-portrait.webp",
+      "alt": {
+        "ja": "朱の鳥居の参道に立つ高橋高",
+        "en": "Ko Takahashi standing on a path of vermilion torii gates"
+      }
+    },
+    "episodes": [
+      {
+        "platform": "Zenn",
+        "title": {
+          "ja": "私が引いている3本の線",
+          "en": "The three lines I draw"
+        },
+        "status": "published",
+        "url": "https://zenn.dev/rust_start/articles/0adc828c3bc37a?utm_source=kotakahashi&utm_medium=personal-brand&utm_campaign=2026-autumn-series"
+      },
+      {
+        "platform": "Medium",
+        "title": {
+          "ja": "Three lines I draw before letting AI agents run a company",
+          "en": "Three lines I draw before letting AI agents run a company"
+        },
+        "status": "upcoming"
+      },
+      {
+        "platform": "Note",
+        "title": {
+          "ja": "This isn't Japan's problem.",
+          "en": "This isn't Japan's problem."
+        },
+        "status": "published",
+        "url": "https://note.com/ko_matsuri/n/n30d2842b4c06?utm_source=kotakahashi&utm_medium=personal-brand&utm_campaign=2026-autumn-series"
+      },
+      {
+        "platform": "Medium",
+        "title": {
+          "ja": "This isn't Japan's problem. It's yours, too.",
+          "en": "This isn't Japan's problem. It's yours, too."
+        },
+        "status": "upcoming"
+      },
+      {
+        "platform": "Note",
+        "title": {
+          "ja": "名刺の枚数ではなかった — 一度の登壇が連れてきたもの",
+          "en": "名刺の枚数ではなかった — 一度の登壇が連れてきたもの"
+        },
+        "status": "upcoming"
+      },
+      {
+        "platform": "Zenn",
+        "title": {
+          "ja": "書いても索引に入らない — 「取得されない」を実測した",
+          "en": "書いても索引に入らない — 「取得されない」を実測した"
+        },
+        "status": "upcoming"
+      },
+      {
+        "platform": "Zenn",
+        "title": {
+          "ja": "「誰かが作業中です」で、会社の定期ジョブが全部止まっていた",
+          "en": "「誰かが作業中です」で、会社の定期ジョブが全部止まっていた"
+        },
+        "status": "upcoming"
+      },
+      {
+        "platform": "Zenn",
+        "title": {
+          "ja": "1 回 10 分の上限を、自分宛の合図でつないだ",
+          "en": "1 回 10 分の上限を、自分宛の合図でつないだ"
+        },
+        "status": "upcoming"
+      },
+      {
+        "platform": "Note",
+        "title": {
+          "ja": "一日で、茶と舞に座った — 続ける人の側から見た文化",
+          "en": "一日で、茶と舞に座った — 続ける人の側から見た文化"
+        },
+        "status": "upcoming"
+      },
+      {
+        "platform": "Note",
+        "title": {
+          "ja": "地元の神輿を担いだ日",
+          "en": "地元の神輿を担いだ日"
+        },
+        "status": "upcoming"
+      },
+      {
+        "platform": "Medium",
+        "title": {
+          "ja": "Carrying a mikoshi",
+          "en": "Carrying a mikoshi"
+        },
+        "status": "upcoming"
+      }
+    ]
+  }
 }
