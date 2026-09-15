@@ -1,6 +1,11 @@
 # Changelog
 
-All notable changes to ko-takahashi.com are documented here.
+All notable changes to www.ko-takahashi.jp are documented here.
+
+## [Unreleased] - 2026-09-16
+
+### Fixed
+- ドキュメントのドメイン表記を実装に合わせて `www.ko-takahashi.jp` に統一。`ko-takahashi.com`（別人＝シンガーソングライター 高橋功の個人サイト）を指す記述を一掃した。コードの canonical/og:url/sitemap/llms.txt は既に `c83cd83`（2026-09-12）で `.jp` へ修正済みで、本変更は docs の追随。`config.ts` の履歴コメントのみ経緯として `.com` を残置。
 
 ## [2.0.0] - 2026-03-29
 
@@ -12,7 +17,7 @@ All notable changes to ko-takahashi.com are documented here.
 - Font loading: preconnect + preload + display=swap strategy
 
 ### SEO / GEO
-- Domain unified to `ko-takahashi.com` (fixed sitemap, OG, canonical, llms.txt)
+- Domain unified to `www.ko-takahashi.jp` (fixed sitemap, OG, canonical, llms.txt)
 - JSON-LD migrated to unified `@graph` pattern (6 schemas: Person, Organization, WebSite, ProfilePage, BreadcrumbList, FAQPage)
 - FAQ Schema expanded from 4 to 20 questions
 - Page-specific canonical URLs for all routes

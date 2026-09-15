@@ -1,7 +1,7 @@
 # 00 - プロジェクト概要
 
 ## サイト名
-**Ko Takahashi Official Portfolio** — ko-takahashi.com
+**Ko Takahashi Official Portfolio** — www.ko-takahashi.jp
 
 ## 目的
 高橋高（Ko Takahashi）の個人ブランドサイト。起業家・哲学者・エンジニアとしてのアイデンティティを世界に発信し、プロジェクト（Matsuri Platform、Culture OS、Jon & Coo Inc.、The J-Times）への導線を最大化する。
@@ -55,11 +55,11 @@
 
 | 用途 | ドメイン | 状態 |
 |------|---------|------|
-| 本番サイト（canonical） | ko-takahashi.com | Seo.tsx, index.htmlで使用 |
+| 本番サイト（canonical） | www.ko-takahashi.jp | Seo.tsx, index.htmlで使用 |
 | サイトマップ生成 | jon-and-coo.com | vite.config.tsで使用（**不整合**） |
 | Vercelデプロイ | ko-takahashi-official.vercel.app | llms.txtで使用 |
 
-> **課題**: ドメインが3つに分散しており、`ko-takahashi.com` への統一が必要。
+> **課題**: ドメインが3つに分散しており、`www.ko-takahashi.jp` への統一が必要。
 
 ## デプロイ
 - ホスティング: Vercel（推定）

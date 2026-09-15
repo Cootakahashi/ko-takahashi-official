@@ -28,7 +28,7 @@ interface SeoProps {
 - `<title>` — ページ別のキーワード豊富なタイトル
 - `<meta name="description">` — ページ別の説明文
 - `<meta name="keywords">` — 40+キーワード（日本語 + 英語）
-- `<link rel="canonical">` — `https://ko-takahashi.com`（全ページ共通 — **要修正**）
+- `<link rel="canonical">` — `https://www.ko-takahashi.jp`（全ページ共通 — **要修正**）
 - `<meta name="robots">` — `index, follow, max-image-preview:large, max-snippet:-1`
 - Geo メタ: `geo.region (JP-13)`, `geo.placename`, `geo.position`, `ICBM`
 - OG タグ: type, title, description, image, url, locale, profile

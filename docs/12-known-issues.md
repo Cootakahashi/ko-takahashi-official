@@ -12,7 +12,7 @@
 - **症状**: サイトマップ内のURLが `jon-and-coo.com` を指す
 - **原因**: `vite.config.ts` の `hostname` が未修正
 - **影響**: Google が正しいURLをインデックスできない
-- **対策**: hostname を `ko-takahashi.com` に変更
+- **対策**: hostname を `www.ko-takahashi.jp` に変更
 
 ### ISSUE-003: URLが変わらない
 - **症状**: どのページに遷移してもURL は `/` のまま
@@ -30,7 +30,7 @@
 - **対策**: 実画像URLに変更
 
 ### ISSUE-005: canonical URL が全ページ共通
-- **症状**: `/story`, `/articles` 等が全て `https://ko-takahashi.com` を指す
+- **症状**: `/story`, `/articles` 等が全て `https://www.ko-takahashi.jp` を指す
 - **影響**: 個別ページのインデックスが困難
 - **対策**: Seo.tsx でページ別canonical生成
 
@@ -40,7 +40,7 @@
 - **対策**: WebP変換 + 圧縮
 
 ### ISSUE-007: SearchAction が架空のURL
-- **症状**: WebSite スキーマに `ko-takahashi.com/search?q=...` があるが検索機能なし
+- **症状**: WebSite スキーマに `www.ko-takahashi.jp/search?q=...` があるが検索機能なし
 - **影響**: 構造化データバリデーションエラー
 - **対策**: 検索機能実装 or スキーマから削除
 

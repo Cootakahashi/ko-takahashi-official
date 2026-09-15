@@ -22,7 +22,7 @@ Phase 4: 分析・計測（GA4・Search Console連携）
 Sitemap({ hostname: 'https://jon-and-coo.com', ... })
 
 // After
-Sitemap({ hostname: 'https://ko-takahashi.com', ... })
+Sitemap({ hostname: 'https://www.ko-takahashi.jp', ... })
 ```
 
 ### 0-2. OG画像のプレースホルダー修正
@@ -33,14 +33,14 @@ Sitemap({ hostname: 'https://ko-takahashi.com', ... })
 ogImage: "https://picsum.photos/1200/630"
 
 // After
-ogImage: "https://ko-takahashi.com/ko/takahashi-ko.jpg"
+ogImage: "https://www.ko-takahashi.jp/ko/takahashi-ko.jpg"
 ```
 
 ### 0-3. llms.txt のドメイン修正
 
 **ファイル**: `public/llms.txt`
 - LinkedInのURL: `YOUR_CUSTOM_ID_HERE` → `ko-takahashi-jp`
-- Vercel URL → `https://ko-takahashi.com`
+- Vercel URL → `https://www.ko-takahashi.jp`
 
 ---
 
@@ -86,7 +86,7 @@ ogImage: "https://ko-takahashi.com/ko/takahashi-ko.jpg"
 User-agent: *
 Allow: /
 
-Sitemap: https://ko-takahashi.com/sitemap.xml
+Sitemap: https://www.ko-takahashi.jp/sitemap.xml
 ```
 
 ---
@@ -95,27 +95,27 @@ Sitemap: https://ko-takahashi.com/sitemap.xml
 
 ### 2-1. ページ別 canonical URL
 
-**現状**: 全ページが `https://ko-takahashi.com` を指す。
+**現状**: 全ページが `https://www.ko-takahashi.jp` を指す。
 
 **修正** (Seo.tsx):
 ```typescript
 const canonicalMap: Record<string, string> = {
-  home: "https://ko-takahashi.com",
-  story: "https://ko-takahashi.com/story",
-  articles: "https://ko-takahashi.com/articles",
-  schedule: "https://ko-takahashi.com/schedule",
+  home: "https://www.ko-takahashi.jp",
+  story: "https://www.ko-takahashi.jp/story",
+  articles: "https://www.ko-takahashi.jp/articles",
+  schedule: "https://www.ko-takahashi.jp/schedule",
 };
 ```
 
 ### 2-2. hreflang タグ追加
 
 ```html
-<link rel="alternate" hreflang="ja" href="https://ko-takahashi.com/?lang=ja" />
-<link rel="alternate" hreflang="en" href="https://ko-takahashi.com/?lang=en" />
-<link rel="alternate" hreflang="zh" href="https://ko-takahashi.com/?lang=zh" />
-<link rel="alternate" hreflang="ko" href="https://ko-takahashi.com/?lang=ko" />
-<link rel="alternate" hreflang="th" href="https://ko-takahashi.com/?lang=th" />
-<link rel="alternate" hreflang="x-default" href="https://ko-takahashi.com" />
+<link rel="alternate" hreflang="ja" href="https://www.ko-takahashi.jp/?lang=ja" />
+<link rel="alternate" hreflang="en" href="https://www.ko-takahashi.jp/?lang=en" />
+<link rel="alternate" hreflang="zh" href="https://www.ko-takahashi.jp/?lang=zh" />
+<link rel="alternate" hreflang="ko" href="https://www.ko-takahashi.jp/?lang=ko" />
+<link rel="alternate" hreflang="th" href="https://www.ko-takahashi.jp/?lang=th" />
+<link rel="alternate" hreflang="x-default" href="https://www.ko-takahashi.jp" />
 ```
 
 ### 2-3. 画像最適化

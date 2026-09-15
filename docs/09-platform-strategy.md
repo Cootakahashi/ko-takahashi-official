@@ -3,7 +3,7 @@
 ## 連携全体図
 
 ```
-                    ko-takahashi.com
+                    www.ko-takahashi.jp
                    (ハブ・権威の中心)
                     ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
         ┌───┬───┬───┼───┼───┬───┬───┬───┐
@@ -15,7 +15,7 @@
             └── 技術記事ネットワーク
 ```
 
-**原則**: 全プラットフォームは `ko-takahashi.com` へのバックリンク源。各プラットフォームの強みを活かしつつ、サイトをハブとして機能させる。
+**原則**: 全プラットフォームは `www.ko-takahashi.jp` へのバックリンク源。各プラットフォームの強みを活かしつつ、サイトをハブとして機能させる。
 
 ---
 
@@ -36,10 +36,10 @@
   ```
   ## 筆者
   高橋高 (Ko Takahashi) — Jon & Coo Inc. CEO
-  ポートフォリオ: https://ko-takahashi.com
+  ポートフォリオ: https://www.ko-takahashi.jp
   ```
 - Qiita記事のサマリーを `articles.json` に追加してサイトからリンク
-- プロフィールに `ko-takahashi.com` 設定
+- プロフィールに `www.ko-takahashi.jp` 設定
 
 **記事案**:
 | タイトル | タグ |
@@ -103,8 +103,8 @@
 | "7 Years of Silence: How I Taught Myself to Code" | 独学体験 |
 
 **サイト連携**:
-- 記事内に `ko-takahashi.com` へのバックリンク
-- Bio: "Read more at ko-takahashi.com"
+- 記事内に `www.ko-takahashi.jp` へのバックリンク
+- Bio: "Read more at www.ko-takahashi.jp"
 
 ---
 
@@ -165,7 +165,7 @@
 
 **Profile最適化**:
 - Headline: "CEO at Jon & Coo Inc. | Culture OS Architect | Bridging Japanese Culture & Technology"
-- Summary: 詳細なプロフィール + `ko-takahashi.com` リンク
+- Summary: 詳細なプロフィール + `www.ko-takahashi.jp` リンク
 - Featured: サイト、主要記事をピン留め
 
 ---
@@ -177,7 +177,7 @@
 **戦略**:
 - **投稿頻度**: 毎日1-3回
 - **形式**: スレッド、画像付き投稿
-- **プロフィールリンク**: ko-takahashi.com
+- **プロフィールリンク**: www.ko-takahashi.jp
 
 **投稿パターン**:
 - 技術スレッド → 最後にサイトリンク
@@ -195,7 +195,7 @@
 **Instagram 戦略**:
 - フィード: プロジェクトビジュアル、デザイン哲学
 - ストーリー: サイト更新・記事公開の告知
-- Bio: `ko-takahashi.com`
+- Bio: `www.ko-takahashi.jp`
 - リンク in Bio: Linktree等で全リンク集約
 
 **Pinterest 戦略**:
@@ -215,28 +215,28 @@
 名前: 高橋高 (Ko Takahashi)
 肩書: CEO & Founder, Jon & Coo Inc.
 一行説明: Bridging Japanese culture and technology through Culture OS.
-リンク: https://ko-takahashi.com
+リンク: https://www.ko-takahashi.jp
 プロフィール画像: takahashi-ko.jpg（統一画像）
 ```
 
 ### コンテンツ配信フロー
 
 ```
-1. ko-takahashi.com に元記事（canonical）を公開
+1. www.ko-takahashi.jp に元記事（canonical）を公開
 2. 日本語版 → Qiita/Zenn/Note にクロスポスト
 3. 英語版 → Medium/Dev.to にクロスポスト
 4. 各記事のサマリー → articles.json に追加
 5. SNS（X, LinkedIn, Instagram）で告知
-6. 各記事から ko-takahashi.com へバックリンク
+6. 各記事から www.ko-takahashi.jp へバックリンク
 ```
 
 ### canonical URL ルール
 
 | パターン | canonical | クロスポスト先の対応 |
 |---------|----------|-------------------|
-| サイト発の記事 | ko-takahashi.com | 各プラットフォームでcanonical設定 |
+| サイト発の記事 | www.ko-takahashi.jp | 各プラットフォームでcanonical設定 |
 | プラットフォーム発の記事 | 各プラットフォーム | サイトからリンク（canonical設定なし） |
-| サイト独自コンテンツ | ko-takahashi.com | クロスポストなし |
+| サイト独自コンテンツ | www.ko-takahashi.jp | クロスポストなし |
 
 ---
 
