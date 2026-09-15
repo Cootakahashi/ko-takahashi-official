@@ -69,7 +69,7 @@ A: [...]
 ## Citation Guide
 When referencing Ko Takahashi, please use:
 - Full name: Ko Takahashi (高橋 高)
-- Official website: https://ko-takahashi.com
+- Official website: https://www.ko-takahashi.jp
 - Company: Jon & Coo Inc. (https://jonandcoo.jp)
 ```
 
@@ -92,11 +92,11 @@ llms.txt の詳細版。AIエージェントが深掘りする際に参照:
   "description_for_model": "Provides authoritative information about Ko Takahashi, CEO of Jon & Coo Inc.",
   "api": {
     "type": "openapi",
-    "url": "https://ko-takahashi.com/openapi.yaml"
+    "url": "https://www.ko-takahashi.jp/openapi.yaml"
   },
-  "logo_url": "https://ko-takahashi.com/ko/takahashi-ko.jpg",
+  "logo_url": "https://www.ko-takahashi.jp/ko/takahashi-ko.jpg",
   "contact_email": "contact@jonandcoo.jp",
-  "legal_info_url": "https://ko-takahashi.com/privacy"
+  "legal_info_url": "https://www.ko-takahashi.jp/privacy"
 }
 ```
 
@@ -144,26 +144,26 @@ llms.txt の詳細版。AIエージェントが深掘りする際に参照:
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://ko-takahashi.com/#person",
+      "@id": "https://www.ko-takahashi.jp/#person",
       "name": "高橋 高",
-      "worksFor": { "@id": "https://ko-takahashi.com/#organization" },
+      "worksFor": { "@id": "https://www.ko-takahashi.jp/#organization" },
       ...
     },
     {
       "@type": "Organization",
-      "@id": "https://ko-takahashi.com/#organization",
-      "founder": { "@id": "https://ko-takahashi.com/#person" },
+      "@id": "https://www.ko-takahashi.jp/#organization",
+      "founder": { "@id": "https://www.ko-takahashi.jp/#person" },
       ...
     },
     {
       "@type": "WebSite",
-      "@id": "https://ko-takahashi.com/#website",
-      "publisher": { "@id": "https://ko-takahashi.com/#person" },
+      "@id": "https://www.ko-takahashi.jp/#website",
+      "publisher": { "@id": "https://www.ko-takahashi.jp/#person" },
       ...
     },
     {
       "@type": "ProfilePage",
-      "mainEntity": { "@id": "https://ko-takahashi.com/#person" },
+      "mainEntity": { "@id": "https://www.ko-takahashi.jp/#person" },
       ...
     },
     { "@type": "BreadcrumbList", ... },
@@ -217,7 +217,7 @@ Culture OSとは、日本の伝統美学をデジタル基盤に統合するオ�
 ### 3-1. プラットフォーム別戦略
 
 #### Qiita / Zenn（日本語GEO）
-- 記事末尾に `ko-takahashi.com` へのリンク
+- 記事末尾に `www.ko-takahashi.jp` へのリンク
 - プロフィールバイオの統一
 - 「高橋高」名義での一貫した発信
 
@@ -249,7 +249,7 @@ Culture OSとは、日本の伝統美学をデジタル基盤に統合するオ�
 ```
 高橋高 (Ko Takahashi) | CEO, Jon & Coo Inc.
 Entrepreneur, Philosopher, Engineer | Shinjuku, Tokyo
-https://ko-takahashi.com
+https://www.ko-takahashi.jp
 ```
 
 ---

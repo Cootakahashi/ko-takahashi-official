@@ -20,13 +20,13 @@
 
 ## ドメイン統一方針
 
-全てのドメインを **`ko-takahashi.com`** に統一する。
+全てのドメインを **`www.ko-takahashi.jp`** に統一する。
 
 | 現状 | 統一後 |
 |------|--------|
-| vite.config.ts: `jon-and-coo.com` | `ko-takahashi.com` |
-| llms.txt: `ko-takahashi-official.vercel.app` | `ko-takahashi.com` |
-| config.ts ogImage: `picsum.photos` | `ko-takahashi.com/ko/takahashi-ko.jpg` |
+| vite.config.ts: `jon-and-coo.com` | `www.ko-takahashi.jp` |
+| llms.txt: `ko-takahashi-official.vercel.app` | `www.ko-takahashi.jp` |
+| config.ts ogImage: `picsum.photos` | `www.ko-takahashi.jp/ko/takahashi-ko.jpg` |
 
 ## 最優先実装事項
 

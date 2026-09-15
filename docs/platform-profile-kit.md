@@ -6,7 +6,7 @@
 
 1. **名前**: 「高橋高 (Ko Takahashi)」を必ず含める
 2. **肩書**: 「CEO & Founder, Jon & Coo Inc.」
-3. **リンク**: `https://ko-takahashi.com` を必ず含める
+3. **リンク**: `https://www.ko-takahashi.jp` を必ず含める
 4. **プロフィール画像**: takahashi-ko.jpg を全プラットフォームで統一
 5. **キーワード**: 「Culture OS」「Matsuri Platform」「Shinjuku」「日本文化×テクノロジー」
 
@@ -31,13 +31,13 @@ Now as CEO of Jon & Coo Inc., I'm building Culture OS — a framework integratin
 
 My design philosophy, Zen-Tech, applies Zen garden principles to digital interfaces: "In silence, information stands out."
 
-🔗 Portfolio: https://ko-takahashi.com
+🔗 Portfolio: https://www.ko-takahashi.jp
 🔗 Matsuri Platform: https://matsuri.group
 🔗 The J-Times: https://www.j-times.org
 ```
 
 **Featured**:
-- ko-takahashi.com (Official Portfolio)
+- www.ko-takahashi.jp (Official Portfolio)
 - matsuri.group (Matsuri Platform)
 - j-times.org (The J-Times)
 
@@ -51,7 +51,7 @@ My design philosophy, Zen-Tech, applies Zen garden principles to digital interfa
 ```
 CEO & Founder, Jon & Coo Inc. | Building Culture OS & Matsuri Platform | Rust, Python, TypeScript, Solana | Shinjuku, Tokyo 🇯🇵
 ```
-**Website**: `https://ko-takahashi.com`
+**Website**: `https://www.ko-takahashi.jp`
 **Location**: Shinjuku, Tokyo, Japan
 
 ---
@@ -64,7 +64,7 @@ CEO & Founder, Jon & Coo Inc. | Building Culture OS & Matsuri Platform | Rust, P
 ```
 CEO & Founder, Jon & Coo Inc. | Culture OS Architect | 11歳で学校を辞め、23歳で破産、7年の沈黙から蘇った | Bridging Japanese culture & technology | Shinjuku 🇯🇵
 
-ko-takahashi.com
+www.ko-takahashi.jp
 ```
 
 ---
@@ -76,7 +76,7 @@ ko-takahashi.com
 **Bio**:
 ```
 Jon & Coo Inc. CEO。Culture OS & Matsuri Platform開発者。Rust, Python, TypeScript, Solana。独学エンジニア。
-ポートフォリオ: https://ko-takahashi.com
+ポートフォリオ: https://www.ko-takahashi.jp
 ```
 
 ---
@@ -88,7 +88,7 @@ Jon & Coo Inc. CEO。Culture OS & Matsuri Platform開発者。Rust, Python, Type
 **Bio**:
 ```
 Jon & Coo Inc. CEO / Culture OS Architect。Rust, Python, TypeScript, Solana開発。11歳で学校を辞め、独学でプログラミングを習得。新宿拠点。
-https://ko-takahashi.com
+https://www.ko-takahashi.jp
 ```
 
 ---
@@ -101,7 +101,7 @@ https://ko-takahashi.com
 ```
 CEO & Founder, Jon & Coo Inc. Building Culture OS — bridging Japanese culture and technology. Self-taught engineer: Rust, Python, TypeScript. Dropped out at 11, went bankrupt at 23, rebuilt from zero.
 
-Read more → ko-takahashi.com
+Read more → www.ko-takahashi.jp
 ```
 
 ---
@@ -114,7 +114,7 @@ Read more → ko-takahashi.com
 ```
 CEO & Founder at Jon & Coo Inc. | Culture OS Architect | Self-taught: Rust, Python, TypeScript, Solana | Shinjuku, Tokyo 🇯🇵
 
-Portfolio: ko-takahashi.com
+Portfolio: www.ko-takahashi.jp
 ```
 
 ---
@@ -126,7 +126,7 @@ Portfolio: ko-takahashi.com
 **Bio**:
 ```
 Jon & Coo Inc. CEO / 起業家・哲学者。Culture OS、Matsuri Platformを開発。11歳で学校を辞め、23歳で破産。7年間の沈黙期間に4ヶ国語とプログラミングを独学。テクノロジーと日本文化の融合を追求。新宿拠点。
-ko-takahashi.com
+www.ko-takahashi.jp
 ```
 
 ---
@@ -143,7 +143,7 @@ Bridging 🇯🇵 culture & technology
 Shinjuku, Tokyo
 ↓ Official Portfolio
 ```
-**Website**: `https://ko-takahashi.com/links`
+**Website**: `https://www.ko-takahashi.jp/links`
 
 ---
 
@@ -155,7 +155,7 @@ Shinjuku, Tokyo
 ```
 CEO & Founder, Jon & Coo Inc. | Culture OS & Matsuri Platform | Zen-Tech Design Philosophy | Japanese culture × technology | Shinjuku, Tokyo
 
-ko-takahashi.com
+www.ko-takahashi.jp
 ```
 
 ---
@@ -167,9 +167,9 @@ ko-takahashi.com
 ---
 **筆者**: 高橋高 (Ko Takahashi)
 Jon & Coo Inc. CEO & Founder | Culture OS Architect
-📎 ポートフォリオ: [ko-takahashi.com](https://ko-takahashi.com)
+📎 ポートフォリオ: [www.ko-takahashi.jp](https://www.ko-takahashi.jp)
 📎 Matsuri Platform: [matsuri.group](https://matsuri.group/ja)
-📎 全リンク: [ko-takahashi.com/links](https://ko-takahashi.com/links)
+📎 全リンク: [www.ko-takahashi.jp/links](https://www.ko-takahashi.jp/links)
 ```
 
 ### 英語版
@@ -177,9 +177,9 @@ Jon & Coo Inc. CEO & Founder | Culture OS Architect
 ---
 **Author**: Ko Takahashi (高橋 高)
 CEO & Founder, Jon & Coo Inc. | Culture OS Architect
-📎 Portfolio: [ko-takahashi.com](https://ko-takahashi.com)
+📎 Portfolio: [www.ko-takahashi.jp](https://www.ko-takahashi.jp)
 📎 Matsuri Platform: [matsuri.group](https://matsuri.group)
-📎 All links: [ko-takahashi.com/links](https://ko-takahashi.com/links)
+📎 All links: [www.ko-takahashi.jp/links](https://www.ko-takahashi.jp/links)
 ```
 
 ---

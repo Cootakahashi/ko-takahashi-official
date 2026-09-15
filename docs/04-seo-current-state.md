@@ -8,7 +8,7 @@
 - [x] `<meta name="keywords">` — 12キーワード
 - [x] `<meta name="author">` — 高橋高 (Ko Takahashi)
 - [x] `<meta name="robots">` — index, follow, max-image-preview:large
-- [x] `<link rel="canonical">` — https://ko-takahashi.com
+- [x] `<link rel="canonical">` — https://www.ko-takahashi.jp
 - [x] Google Site Verification — OmFhJpRAjDejGkuVA92KFJ4dRTYFq_sC__Wy_iuLFxM
 
 ### メタタグ（Seo.tsx — 動的）
@@ -29,8 +29,8 @@
 ### Open Graph
 - [x] og:type — `profile`
 - [x] og:title, og:description
-- [x] og:image — `/ko/takahashi-ko.jpg`（Seo.tsx）/ `https://ko-takahashi.com/ko/takahashi-ko.jpg`（index.html）
-- [x] og:url — `https://ko-takahashi.com`
+- [x] og:image — `/ko/takahashi-ko.jpg`（Seo.tsx）/ `https://www.ko-takahashi.jp/ko/takahashi-ko.jpg`（index.html）
+- [x] og:url — `https://www.ko-takahashi.jp`
 - [x] og:site_name — 高橋高 Official Portfolio
 - [x] og:locale — ja_JP（デフォルト）
 - [x] og:locale:alternate — en_US, zh_CN, ko_KR, th_TH
@@ -88,8 +88,8 @@
 
 | ファイル | 使用ドメイン | 用途 |
 |---------|------------|------|
-| index.html (canonical) | ko-takahashi.com | 正しい |
-| Seo.tsx (url変数) | ko-takahashi.com | 正しい |
+| index.html (canonical) | www.ko-takahashi.jp | 正しい |
+| Seo.tsx (url変数) | www.ko-takahashi.jp | 正しい |
 | vite.config.ts (sitemap) | **jon-and-coo.com** | **間違い** |
 | llms.txt (リンク) | **ko-takahashi-official.vercel.app** | **間違い** |
 | config.ts (ogImage) | **picsum.photos** | **プレースホルダー** |
@@ -100,7 +100,7 @@
 
 ### 3. Canonical URLがページ別でない
 
-全ページが `https://ko-takahashi.com` を指す。`/story`, `/articles`, `/schedule` の個別canonical URLがない。
+全ページが `https://www.ko-takahashi.jp` を指す。`/story`, `/articles`, `/schedule` の個別canonical URLがない。
 
 **影響**: 全ページが同一URLとして扱われ、個別インデックスされない。
 
@@ -156,7 +156,7 @@ SPAルーティングが `useState` ベースのため、ブラウザのURLが�
 
 ### 9. SearchAction が機能しない
 
-WebSite スキーマの `SearchAction` に検索URL `ko-takahashi.com/search?q={query}` が設定されているが、検索機能は実装されていない。
+WebSite スキーマの `SearchAction` に検索URL `www.ko-takahashi.jp/search?q={query}` が設定されているが、検索機能は実装されていない。
 
 **影響**: 構造化データのバリデーションエラー。Google からの信頼性低下。
 

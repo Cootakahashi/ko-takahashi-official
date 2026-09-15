@@ -3,7 +3,7 @@
 ## Project Overview
 
 Personal portfolio for Ko Takahashi (高橋高), CEO of Jon & Coo Inc.
-- **URL**: https://ko-takahashi.com
+- **URL**: https://www.ko-takahashi.jp
 - **Stack**: Vite + React 18 + TypeScript + TailwindCSS + Three.js + Framer Motion
 - **Hosting**: Vercel
 - **Design**: "Obsidian & Gold" — Zen-Tech aesthetic (dark backgrounds, gold accents, film grain)
@@ -65,5 +65,12 @@ npm run preview      # Preview production build
 
 ## Domain
 
-Everything points to `ko-takahashi.com`. Do not introduce other domains.
-Sitemap, canonical URLs, OG tags, llms.txt all reference this domain.
+Everything points to `https://www.ko-takahashi.jp` (apex `ko-takahashi.jp` 307-redirects to `www`).
+Sitemap, canonical URLs, OG tags, llms.txt all reference this domain. See `config.ts` `SITE_URL`.
+
+> 🔴 **`ko-takahashi.com`（.com）は当サイトのドメインではない。** それは別人（シンガーソング
+> ライター 高橋功）の個人サイトで、我々の所有ではない。2026-08-31 まで canonical / og:url /
+> sitemap / llms.txt が誤って `.com` を指しており、検索エンジンに「正本は別人のサイト」と宣言して
+> しまっていた（`c83cd83` で修正済み）。**canonical・og:url・sitemap・hreflang・JSON-LD の `@id`
+> などに `.com`（ko-takahashi 資料の旧ドメイン）を絶対に使わないこと。** 正しいのは常に
+> `https://www.ko-takahashi.jp`。

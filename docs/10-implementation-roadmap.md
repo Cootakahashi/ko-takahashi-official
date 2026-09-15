@@ -13,19 +13,19 @@
 
 ### P0-1. サイトマップ hostname 修正
 - **ファイル**: `vite.config.ts`
-- **変更**: `hostname: 'https://jon-and-coo.com'` → `'https://ko-takahashi.com'`
+- **変更**: `hostname: 'https://jon-and-coo.com'` → `'https://www.ko-takahashi.jp'`
 - **効果**: Google がサイトマップを正しく認識
 
 ### P0-2. OG画像プレースホルダー修正
 - **ファイル**: `config.ts`
-- **変更**: `ogImage: "https://picsum.photos/1200/630"` → `"https://ko-takahashi.com/ko/takahashi-ko.jpg"`
+- **変更**: `ogImage: "https://picsum.photos/1200/630"` → `"https://www.ko-takahashi.jp/ko/takahashi-ko.jpg"`
 - **効果**: SNSシェア時に正しい画像表示
 
 ### P0-3. llms.txt のリンク修正
 - **ファイル**: `public/llms.txt`
 - **変更**:
   - LinkedIn URL修正: `YOUR_CUSTOM_ID_HERE` → `ko-takahashi-jp`
-  - Vercel URL → `https://ko-takahashi.com`
+  - Vercel URL → `https://www.ko-takahashi.jp`
 - **効果**: AI検索での正しいリンク参照
 
 ### P0-4. ページ別 canonical URL
@@ -112,7 +112,7 @@
 
 ### P3-4. 各プラットフォームプロフィール統一
 - 全8プラットフォームのバイオ統一
-- ko-takahashi.com リンク設定
+- www.ko-takahashi.jp リンク設定
 - **効果**: エンティティ認識強化
 
 ### P3-5. Medium英語記事投稿開始
